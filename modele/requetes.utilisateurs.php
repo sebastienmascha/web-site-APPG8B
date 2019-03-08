@@ -30,10 +30,7 @@ function rechercheParNom(PDO $bdd, string $nom): array {
  * @param PDO $bdd
  * @return array
  */
-function recupereTousUtilisateurs(PDO $bdd): array {
-    $query = 'SELECT * FROM users';
-    return $bdd->query($query)->fetchAll();
-}
+
 
 /**
  * Ajoute un nouvel utilisateur dans la base de données

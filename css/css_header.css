@@ -11,3 +11,8 @@ background-image: url("./../img/bg.jpg");
 background-attachment:fixed; 
 background-size:cover; 
 }
+
+footer {
+    position: 'absolute';
+    bottom: 20px;
+}
