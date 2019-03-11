@@ -17,6 +17,7 @@
 
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/css_stock.css">
     <link rel="stylesheet" href="css/css_admin.css">
 
 </head>
