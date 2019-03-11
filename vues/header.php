@@ -15,10 +15,7 @@
     <meta name="description" content="CaCo, la cafetière connectée.">
     <meta name="author" content="CaCo">
 
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="css/css.css">
-    <link rel="stylesheet" href="css/css_stock.css">
-    <link rel="stylesheet" href="css/css_admin.css">
 
 </head>
 
@@ -50,15 +47,15 @@
         </aside>
 
         <header class="bg-trans">
-
-            <div class="gauche">
-                <p>NAME_BDD </p>
+            <div class="droite">
+                <p>NAME_USER </p>
                 <img src="img/icon.png" />
                 <img src="img/notif.png" />
+                <a href="index.php?cible=utilisateurs&fonction=inscription">
+                    <div class="droite"><img src="img/deco.png" /></div>
+                </a>
             </div>
-            <a href="index.php?cible=utilisateurs&fonction=inscription">
-                <div class="droite"><img src="img/deco.png" /></div>
-            </a>
+
         </header>
 
         <div class="wrap">

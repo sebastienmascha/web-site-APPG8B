@@ -6,7 +6,6 @@
 
 <p><?php echo $entete; ?></p>
 
-
 <table>
 	<thead>
 		<tr>

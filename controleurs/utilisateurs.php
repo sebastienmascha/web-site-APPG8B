@@ -28,42 +28,6 @@ switch ($function) {
         $title = "Accueil";
         break;
 
-    case 'gaetan':
-        //affichage de l'accueil
-        $vue = "gaetan";
-        $title = "Gaetan";
-        break;
-
-    case 'agathe':
-        //affichage de l'accueil
-        $vue = "agathe";
-        $title = "Agathe";
-        break;
-
-    case 'astrid':
-        //affichage de l'accueil
-        $vue = "astrid";
-        $title = "Astrid";
-        break;
-
-    case 'seb':
-        //affichage de l'accueil
-        $vue = "seb";
-        $title = "Seb";
-        break;
-
-    case 'olivier':
-        //affichage de l'accueil
-        $vue = "olivier";
-        $title = "Olivier";
-        break;
-
-    case 'gus':
-        //affichage de l'accueil
-        $vue = "gus";
-        $title = "Gus";
-        break;
-
     case 'inscription':
         // inscription d'un nouvel utilisateur
         $vue = "inscription";
@@ -96,20 +60,6 @@ switch ($function) {
             }
         }
         $title = "Inscription";
-        break;
-
-    case 'liste':
-        // Liste des utilisateurs déjà enregistrés
-        $vue = "liste";
-        $title = "Liste des utilisateurs inscrits";
-        $entete = "Voici la liste :";
-
-        $liste = recupereTousUtilisateurs($bdd);
-
-        if (empty($liste)) {
-            $alerte = "Aucun utilisateur inscrit pour le moment";
-        }
-
         break;
 
     case 'admin':

@@ -2,7 +2,13 @@
 /**
 * Vue : accueil
 */
+
+//<link rel="stylesheet" href="css/css_accueil.css">
 ?>
+
+<style>
+<?php include "css/css_accueil.css"; ?>
+</style>
 
 
 <div class="boite">

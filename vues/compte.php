@@ -4,6 +4,11 @@
 */
 ?>
 
+<style>
+<?php include "css/css_compte.css"; ?>
+</style>
+
+
 <p>Faites ce que vous voulez !!!!!!!!!</p>
 
 <div class="boite">

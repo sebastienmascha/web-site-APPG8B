@@ -4,8 +4,10 @@
 */			
 ?>
 
+<style>
+<?php include "css/css_inscription.css"; ?>
+</style>
 
-<!-- CODE DU FRONT OFFICE -->
 
 <?php echo AfficheAlerte($alerte); ?>
 
