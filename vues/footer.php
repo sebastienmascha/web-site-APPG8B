@@ -7,17 +7,22 @@
 
 
 
+
+</div>
+</div>
+</main>
+
+</div>
 <footer>
-    (c) Caco 2019
-	</footer>
+    © 2019 Caco
+</footer>
 
 
 
 
 </div>
 
-  <script src="js/scripts.js"></script>
-
-
+<script src="js/scripts.js"></script>
 </body>
-</html>
+
+</html> 

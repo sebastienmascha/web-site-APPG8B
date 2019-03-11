@@ -4,7 +4,7 @@
  * Le contrôleur :
  * - définit le contenu des variables à afficher
  * - identifie et appelle la vue
- */ 
+ */
 
 /**
  * Contrôleur de l'utilisateur
@@ -21,25 +21,25 @@ if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
 }
 
 switch ($function) {
-    
+
     case 'accueil':
         //affichage de l'accueil
         $vue = "accueil";
         $title = "Accueil";
         break;
-    
+
     case 'gaetan':
         //affichage de l'accueil
         $vue = "gaetan";
         $title = "Gaetan";
         break;
-    
+
     case 'agathe':
         //affichage de l'accueil
         $vue = "agathe";
         $title = "Agathe";
         break;
-        
+
     case 'astrid':
         //affichage de l'accueil
         $vue = "astrid";
@@ -65,22 +65,20 @@ switch ($function) {
         break;
 
     case 'inscription':
-    // inscription d'un nouvel utilisateur
+        // inscription d'un nouvel utilisateur
         $vue = "inscription";
         $alerte = false;
-        
+
         // Cette partie du code est appelée si le formulaire a été posté
         if (isset($_POST['username']) and isset($_POST['password'])) {
-            
-            if( !estUneChaine($_POST['username'])) {
+
+            if (!estUneChaine($_POST['username'])) {
                 $alerte = "Le nom d'utilisateur doit être une chaîne de caractère.";
-                
-            } else if( !estUnMotDePasse($_POST['password'])) {
+            } else if (!estUnMotDePasse($_POST['password'])) {
                 $alerte = "Le mot de passe n'est pas correct.";
-                
             } else {
                 // Tout est ok, on peut inscrire le nouvel utilisateur
-                
+
                 // 
                 $values = [
                     'username' => $_POST['username'],
@@ -89,7 +87,7 @@ switch ($function) {
 
                 // Appel à la BDD à travers une fonction du modèle.
                 $retour = ajouteUtilisateur($bdd, $values);
-                
+
                 if ($retour) {
                     $alerte = "Inscription réussie";
                 } else {
@@ -99,21 +97,39 @@ switch ($function) {
         }
         $title = "Inscription";
         break;
-        
+
     case 'liste':
-    // Liste des utilisateurs déjà enregistrés
+        // Liste des utilisateurs déjà enregistrés
         $vue = "liste";
         $title = "Liste des utilisateurs inscrits";
         $entete = "Voici la liste :";
-        
+
         $liste = recupereTousUtilisateurs($bdd);
-        
-        if(empty($liste)) {
+
+        if (empty($liste)) {
             $alerte = "Aucun utilisateur inscrit pour le moment";
         }
-        
+
         break;
-        
+
+    case 'admin':
+        //liste des capteurs enregistrés
+        $vue = "admin";
+        $title = "Espace administrateur";
+        break;
+
+    case 'stock':
+        //liste des capteurs enregistrés
+        $vue = "stock";
+        $title = "Gestion du stock";
+        break;
+
+    case 'compte':
+        //liste des capteurs enregistrés
+        $vue = "compte";
+        $title = "Mon compte";
+        break;
+
     default:
         // si aucune fonction ne correspond au paramètre function passé en GET
         $vue = "erreur404";
@@ -121,6 +137,6 @@ switch ($function) {
         $message = "Erreur 404 : la page recherchée n'existe pas.";
 }
 
-include ('vues/header.php');
-include ('vues/' . $vue . '.php');
-include ('vues/footer.php');
+include('vues/header.php');
+include('vues/' . $vue . '.php');
+include('vues/footer.php');
