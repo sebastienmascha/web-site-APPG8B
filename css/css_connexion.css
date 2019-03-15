@@ -1,0 +1,155 @@
+html {
+    background-image: url("./../img/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+.bg-trans {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+#conteneur {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#wrap {
+    overflow: hidden;
+    width: 100%;
+}
+
+header {
+    height: 80px;
+}
+
+header p {
+    display: inline;
+    vertical-align: middle;
+    line-height: 80px;
+    float: left;
+}
+
+header img {
+    margin-top: 15px;
+    height: 50px;
+}
+
+.droite {
+    float: right;
+}
+
+.gauche {
+    float: left;
+}
+
+.moi {}
+
+.notif-icon {}
+
+#side {
+    float: left;
+    height: 100%;
+    width: 20%;
+    min-height: 100vh;
+}
+
+#logo {
+    height: 80px;
+}
+
+#logo img {
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+
+.liste {
+    margin-top: 60px;
+    padding: 0px;
+    list-style-type: none;
+    text-align: center;
+}
+
+.liste li {
+    height: 60px;
+}
+
+.liste li:hover {
+    background-color: #FFF4CA;
+}
+
+.nav-icon {
+    width: 40%;
+}
+
+.nav-icon img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.nav-text {
+    font-size: 120%;
+    text-align: left;
+    width: 60%;
+    margin: auto;
+    vertical-align: middle;
+    line-height: 60px;
+    float: right;
+    color: black;
+}
+
+main {
+    margin-top: 40px;
+}
+
+#page-wrap {
+    width: 90%;
+    margin: auto;
+}
+
+#page-header {
+    background-image: url("./../img/header.png");
+    height: 80px;
+    padding: 10px;
+}
+
+.icon-page {
+    display: inline;
+    margin: auto;
+    height: 80px;
+    float: left;
+}
+
+h1 {
+    display: inline;
+    margin: auto;
+    margin-left: 30px;
+    vertical-align: middle;
+    line-height: 80px;
+    text-align: left;
+    color: white;
+}
+
+.page-content {
+    display: grid;
+    padding: 30px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px 2em;
+}
+
+.page-content:first-child {
+    align-self: center;
+}
+
+.boite {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    font-size: 30px;
+    clear: both;
+    color: white;
+}

@@ -51,7 +51,7 @@
                 <p>NAME_USER </p>
                 <img src="img/icon.png" />
                 <img src="img/notif.png" />
-                <a href="index.php?cible=utilisateurs&fonction=inscription">
+                <a href="index.php?cible=connexion&fonction=connexion">
                     <div class="droite"><img src="img/deco.png" /></div>
                 </a>
             </div>
