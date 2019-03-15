@@ -71,4 +71,4 @@ switch ($function) {
 }
 
 include ('vues/' . $vue . '.php');
-include ('vues/footer.php');
+include ('vues/footer/footer.php');
