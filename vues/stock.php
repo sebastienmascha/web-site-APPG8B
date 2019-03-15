@@ -7,14 +7,12 @@
 
 
 
-
-
-
 <div class="boite">
 
-<p> Café </p>
+<p class="p_stock"> Café </p>
+<img class="cafe" src="./img/coffee_icon.png" >
 <div class="box">
-	<button> Commander </button>
+	<a href="https://www.dolce-gusto.fr/boissons/grande-morning-16-capsules" target="_blank"> <button> Commander </button> </a>
 </div>
 <br>
 <div class="progress-bar green"></div>
@@ -25,9 +23,10 @@
 
 <div class="boite">
 
-<p> Chocolat chaud </p>
+<p class="p_stock"> Chocolat chaud </p>
+<img class="cafe" src="./img/Chocolat.png" >
 <div class="box">
-	<button> Commander </button>
+	<a href="https://www.dolce-gusto.fr/boissons/chocolat/chococino-chocolat-chaud" target="_blank"> <button> Commander </button> </a>
 </div>
 <br>
     <div class="progress-bar green"></div>
@@ -40,9 +39,10 @@
 
 <div class="boite">
 
-<p> Expresso </p>	
+<p class="p_stock"> Thé </p>
+<img class="cafe" src="./img/the.png" >
 <div class="box">
-	<button> Commander </button>
+	<a href="https://www.dolce-gusto.fr/boissons/the/citrus-honey-black-tea" target="_blank"> <button> Commander </button> </a>
 </div>
 <br>
     <div class="progress-bar green"></div>
@@ -55,9 +55,10 @@
 
 <div class="boite">
 
-<p> Thé </p>
+<p class="p_stock"> Cappuccino </p>
+<img class="cafe" src="./img/Cappuccino.png" >
 <div class="box">
-	<button> Commander </button>
+	<a href="https://www.dolce-gusto.fr/boissons/cappuccino-latte/cappuccino" target="_blank"> <button> Commander </button> </a>
 </div>
 <br>
 <div class="progress-bar green"></div>
