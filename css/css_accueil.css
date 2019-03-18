@@ -1,4 +1,50 @@
+
+.boitePrincipale {
+	background-color: rgba(255,255,255,0.4);
+	padding:0px;
+	width : 840px;
+}
+
 .boite {
 	background-color: rgba(255,255,255,0.4);
-	padding:20px;
+	padding:1px;
+	margin: 15px;
+	width: 380px;
+	float:left;
+}
+
+#accueil-header {
+	background-color:rgba(255,255,255,0.4);
+	height:50px;
+	padding-top:1px;
+	padding-bottom:20px;
+	text-align: center;
+	font-size:25px;
+}
+
+.cafetiere-header{
+	background-color:rgba(255,255,255,0.4);
+	height:20px;
+	padding-top:1px;
+	padding-bottom:20px;
+	text-align: center;
+	font-size:15px;
+}
+
+
+.boutonInstant{
+	font-size:10px;
+	color:white;
+	background-color: green;
+	border: 2px;
+	border-radius: 15px;
+	padding: 5px;
+	margin-left: 135px;
+	margin-top:10px;
+	transition-duration: 0.4s;
+}
+
+.Recap{
+	padding-left:20px;
+
 }
