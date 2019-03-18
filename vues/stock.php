@@ -7,7 +7,7 @@
 
 
 
-<div class="boite">
+<div class="boite1">
 
 <p class="p_stock"> Café </p>
 <img class="cafe" src="./img/coffee_icon.png" >
@@ -21,7 +21,7 @@
 
 
 
-<div class="boite">
+<div class="boite2">
 
 <p class="p_stock"> Chocolat chaud </p>
 <img class="cafe" src="./img/Chocolat.png" >
@@ -37,7 +37,7 @@
 
 
 
-<div class="boite">
+<div class="boite3">
 
 <p class="p_stock"> Thé </p>
 <img class="cafe" src="./img/the.png" >
@@ -53,7 +53,7 @@
 
 
 
-<div class="boite">
+<div class="boite4">
 
 <p class="p_stock"> Cappuccino </p>
 <img class="cafe" src="./img/Cappuccino.png" >

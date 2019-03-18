@@ -1,8 +1,9 @@
 
 .p_stock {
-    color: #4f3827;   
+    color: #725e1d;   
     font-family:monospace;
-    font-size: 2em;
+    font-size: 20px;
+    text-shadow: -0.4px 0 white, 0 0.4px white, 0.4px 0 white, 0 -0.4px white; 
 }
 
 .progress-bar { 
@@ -101,4 +102,50 @@ button:active {
 .cafe{
     width: 50px;
     margin-left:200px;
+
 }
+
+.boite1{
+    padding: 20px;
+    background-image: url(./img/backcaffe.jpg);
+    background-size: cover;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d6ca7c;
+}
+
+
+.boite2{
+    padding: 20px;
+    background-image: url(./img/backchoc.jpg);
+    background-size: cover;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d6ca7c;
+}
+
+
+
+.boite3{
+    padding: 20px;
+    background-image: url(./img/backthe.jpg);
+    background-size: cover;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d6ca7c;
+}
+
+
+.boite4{
+    padding: 20px;
+    background-image: url(./img/backcafe.jpg);
+    background-size: cover;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d6ca7c;
+}
+
