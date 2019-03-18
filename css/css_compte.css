@@ -1,59 +1,58 @@
-label {
-    /* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
-    display: inline-block;
-    
-    width: 90px;
-    height: 35px;
-    text-align: left;
-    font-size: 16px
-    
-    
-  }
-  button
-{
-    background-color: #0bb10b;
-    border-radius:5px;
-    color: #ffffff;
-    margin-left: 12%;
-    margin-top: 4%;
-    width: 90px;
-    height: 30px;
+.boite {
+    background : rgba(255, 255, 255, 0.75);
+    height: 300px;
+    width: 700px;
+    border-radius: 1%;
+    margin-left: 5%;
 }
-input {  
-    border-radius:5px;
-    }
+
+form {
+    width:200px;
+}
+
+input[type=text], input[type=email], select, textarea {
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 25px;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
 .icon
 {
-    width: 260px;
-    height: 260px;
-    margin-left: 60%;
-    margin-top: -800px;
-    margin-bottom: 60px;
-    
+    width: 200px;
+    height: 200px;
+    margin-left: -200%;
+
 }
-.boite
-{
-    background : rgba(255, 255, 255, 0.75);
-    height: 400px;
-    width: 800px;
-    border-top-left-radius: 1%;
-    border-bottom-left-radius: 1%;
-    border-top-right-radius: 1%;
-    border-bottom-right-radius: 1%;
-    
-    
-}
+
 .légende
 {
-    margin-left: 72%; 
-    margin-top: -7%;
-    
-    
+   margin-left: -175%;
+
+
 }
 .utilisateur
 {
     color: red;
     font-weight: bold;
-    margin-left: 69%; 
-    margin-top: -3%;
+   padding-left: 62%;
+   
+  
 }
