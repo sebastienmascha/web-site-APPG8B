@@ -1,0 +1,59 @@
+label {
+    /* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
+    display: inline-block;
+    
+    width: 90px;
+    height: 35px;
+    text-align: left;
+    font-size: 16px
+    
+    
+  }
+  button
+{
+    background-color: #0bb10b;
+    border-radius:5px;
+    color: #ffffff;
+    margin-left: 12%;
+    margin-top: 4%;
+    width: 90px;
+    height: 30px;
+}
+input {  
+    border-radius:5px;
+    }
+.icon
+{
+    width: 260px;
+    height: 260px;
+    margin-left: 60%;
+    margin-top: -800px;
+    margin-bottom: 60px;
+    
+}
+.boite
+{
+    background : rgba(255, 255, 255, 0.75);
+    height: 400px;
+    width: 800px;
+    border-top-left-radius: 1%;
+    border-bottom-left-radius: 1%;
+    border-top-right-radius: 1%;
+    border-bottom-right-radius: 1%;
+    
+    
+}
+.légende
+{
+    margin-left: 72%; 
+    margin-top: -7%;
+    
+    
+}
+.utilisateur
+{
+    color: red;
+    font-weight: bold;
+    margin-left: 69%; 
+    margin-top: -3%;
+}
