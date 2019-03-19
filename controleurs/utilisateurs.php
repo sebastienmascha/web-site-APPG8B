@@ -46,6 +46,18 @@ switch ($function) {
         $title = "Mon compte";
         break;
 
+    case 'referent-maison':
+        //liste des capteurs enregistrés
+        $vue = "referent-maison";
+        $title = "Maison";
+        break;
+
+    case 'referent-profil':
+        //liste des capteurs enregistrés
+        $vue = "referent-profil";
+        $title = "Profil";
+        break;
+
     default:
         // si aucune fonction ne correspond au paramètre function passé en GET
         $vue = "/components/erreur404";
