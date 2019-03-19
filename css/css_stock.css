@@ -1,6 +1,6 @@
 
 .p_stock {
-    color: #725e1d;   
+    color: #543e0c;   
     font-family:fantasy;
     font-size: 20px;
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; 
@@ -39,7 +39,7 @@
     content: '|||||||||||||';
     display: block;
     position: absolute;
-    width: 200px;
+    width: 400px;
     height: 7px;
     overflow: hidden;
     border-radius: 12px;
