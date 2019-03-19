@@ -1,0 +1,30 @@
+div.boite{
+	height: 300px;
+	width: 860px;
+}
+h3{
+	position :fixed;
+	top:350px;
+	left:450px;
+}
+h4{
+	position :fixed;
+	top:350px;
+	left:900px;
+}
+
+input{
+	background-color: #4D1919;
+ 	border: none;
+ 	color: white;
+ 	padding: 15px 32px;
+ 	height: 100px;
+ 	width: 250px;
+ 	text-align: center;
+ 	text-decoration: none;
+ 	display: inline-block;
+ 	font-size: 16px;
+
+}
+/*D38251
+4D1919*/
