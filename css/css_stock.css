@@ -1,9 +1,9 @@
 
 .p_stock {
     color: #725e1d;   
-    font-family:monospace;
+    font-family:fantasy;
     font-size: 20px;
-    text-shadow: -0.4px 0 white, 0 0.4px white, 0.4px 0 white, 0 -0.4px white; 
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; 
 }
 
 .progress-bar { 
@@ -101,7 +101,7 @@ button:active {
 
 .cafe{
     width: 50px;
-    margin-left:200px;
+    margin-left:202px;
 
 }
 
@@ -109,10 +109,10 @@ button:active {
     padding: 20px;
     background-image: url(./img/backcaffe.jpg);
     background-size: cover;
-    border-radius: 8px;
+    border-radius: 7px;
     border-style: solid;
     border-width: 1px;
-    border-color: #d6ca7c;
+    border-color: #5C5C5C;
 }
 
 
@@ -120,22 +120,22 @@ button:active {
     padding: 20px;
     background-image: url(./img/backchoc.jpg);
     background-size: cover;
-    border-radius: 8px;
+    border-radius: 7px;
     border-style: solid;
     border-width: 1px;
-    border-color: #d6ca7c;
+    border-color: #5C5C5C;
 }
 
 
 
 .boite3{
     padding: 20px;
-    background-image: url(./img/backthe.jpg);
+    background-image: url(./img/backlatte.jpg);
     background-size: cover;
-    border-radius: 8px;
+    border-radius: 7px;
     border-style: solid;
     border-width: 1px;
-    border-color: #d6ca7c;
+    border-color: #5C5C5C;
 }
 
 
@@ -143,9 +143,9 @@ button:active {
     padding: 20px;
     background-image: url(./img/backcafe.jpg);
     background-size: cover;
-    border-radius: 8px;
+    border-radius: 7px;
     border-style: solid;
     border-width: 1px;
-    border-color: #d6ca7c;
+    border-color: #5C5C5C;
 }
 

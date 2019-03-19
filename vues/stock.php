@@ -39,10 +39,10 @@
 
 <div class="boite3">
 
-<p class="p_stock"> Thé </p>
-<img class="cafe" src="./img/the.png" >
+<p class="p_stock"> Latte </p>
+<img class="cafe" src="./img/latte.png" >
 <div class="box">
-	<a href="https://www.dolce-gusto.fr/boissons/the/citrus-honey-black-tea" target="_blank"> <button> Commander </button> </a>
+	<a href="https://www.dolce-gusto.fr/boissons/cappuccino-latte/latte-macchiato" target="_blank"> <button> Commander </button> </a>
 </div>
 <br>
     <div class="progress-bar green"></div>
