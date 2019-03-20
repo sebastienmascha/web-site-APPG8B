@@ -58,6 +58,24 @@ switch ($function) {
         $title = "Profil";
         break;
 
+    case 'sav':
+        //liste des capteurs enregistrés
+        $vue = "footer/sav";
+        $title = "SAV";
+        break;
+
+    case 'cdu':
+        //liste des capteurs enregistrés
+        $vue = "footer/cdu";
+        $title = "CDU";
+        break;
+
+    case 'faq':
+        //liste des capteurs enregistrés
+        $vue = "footer/faq";
+        $title = "FAQ";
+        break;
+
     default:
         // si aucune fonction ne correspond au paramètre function passé en GET
         $vue = "/components/erreur404";

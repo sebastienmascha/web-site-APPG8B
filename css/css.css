@@ -157,7 +157,14 @@ h1 {
 
 footer {
 	text-align:center;
-	font-size:30px;
+	font-size:10px;
 	clear:both;
 	color:white;
 }
+#footer-table { 
+	border: none;
+	
+}
+
+
+
