@@ -10,7 +10,7 @@ form {
     width:200px;
 }
 
-input[type=text], input[type=email], select, textarea {
+input[type=text], input[type=email],input[type=time],select, textarea {
     width: 100%;
     margin: 5px;
     padding: 5px;
@@ -19,6 +19,7 @@ input[type=text], input[type=email], select, textarea {
     border-radius: 4px;
     height: 25px;
 }
+
 
 input[type=submit] {
     background-color: #4CAF50;
