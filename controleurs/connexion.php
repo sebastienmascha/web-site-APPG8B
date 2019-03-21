@@ -36,14 +36,14 @@ switch ($function) {
             // RECHERCHE SI LE COMPTE EXISTE
                 $req = mysqli_query($GLOBALS['___mysqli_ston'], "SELECT COUNT(id) FROM users_user WHERE email = '".secure($_POST['email'])."'");
                 $res = mysqli_fetch_assoc($req);
-            else if($res['id'] == 0)
+            if($res['id'] == 0)
             {
                 $alerte = "Le compte n'existe pas.";
             }
             // RECHERCHE SI MOT DE PASSE EST BON
                 $req2 = mysqli_query($GLOBALS['___mysqli_ston'], "SELECT * FROM users_user WHERE email = '".secure($_POST['email'])."'");
                 $res2 = mysqli_fetch_assoc($req2);
-            else if(crypterMdp($_POST['pass']) != $res2['pass'])
+            if(crypterMdp($_POST['pass']) != $res2['pass'])
             {
                 $alerte = "Le mot de passe n'est pas correct.";
             }

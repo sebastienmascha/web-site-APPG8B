@@ -9,21 +9,6 @@ $table = "users";
 // requêtes spécifiques à la table des capteurs
 
 
-/**
- * Recherche un utilisateur en fonction du nom passé en paramètre
- * @param PDO $bdd
- * @param string $nom
- * @return array
- */
-function rechercheParNom(PDO $bdd, string $nom): array {
-    
-    $statement = $bdd->prepare('SELECT * FROM  users WHERE username = :username');
-    $statement->bindParam(":username", $value);
-    $statement->execute();
-    
-    return $statement->fetchAll();
-    
-}
 
 /**
  * Recherche un utilisateur en fonction du nom passé en paramètre
