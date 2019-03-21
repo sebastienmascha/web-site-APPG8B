@@ -26,6 +26,22 @@ function rechercheParNom(PDO $bdd, string $nom): array {
 }
 
 /**
+ * Recherche un utilisateur en fonction du nom passé en paramètre
+ * @param PDO $bdd
+ * @param string $nom
+ * @return array
+ */
+function rechercheParNom(PDO $bdd, string $nom): array {
+    
+    $statement = $bdd->prepare('SELECT * FROM  users WHERE username = :username');
+    $statement->bindParam(":username", $value);
+    $statement->execute();
+    
+    return $statement->fetchAll();
+    
+}
+
+/**
  * Récupère tous les enregistrements de la table users
  * @param PDO $bdd
  * @return array
