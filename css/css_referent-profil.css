@@ -1,0 +1,103 @@
+
+div#editer{
+	height: 610px;
+	width: 420px;
+	background: rgba(255,255,255,0.4);
+	visibility: initial;
+}
+p{
+	font-size:x-large;
+	float:left;
+	margin-left:auto;
+	margin right: auto;
+	width: 5.5em;
+	font-family: Myriad pro;
+	text-align: center;	
+}
+td#td{
+    width : 100px;
+    height : 50px;
+    /*border :1px solid rgba(255,255,255,0.4);*/
+}
+tr#tr{
+	background:rgba(255,255,255,0.4);
+	border:10px solid rgba(255,255,255,0.4);	
+}
+input#edite{
+	background-color: #45a049;
+ 	border: none;
+ 	color: white;
+ 	/*padding: 15px 32px;*/
+ 	height: 50px;
+ 	width: 70px;
+ 	text-align: center;
+ 	text-decoration: none;
+ 	display: inline-block;
+ 	font-size: 16px;
+ 	border-radius:4px;
+ 	margin-left:3em;
+ 	cursor:pointer;
+ 	font-family: Myriad Pro;
+}
+input#edite:hover{
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    font-family:Myriad Pro ;
+    background-color: white ; 
+    color:#45a049;
+}
+input#valider{
+	background-color: #45a049;
+ 	border: none;
+ 	color: white;
+ 	/*padding: 15px 32px;*/
+ 	height: 70px;
+ 	width: 150px;
+ 	text-align: center;
+ 	text-decoration: none;
+ 	display: inline-block;
+ 	font-size: 16px;
+ 	border-radius:4px;
+ 	margin-left:3em;
+ 	cursor:pointer;
+ 	font-family: Myriad Pro;
+ 	position:relative;
+    left:100px;
+    top:60px;
+
+}
+input#valider:hover{
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    font-family:Myriad Pro ;
+    background-color: white ; 
+    color:#45a049;
+
+    
+}
+
+
+h2{
+	font-family: Myriad Pro;
+	position : relative;
+	font-size:xx-large;
+	left:32px;
+}
+tr#tr1{
+	font-size:x-large;
+	
+	
+	
+	font-family: Myriad pro;
+		
+
+}
+td#td1{
+	width : 100px;
+    height : 50px;
+
+}
+
+

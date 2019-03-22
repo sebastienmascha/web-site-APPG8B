@@ -14,7 +14,7 @@ h4{
 }
 
 input{
-	background-color: #4D1919;
+	background-color: #45a049;
  	border: none;
  	color: white;
  	padding: 15px 32px;
@@ -24,6 +24,21 @@ input{
  	text-decoration: none;
  	display: inline-block;
  	font-size: 16px;
+ 	cursor: pointer;
+ 	font-family: monospace;
+ 	border-radius: 4px;
+ 	transition : 0.4s;
+
+}
+input:hover{
+    border: none;
+    border-radius: 2px;
+    padding: 5px;
+    font-family: monospace;
+    font-size: 1em;
+    background-color: #45a049 ; 
+    color:white;
+    transform: scale(1.15);
 
 }
 /*D38251
