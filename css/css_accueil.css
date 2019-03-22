@@ -3,6 +3,10 @@
 	background-color: rgba(255,255,255,0.4);
 	padding:0px;
 	width : 840px;
+	float:left;
+}
+.icon-maison{
+	height:40px;
 }
 
 .boite {
@@ -31,8 +35,14 @@
 	font-size:15px;
 }
 
-
-.boutonInstant{
+.Recap{
+	padding-left:200px;
+	
+}
+.InfoRecap {
+	padding-right:200px;
+}
+button{
 	font-size:10px;
 	color:white;
 	background-color: green;
@@ -42,10 +52,26 @@
 	margin-left: 135px;
 	margin-top:10px;
 	transition-duration: 0.4s;
+	height: 40px;
 	
 }
 
-.Recap{
-	padding-left:200px;
-
+button:hover {
+	
+    border: none;
+    border-radius: 15px;
+    padding: 5px;
+    font-family: monospace;
+    font-size: 1em;
+    background-color: #fff; 
+    color:#1cb70b;
+    /* transform: scale(1.15); */
 }
+tr{
+	text-align: left;
+	padding-left:300px;
+}
+th{
+	margin-left:20px;
+}
+
