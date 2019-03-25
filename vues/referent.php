@@ -5,7 +5,7 @@
 ?>
 
 <style>
-<?php include "css/css_admin.css"; ?>
+<?php include "css/css_referent.css"; ?>
 </style>
 
 <div class="boite">

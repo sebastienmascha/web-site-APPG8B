@@ -28,10 +28,10 @@ switch ($function) {
         $title = "Accueil";
         break;
 
-    case 'admin':
+    case 'referent':
         //liste des capteurs enregistrés
-        $vue = "admin";
-        $title = "Espace administrateur";
+        $vue = "referent";
+        $title = "Espace referent";
         break;
 
     case 'stock':
