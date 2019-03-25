@@ -5,10 +5,10 @@
 ?>
 
 <style>
-<?php include "css/css_referent-machine.css"; ?>
+<?php include "css/css_referent-autre-page.css"; ?>
 </style>
 
-<div class="boite1" >
+<div class="boite" style="background:url('img/MachineUne.jpg'); background-size:cover; ">
 
 	<p class="p"> Machine 1 </p>
 		<div class="box">
@@ -19,7 +19,7 @@
 
 
 
-<div class="boite2">
+<div class="boite" style="background:url('img/MachineDeux.jpg'); background-size:cover; ">
 
 	<p class="p"> Machine 2 </p>
 	<div class="box">
@@ -27,7 +27,7 @@
 	</div>
 </div>
 
-<div class="boite3">
+<div class="boite" style="background:url('img/MachineTrois.jpg'); background-size:cover; ">
 
 	<p class="p"> Machine 3 </p>
 	<div class="box">
@@ -35,7 +35,7 @@
 	</div>
 </div>
 
-<div class="boite4">
+<div class="boite" style="background:url('img/MachineQuatre.jpg'); background-size:cover; ">
 
 	<p class="p"> Machine 4 </p>
 	<div class="box">
@@ -43,7 +43,7 @@
 	</div>
 </div>
 
-<div class="boite5">
+<div class="boite" style="background:url('img/MachineCinq.jpg'); background-size:cover; ">
 
 	<p class="p"> Machine 5 </p>
 	<div class="box">
