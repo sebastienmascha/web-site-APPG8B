@@ -69,114 +69,22 @@
 		<tr id="tr1">
 			<td id="td1">Préférence </td>
 			<td id="td1">
-				<FORM>
+				<form>
 					<SELECT name="préférence" size="1">
 					<OPTION>latte
 					<OPTION>café
 					<OPTION>cappuccino
 					<OPTION>chocolat chaud
 					</SELECT>
-				</FORM>
+				</form>
 			</td>
 		</tr>
 		<tr id="tr1">
 			<td id="td1">Heure de préparation </td>
-			<td id="td1">
-				<FORM>
-					<SELECT name="heure" size="1">
-					<OPTION>00
-					<OPTION>01
-					<OPTION>02
-					<OPTION>03
-					<OPTION>04
-					<OPTION>05
-					<OPTION>06
-					<OPTION>07
-					<OPTION>08
-					<OPTION>09
-					<OPTION>10
-					<OPTION>11
-					<OPTION>12
-					<OPTION>13
-					<OPTION>14
-					<OPTION>15
-					<OPTION>16
-					<OPTION>17
-					<OPTION>18
-					<OPTION>19
-					<OPTION>20
-					<OPTION>21
-					<OPTION>22
-					<OPTION>23
-					</SELECT>
-				</FORM>
-			</td>
-			<td id="td1">	
-				<FORM>
-					<SELECT name="minute" size="1">
-					<OPTION>00
-					<OPTION>01
-					<OPTION>02
-					<OPTION>03
-					<OPTION>04
-					<OPTION>05
-					<OPTION>06
-					<OPTION>07
-					<OPTION>08
-					<OPTION>09
-					<OPTION>10
-					<OPTION>11
-					<OPTION>12
-					<OPTION>13
-					<OPTION>14
-					<OPTION>15
-					<OPTION>16
-					<OPTION>17
-					<OPTION>18
-					<OPTION>19
-					<OPTION>20
-					<OPTION>21
-					<OPTION>22
-					<OPTION>23
-					<OPTION>24
-					<OPTION>25
-					<OPTION>26
-					<OPTION>27
-					<OPTION>28
-					<OPTION>29
-					<OPTION>30
-					<OPTION>31
-					<OPTION>32
-					<OPTION>33
-					<OPTION>34
-					<OPTION>35
-					<OPTION>36
-					<OPTION>37
-					<OPTION>38
-					<OPTION>39
-					<OPTION>40
-					<OPTION>41
-					<OPTION>42
-					<OPTION>43
-					<OPTION>44
-					<OPTION>45
-					<OPTION>46
-					<OPTION>47
-					<OPTION>48
-					<OPTION>49
-					<OPTION>50
-					<OPTION>51
-					<OPTION>52
-					<OPTION>53
-					<OPTION>54
-					<OPTION>55
-					<OPTION>56
-					<OPTION>57
-					<OPTION>58
-					<OPTION>59
-					</SELECT>
-					
-				</FORM>
+			<td id="td1"><input type="time"  id="heure" name="heure"
+       min="00:00" max="23:00" placeholder="heure" required/>
+				
+			
 			</td>
 		</tr>
 		<tr id="tr1">
