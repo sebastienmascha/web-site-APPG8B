@@ -46,10 +46,10 @@ switch ($function) {
         $title = "Mon compte";
         break;
 
-    case 'referent-maison':
+    case 'referent-residence':
         //liste des capteurs enregistrés
-        $vue = "referent-maison";
-        $title = "Maison";
+        $vue = "referent-residence";
+        $title = "Résidence";
         break;
 
     case 'referent-profil':
@@ -75,6 +75,21 @@ switch ($function) {
         $vue = "footer/faq";
         $title = "FAQ";
         break;
+
+    case 'referent-machine':
+    //liste des capteurs enregistrés
+    $vue = "referent-machine";
+    $title = "Machine";
+    break;
+
+    case 'referent-capteur':
+    //liste des capteurs enregistrés
+    $vue = "referent-capteur";
+    $title = "Capteur";
+    break;
+
+    
+
 
     default:
         // si aucune fonction ne correspond au paramètre function passé en GET
