@@ -5,7 +5,7 @@ div#editer{
 	background: rgba(255,255,255,0.4);
 	visibility: initial;
 }
-p{
+p.p{
 	font-size:x-large;
 	float:left;
 	margin-left:auto;

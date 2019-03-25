@@ -11,46 +11,46 @@
 	<table class="table">
 		<tr id="tr">	
 			<td colspan="3" id="td">
-				<p>Gaétan</p>
-				<p>Réferent</p>
-				<p><input id="edite"type="button" value="Edit" onclick="edit_div('editer');" /> </p>
+				<p class="p">Gaétan</p>
+				<p class="p">Réferent</p>
+				<p class="p"><input id="edite"type="button" value="Edit" onclick="edit_div('editer');" /> </p>
 			</td>
 		</tr>
 		<tr id="tr" >
 			<td colspan="3" id="td">
-				<p>Seb</p>
-				<p>Enfant</p>
-				<p><input id="edite"type="button" value="Edit" onclick="edit_div('editer');" /></p>
+				<p class="p">Seb</p>
+				<p class="p">Enfant</p>
+				<p class="p"><input id="edite"type="button" value="Edit" onclick="edit_div('editer');" /></p>
 			</td>
 		</tr>
 		<tr  id="tr">
 			<td clospan="3" id="td">
-				<p>Gus</p>
-				<p>Parent</p>
-				<p><input id="edite"type="button" value="Edit" onclick="edit_div('editer');" /></p>
+				<p class="p">Gus</p>
+				<p class="p">Parent</p>
+				<p class="p"><input id="edite"type="button" value="Edit" onclick="edit_div('editer');" /></p>
 			</td>
 		</tr>
 		<tr  id="tr">
 			<td clospan="3" id="td">
-				<p>Agathe</p>
-				<p>Parent</p>
-				<p><input id="edite"type="button" value="Edit" onclick="edit_div('editer');" /></p>
+				<p class="p">Agathe</p>
+				<p class="p">Parent</p>
+				<p class="p"><input id="edite"type="button" value="Edit" onclick="edit_div('editer');" /></p>
 			</td>
 		</tr>
 		
 		<tr id="tr" >
 			<td clospan="3" id="td">
-				<p>Olivier</p>
-				<p>Enfant</p>
-				<p><input id="edite"type="button" value="Edit" onclick="edit_div('editer');" /></p>
+				<p class="p">Olivier</p>
+				<p class="p">Enfant</p>
+				<p class="p"><input id="edite"type="button" value="Edit" onclick="edit_div('editer');" /></p>
 			</td>
 		</tr>
 		
 		<tr id="tr">
 			<td clospan="3" id="td">
-				<p>Astrid</p>
-				<p>Enfant</p>
-				<p><input id="edite"type="button" value="Edit" onclick="edit_div('editer');" /></p>
+				<p class="p">Astrid</p>
+				<p class="p">Enfant</p>
+				<p class="p"><input id="edite"type="button" value="Edit" onclick="edit_div('editer');" /></p>
 			</td>
 		</tr>
 	</table>
