@@ -6,8 +6,6 @@
 
 
 
-
-
 </div>
 </div>
 </main>
@@ -21,16 +19,21 @@
             <span> <a href="index.php?cible=connexion&fonction=connexion"> Contact</a> </span>
         </div>
 
-        <table style="border: none;">
-            <tr >
-                <th style="border: none;"> <span> <a href="index.php?cible=utilisateurs&fonction=faq"> FAQ</a> </span></th>
-                <th style="border: none;"><span> <a href="index.php?cible=utilisateurs&fonction=cdu"> CDU</a> </span></th>
-                <th style="border: none;"><span> <a href="index.php?cible=utilisateurs&fonction=sav"> SAV</a> </span></th>
+        <table>
+            <tr>
+                <th class="thTable"><td width="33%"> <span> <a href="index.php?cible=utilisateurs&fonction=faq">FAQ</a> </span></th>
+                <th class="thTable"><td width="33%"> <span> <a href="index.php?cible=utilisateurs&fonction=cdu">CDU</a> </span></th>
+                <th class="thTable"><td width="33%"> <span> <a href="index.php?cible=utilisateurs&fonction=sav">SAV</a> </span></th>
             </tr>
-            <tr >
-                <td style="border: none;"><span style="font-size:15px;vertical-align: middle;display: block;">FOIRE AUX QUESTIONS</span><span style="font-size:15px;vertical-align: middle;display: block; margin:15px">    </span><span style="font-size:15px;vertical-align: middle;display: block;"> Une question ?</span></td>
-                <td style="border: none;"><span style="font-size:15px;vertical-align: middle;display: block;">CONDITIONS D'UTILISATION</span><span style="font-size:15px;vertical-align: middle;display: block; margin:15px">    </span><span style="font-size:15px;vertical-align: middle;display: block;">Retrouvez l'ensemble des conditions d'utilisations certifiés par l'utilisateur.</span></td>
-                <td style="border: none;"><span style="font-size:15px;vertical-align: middle;display: block;">DES TECHNICIENS À VOTRE SERVICE</span><span style="font-size:15px;vertical-align: middle;display: block; margin:15px">    </span><span style="font-size:15px;vertical-align: middle;display: block;">Il vous suffit de contacter l'un de nos techniciens par téléphone au 0978 970 970 (prix d'un appel local) <br/> ou de vous présenter au comptoir SAV du magasin CaCo le plus proche de chez vous. La seule condition à remplir pour être pris en charge, <br/> est que la marque de l'appareil soit commercialisée chez CaCo.</span></td>
+            <tr>
+                <td class="tdTable" ><span class="spanTable"><td width="33%">FOIRE AUX QUESTIONS</span> </td>
+                <td class="tdTable"> <span class="spanTable"><td width="33%">CONDITIONS D'UTILISATION</span> </td>
+                <td class="tdTable"> <span class="spanTable"> <td width="33%">TECHNICIENS À VOTRE SERVICE</span></td>
+            </tr>
+            <tr>
+                <td class="tdTable" ><span class="spanTable"> <td width="33%">Une question ?</span></td>
+                <td class="tdTable" ><span class="spanTable"><td width="33%"> Retrouvez l'ensemble des conditions d'utilisations certifiés par l'utilisateur.</span></td>
+                <td class="tdTable" ><span class="spanTable"><td width="33%"> Il vous suffit de contacter l'un de nos techniciens par téléphone au 0978 970 970 (prix d'un appel local) ou de vous présenter au comptoir SAV du magasin CaCo le plus proche de chez vous. La seule condition à remplir pour être pris en charge, est que la marque de l'appareil soit commercialisée chez CaCo.</span></td>
             </tr>
         </table>
     </div>

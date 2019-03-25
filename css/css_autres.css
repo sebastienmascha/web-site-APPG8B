@@ -6,3 +6,23 @@
 p{
 	font-size: 14px;
 }
+
+
+.thTable{
+	width:300px;
+	style="border: none;"
+}
+
+.tdTable{
+	style="border: none;"
+
+}
+
+
+.spanTable{
+	font-size:15px;
+	vertical-align: middle;
+	display: block;
+
+
+}
