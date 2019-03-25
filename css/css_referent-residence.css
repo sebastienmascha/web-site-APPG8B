@@ -1,4 +1,4 @@
-p {
+p.p {
     color: black;   
     font-family:monospace;
     font-size: 50px;
@@ -17,11 +17,14 @@ input{
     font-family: monospace;
     font-size: 1em;
     background-color: #45a049; 
-    color:#fff;
+    color:white;
     outline: none;
     cursor: pointer;
     transition:0.4s;
     position: relative;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 
 }
 
@@ -31,21 +34,19 @@ input:hover{
     padding: 5px;
     font-family: monospace;
     font-size: 1em;
-    background-color: #fff; 
+    background-color: white; 
     color:#45a049
-    transform: scale(1.15);
+   
 
 }
 
 
-input:active {
-    transform: scale(0.99);
-}
 
 
 
 
-.boite1{
+
+div.boite1{
     padding: 20px;
     background-image: url(./img/Appartement_Paris.jpg);
     background-size: cover;
@@ -56,7 +57,7 @@ input:active {
 }
 
 
-.boite2{
+div.boite2{
     padding: 20px;
     background-image: url(./img/Maison_Chantilly.jpg);
     background-size: cover;
@@ -68,7 +69,7 @@ input:active {
 
 
 
-.boite3{
+div.boite3{
     padding: 20px;
     background-image: url(./img/Châlet_Avoriaz.jpg);
     background-size: cover;
@@ -79,7 +80,7 @@ input:active {
 }
 
 
-.boite4{
+div.boite4{
     padding: 20px;
     background-image: url(./img/Maison_Biarritz.jpg);
     background-size: cover;

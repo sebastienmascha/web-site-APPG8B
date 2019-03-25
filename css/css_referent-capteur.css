@@ -1,4 +1,4 @@
-p {
+p.p {
     color: black;   
     font-family:monospace;
     font-size: 50px;
@@ -42,7 +42,7 @@ input:hover{
 
 
 
-.boite1{
+div.boite1{
     padding: 20px;
     background-position:center;
     background-image: url(./img/Micro.jpg);
@@ -54,7 +54,7 @@ input:hover{
 }
 
 
-.boite2{
+div.boite2{
     padding: 20px;
     background-position:center;
     background-image: url(./img/IR.jpg);
@@ -64,7 +64,7 @@ input:hover{
     border-width: 1px;
     border-color: #5C5C5C;
 }
-.boite3{
+div.boite3{
     padding: 20px;
     background-position:center;
     background-image: url(./img/résistance_chauffante.jpg);
@@ -74,7 +74,7 @@ input:hover{
     border-width: 1px;
     border-color: #5C5C5C;
 }
-.boite4{
+div.boite4{
     padding: 20px;
     background-position:center;
     background-image: url(./img/température.jpg);

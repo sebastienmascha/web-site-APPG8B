@@ -14,7 +14,7 @@
     		<input  type="button" onclick="document.location.href='index.php?cible=utilisateurs&fonction=referent-profil';" value="Gestion des profils">
     	<h3>
     	<h4>
-    		<input type="button" onclick="document.location.href='index.php?cible=utilisateurs&fonction=referent-maison';" value="Machine">
+    		<input type="button" onclick="document.location.href='index.php?cible=utilisateurs&fonction=referent-residence';" value="Maison">
 		</h4>
     </p>
 </div>
