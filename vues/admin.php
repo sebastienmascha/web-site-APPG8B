@@ -9,12 +9,12 @@
 </style>
 
 <div class="boite">
-    <p>
-    	<h3>
-    		<input  type="button" onclick="document.location.href='index.php?cible=utilisateurs&fonction=referent-profil';" value="Gestion des profils">
-    	<h3>
-    	<h4>
-    		<input type="button" onclick="document.location.href='index.php?cible=utilisateurs&fonction=referent-maison';" value="Machine">
-		</h4>
-    </p>
+    
+    <div class="h3">
+   		<input  type="button" onclick="document.location.href='index.php?cible=utilisateurs&fonction=referent-profil';" value="Gestion des profils">
+   	</div>
+   	<div class="h4">
+   		<input type="button" onclick="document.location.href='index.php?cible=utilisateurs&fonction=referent-maison';" value="Machine">
+   	</div>
+ 
 </div>
