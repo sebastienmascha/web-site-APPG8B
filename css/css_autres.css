@@ -1,8 +1,33 @@
 .boxCdu{
-	width: 3000px;
+	width: 950px;
 	padding: 20px;
+}
+
+.boxFaq{
+	width:950px;
+	padding:20px;
 }
 
 p{
 	font-size: 14px;
+}
+
+
+.thTable{
+	width:300px;
+	style="border: none;"
+}
+
+.tdTable{
+	style="border: none;"
+
+}
+
+
+.spanTable{
+	font-size:15px;
+	vertical-align: middle;
+	display: block;
+
+
 }
