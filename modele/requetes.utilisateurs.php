@@ -9,6 +9,7 @@ $table = "users";
 // requêtes spécifiques à la table des capteurs
 
 
+
 /**
  * Recherche un utilisateur en fonction du nom passé en paramètre
  * @param PDO $bdd
