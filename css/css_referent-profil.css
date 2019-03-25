@@ -5,7 +5,7 @@ div#editer{
 	background: rgba(255,255,255,0.4);
 	visibility: initial;
 }
-p{
+p.p{
 	font-size:x-large;
 	float:left;
 	margin-left:auto;
@@ -98,6 +98,15 @@ td#td1{
 	width : 100px;
     height : 50px;
 
+}
+input[type="email"],input[type="text"],input[type="time"],select{
+	width: 100%;
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 25px;
 }
 
 
