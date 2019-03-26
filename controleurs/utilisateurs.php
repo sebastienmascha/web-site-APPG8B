@@ -31,7 +31,7 @@ switch ($function) {
     case 'referent':
         //liste des capteurs enregistrés
         $vue = "referent";
-        $title = "Espace réferent";
+        $title = "Espace référent";
         break;
 
     case 'stock':
