@@ -92,7 +92,7 @@
 			<td id="td1">
 				<FORM>
 					<SELECT name="Type" size="1">
-					<OPTION>Réferant
+					<OPTION>Réferent
 					<OPTION>Parent
 					<OPTION>Enfant
 					<OPTION>Invité
