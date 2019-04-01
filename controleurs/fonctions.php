@@ -1,3 +1,5 @@
+
+
 <?php
 /**
  * Fonctions liées aux contrôleurs
@@ -39,14 +41,20 @@ function estUnMotDePasse($chaine): bool
     }
 }
 
-function crypterMdp($password) {
+function crypterMdp($pass) {
     //return sha1($password);
-    return password_hash($password, PASSWORD_BCRYPT);
+    return sha1('z%Z9)+Â°*$' . md5($pass) . 'Y:c!#?f4[?');
 }
 
 function secure($chaine)
 {
-    $nouveau = ((isset($GLOBALS["___mysqli_ston"]) && is_object($GLOBALS["___mysqli_ston"])) ? mysqli_real_escape_string($GLOBALS["___mysqli_ston"], $chaine) : ((trigger_error("[MySQLConverterToo] Fix the mysql_escape_string() call! This code does not work.", E_USER_ERROR)) ? "" : ""));
-    return $nouveau;
+    
+    return $chaine;
 }
 
+function alerte($chaine){
+    return '<span class="alert alert-danger">'.$chaine.'</span>';
+}
+function succes($chaine){
+    return '<span class="alert alert-success">'.$chaine.'</span>';
+}

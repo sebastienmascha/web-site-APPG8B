@@ -7,6 +7,7 @@
 // on inclut le fichier modèle contenant les appels à la BDD
 include('./modele/requetes.utilisateurs.php');
 
+
 // si la fonction n'est pas définie, on choisit d'afficher l'accueil
 if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
     $function = "connexion";
@@ -17,46 +18,63 @@ if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
 switch ($function) {
     
     case 'connexion':
+
+
+
+
         //liste des capteurs enregistrés
-        $vue = "connexion";
+        if(!isset($_SESSION['id'])) { $vue = "connexion";
         $title = "Connexion";
+    }
+    else {
+        header('location:index.php');
+
+    }
+
+
 
  // Cette partie du code est appelée si le formulaire a été posté
         if (isset($_POST['email']) and isset($_POST['password'])) {
 
+            $valide = true;
+
             if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
                 $alerte = "Adresse email non valide.";
-            } 
-
-            else if (!estUnMotDePasse($_POST['password'])) {
-                $alerte = "Le mot de passe n'est pas correct.";
+                $valide=false;
             } 
             
 
             // RECHERCHE SI LE COMPTE EXISTE
-                $req = mysqli_query($GLOBALS['___mysqli_ston'], "SELECT COUNT(id) FROM users_user WHERE email = '".secure($_POST['email'])."'");
-                $res = mysqli_fetch_assoc($req);
-            if($res['id'] == 0)
-            {
-                $alerte = "Le compte n'existe pas.";
-            }
-            // RECHERCHE SI MOT DE PASSE EST BON
-                $req2 = mysqli_query($GLOBALS['___mysqli_ston'], "SELECT * FROM users_user WHERE email = '".secure($_POST['email'])."'");
-                $res2 = mysqli_fetch_assoc($req2);
-            if(crypterMdp($_POST['pass']) != $res2['pass'])
-            {
-                $alerte = "Le mot de passe n'est pas correct.";
-            }
-          
+
+            
+
+       
+
+            $req = recupereTous($bdd, 'users_user WHERE email="'.secure($_POST['email']).'" AND valide=1');
+
+            if(!$req) {
+                        $alerte = "Le compte n'existe pas.";
+                        $valide=false;
+
+                      }  
+
+             foreach($req as $element) {
+                        
+                        if(crypterMdp($_POST['password']) != $element['mdp'])
+                        {
+                            $alerte = "Le mot de passe n'est pas correct.";
+                            $valide=false;
+                        }
+
+                    }
+
                 
-                
-                else
+                if($valide)
                 {
                     
                 // RECUPERE TOUT 
 
-                    $req3 = mysqli_query($GLOBALS['___mysqli_ston'], "SELECT * FROM users_user WHERE email = '".secure($_POST['email'])."'");
-                    $dataCo = mysqli_fetch_assoc($req3);
+                     foreach($req as $dataCo) {
 
                     // variable session pr avoir acces rapidement a ces données
                     $_SESSION['id'] = $dataCo['id'];
@@ -67,13 +85,13 @@ switch ($function) {
                     $_SESSION['token'] = uniqid(md5(rand()), true); // utile pour le lien de déconnexion 
                     $_SESSION['acces'] = $dataCo['acces'];
                     
-                    $alerte = "Bienvenue ".$dataCo['prenom']." !";
+                    $alerte = "Bienvenue ".$_SESSION['prenom']." !";
+                   
                   
-                    
-                    // AJOUTER session_start(); au tout début d'un fichier qui est inclu sur TOUTES les pages pour maintenir la session ouverte
-                    // doit impérativement être déclaré avant que du code html soit appelé
+                    }
+                  
 
-                    exit;
+                
                 }
 
 
@@ -128,12 +146,28 @@ switch ($function) {
         $title = "Inscription";
         break;
 
+
+
+
+
         case 'deconnexion':
-        // inscription d'un nouvel utilisateur
-        $vue = "connexion";
-        $title = "Connexion";
+        if(isset($_GET['token']) AND isset($_SESSION['token']) AND $_GET['token'] == $_SESSION['token']){
+                session_destroy();
+                
+            }
+            else {
+                
+            }
+        $vue = "deconnexion";
+        $title = "Déconnexion";
         break;
         
+
+
+
+
+
+
     default:
         // si aucune fonction ne correspond au paramètre function passé en GET
         $vue = "components/erreur404";

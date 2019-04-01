@@ -23,6 +23,34 @@ function recupereTous(PDO $bdd, string $table): array {
  * @param array $attributs
  * @return array
  */
+function compter(PDO $bdd, string $table, array $attributs): array {
+    
+    $where = "";
+    foreach($attributs as $key => $value) {
+        $where .= "$key = :$key" . ", ";
+    }
+    $where = substr_replace($where, '', -2, 2);
+    
+    $statement = $bdd->prepare('SELECT COUNT(*) AS FROM ' . $table . ' WHERE ' . $where);
+    
+    
+    foreach($attributs as $key => $value) {
+        $statement->bindParam(":$key", $value);
+    }
+    $statement->execute();
+    
+    return $statement->fetchAll();
+    
+}
+
+
+/**
+ * Recherche des éléments en fonction des attributs passés en paramètre
+ * @param PDO $bdd
+ * @param string $table
+ * @param array $attributs
+ * @return array
+ */
 function recherche(PDO $bdd, string $table, array $attributs): array {
     
     $where = "";
@@ -42,6 +70,8 @@ function recherche(PDO $bdd, string $table, array $attributs): array {
     return $statement->fetchAll();
     
 }
+
+
 
 /**
  * Insère un nouvel élément dans une table
