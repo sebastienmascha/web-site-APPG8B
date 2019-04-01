@@ -93,7 +93,7 @@ if(!isset($valide) or !$valide) {
 </div>
                 <div class="boite">
               
-                <img src="./../img/logo.png" class="logo" alt="logo" style="height:300px;">
+                <img src="img/logo.png" class="logo" alt="logo" style="height:300px;">
                 </div>
 
         <?php }
