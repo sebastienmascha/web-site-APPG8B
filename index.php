@@ -7,7 +7,7 @@
  * - Modèle : contient les fonctions liées à la BDD et appelées par les contrôleurs
  * - Vue : contient ce qui doit être affiché
  **/
-
+session_start();
 // Activation des erreurs
 ini_set('display_errors', 1);
 
@@ -15,6 +15,8 @@ ini_set('display_errors', 1);
 include("controleurs/fonctions.php");
 // Appel des fonctions liées à l'affichage
 include("vues/fonctions.php");
+
+if(isset($_SESSION['id'])) {
 
 // On identifie le contrôleur à appeler dont le nom est contenu dans cible passé en GET
 if(isset($_GET['cible']) && !empty($_GET['cible'])) {
@@ -24,6 +26,11 @@ if(isset($_GET['cible']) && !empty($_GET['cible'])) {
 } else {
     // Si aucun contrôleur défini en GET, on bascule sur utilisateurs
     $url = 'utilisateurs';
+}
+	
+}
+else {
+	$url = 'connexion';
 }
 
 // On appelle le contrôleur

@@ -1,7 +1,6 @@
 <?php
-/**
-* Vue : entête HTML
-*/
+
+
 ?>
 
 <!doctype html>
@@ -39,7 +38,7 @@
                     </a>
                     <li><a href="index.php?cible=utilisateurs&fonction=compte"><span class="nav-icon"><img src="img/dashboard.png" alt="Mon compte" /></span> <span class="nav-text">Mon compte</span></a></li>
                     <li><a href="index.php?cible=utilisateurs&fonction=stock"><span class="nav-icon"><img src="img/package.png" alt="Stock" /> </span><span class="nav-text">Stock</span></a></li>
-                    <li><a href="index.php?cible=utilisateurs&fonction=referent"><span class="nav-icon"><img src="img/admin.png" alt="Referent" /></span> <span class="nav-text">Referent</span></a></li>
+                    <li><a href="index.php?cible=utilisateurs&fonction=admin"><span class="nav-icon"><img src="img/admin.png" alt="Réferent" /></span> <span class="nav-text">Référent</span></a></li>
 
                 </ul>
             </nav>
@@ -48,10 +47,10 @@
 
         <header class="bg-trans">
             <div class="droite">
-                <p>NAME_USER </p>
+                <p><?php echo $_SESSION['prenom']?></p>
                 <img src="img/icon.png" />
                 <img src="img/notif.png" />
-                <a href="index.php?cible=connexion&fonction=connexion">
+                <a href="index.php?cible=connexion&fonction=deconnexion&token=<?php echo $_SESSION['token']; ?>">
                     <div class="droite"><img src="img/deco.png" /></div>
                 </a>
             </div>
