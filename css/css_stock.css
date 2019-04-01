@@ -149,3 +149,7 @@ button:active {
     border-color: #5C5C5C;
 }
 
+
+table{
+    border: none;
+}
