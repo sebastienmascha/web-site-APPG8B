@@ -31,7 +31,7 @@ switch ($function) {
     case 'referent':
         //liste des capteurs enregistrés
         $vue = "referent";
-        $title = "Espace referent";
+        $title = "Espace référent";
         break;
 
     case 'stock':
@@ -49,7 +49,7 @@ switch ($function) {
     case 'referent-residence':
         //liste des capteurs enregistrés
         $vue = "referent-residence";
-        $title = "Résidence";
+        $title = "Résidence(s)";
         break;
 
     case 'referent-profil':
@@ -79,13 +79,13 @@ switch ($function) {
     case 'referent-machine':
     //liste des capteurs enregistrés
     $vue = "referent-machine";
-    $title = "Machine";
+    $title = "Machine(s)";
     break;
 
     case 'referent-capteur':
     //liste des capteurs enregistrés
     $vue = "referent-capteur";
-    $title = "Capteur";
+    $title = "Capteur(s)";
     break;
 
     

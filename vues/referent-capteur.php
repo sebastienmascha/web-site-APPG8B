@@ -1,3 +1,8 @@
+<?php 
+/**
+* Vue : accueil
+*/
+?>
 <style>
 <?php include "css/css_referent-autre-page.css"; ?>
 </style>

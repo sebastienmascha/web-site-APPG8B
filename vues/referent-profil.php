@@ -12,7 +12,7 @@
 		<tr id="tr">	
 			<td colspan="3" id="td">
 				<p class="p">Gaétan</p>
-				<p class="p">Réferent</p>
+				<p class="p">Référent</p>
 				<p class="p"><input id="edite"type="button" value="Edit" onclick="edit_div('editer');" /> </p>
 			</td>
 		</tr>
@@ -92,7 +92,7 @@
 			<td id="td1">
 				<FORM>
 					<SELECT name="Type" size="1">
-					<OPTION>Réferant
+					<OPTION>Référent
 					<OPTION>Parent
 					<OPTION>Enfant
 					<OPTION>Invité
