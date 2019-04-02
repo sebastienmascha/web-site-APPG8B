@@ -1,19 +1,22 @@
+.page-content2 {
+	
+	display: grid;
+	padding:30px;
+  }
 
 .boitePrincipale {
 	background-color: rgba(255,255,255,0.4);
-	/* padding:auto; */
-	width : inherit;
-	float:left;
+	
 }
-.icon-maison{
-	height:40px;
-}
+.flex-container{
+	display: flex;
+  justify-content: center;
+} 
 
 .boite {
 	background-color: rgba(255,255,255,0.4);
 	padding:1px;
-	margin: 15px;
-	width: 100%;
+	margin: 5%;
 	float:left;
 }
 
@@ -36,21 +39,22 @@
 }
 
 .Recap{
-	padding-left:200px;
+	padding-left:5%;
 	
 }
 .InfoRecap {
 	padding-right:200px;
 }
+
+
 button{
 	font-size:10px;
 	color:white;
 	background-color: green;
 	border: 2px;
 	border-radius: 15px;
-	padding: 5px;
-	margin-left: 135px;
-	margin-top:10px;
+	padding: 1%;
+	margin-top: 1%;
 	transition-duration: 0.4s;
 	height: 40px;
 	
@@ -58,20 +62,20 @@ button{
 
 button:hover {
 	
-    border: none;
-    border-radius: 15px;
-    padding: 5px;
-    font-family: monospace;
-    font-size: 1em;
-    background-color: #fff; 
-    color:#1cb70b;
-    /* transform: scale(1.15); */
+	/* border-radius: 15px; */
+    /*padding: 5px;*/
+    /* font-family:monospace ; */
+    background-color: white ; 
+    color:#45a049;
+
 }
 tr{
 	text-align: left;
-	padding-left:300px;
 }
 th{
-	margin-left:20px;
+	margin-left:10%;
+	margin-right:10%;
 }
-
+td{
+	padding-left:5%;
+}
