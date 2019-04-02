@@ -60,19 +60,19 @@ switch ($function) {
 
     case 'sav':
         //liste des capteurs enregistrés
-        $vue = "footer/sav";
+        $vue = "header-footer/sav";
         $title = "SAV";
         break;
 
     case 'cdu':
         //liste des capteurs enregistrés
-        $vue = "footer/cdu";
+        $vue = "header-footer/cdu";
         $title = "CDU";
         break;
 
     case 'faq':
         //liste des capteurs enregistrés
-        $vue = "footer/faq";
+        $vue = "header-footer/faq";
         $title = "FAQ";
         break;
 
@@ -98,6 +98,6 @@ switch ($function) {
         $message = "Erreur 404 : la page recherchée n'existe pas.";
 }
 
-include('vues/header.php');
+include('vues/header-footer/header.php');
 include('vues/' . $vue . '.php');
-include('vues/footer/footer.php');
+include('vues/header-footer/footer.php');

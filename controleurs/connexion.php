@@ -16,65 +16,54 @@ if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
 }
 
 switch ($function) {
-    
+
     case 'connexion':
-
-
-
-
         //liste des capteurs enregistrés
-        if(!isset($_SESSION['id'])) { $vue = "connexion";
-        $title = "Connexion";
-    }
-    else {
-        header('location:index.php');
+        if (!isset($_SESSION['id'])) {
+            $vue = "connexion";
+            $title = "Connexion";
+        } else {
+            header('location:index.php');
+        }
 
-    }
-
-
-
- // Cette partie du code est appelée si le formulaire a été posté
+        // Cette partie du code est appelée si le formulaire a été posté
         if (isset($_POST['email']) and isset($_POST['password'])) {
 
             $valide = true;
 
             if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
                 $alerte = "Adresse email non valide.";
-                $valide=false;
-            } 
-            
+                $valide = false;
+            }
+
 
             // RECHERCHE SI LE COMPTE EXISTE
 
-            
 
-       
 
-            $req = recupereTous($bdd, 'users_user WHERE email="'.secure($_POST['email']).'" AND valide=1');
 
-            if(!$req) {
-                        $alerte = "Le compte n'existe pas.";
-                        $valide=false;
 
-                      }  
+            $req = recupereTous($bdd, 'users_user WHERE email="' . secure($_POST['email']) . '" AND valide=1');
 
-             foreach($req as $element) {
-                        
-                        if(crypterMdp($_POST['password']) != $element['mdp'])
-                        {
-                            $alerte = "Le mot de passe n'est pas correct.";
-                            $valide=false;
-                        }
+            if (!$req) {
+                $alerte = "Le compte n'existe pas.";
+                $valide = false;
+            }
 
-                    }
+            foreach ($req as $element) {
 
-                
-                if($valide)
-                {
-                    
+                if (crypterMdp($_POST['password']) != $element['mdp']) {
+                    $alerte = "Le mot de passe n'est pas correct.";
+                    $valide = false;
+                }
+            }
+
+
+            if ($valide) {
+
                 // RECUPERE TOUT 
 
-                     foreach($req as $dataCo) {
+                foreach ($req as $dataCo) {
 
                     // variable session pr avoir acces rapidement a ces données
                     $_SESSION['id'] = $dataCo['id'];
@@ -84,35 +73,14 @@ switch ($function) {
 
                     $_SESSION['token'] = uniqid(md5(rand()), true); // utile pour le lien de déconnexion 
                     $_SESSION['acces'] = $dataCo['acces'];
-                    
-                    $alerte = "Bienvenue ".$_SESSION['prenom']." !";
-                   
-                  
-                    }
-                  
 
-                
+                    $alerte = "Bienvenue " . $_SESSION['prenom'] . " !";
                 }
-
-
+            }
         }
-
-
         break;
-        
 
-
-
-
-
-
-
-
-
-
-
-
-        case 'inscription':
+    case 'inscription':
         // inscription d'un nouvel utilisateur
         $vue = "inscription";
         $alerte = false;
@@ -150,18 +118,32 @@ switch ($function) {
 
 
 
-        case 'deconnexion':
-        if(isset($_GET['token']) AND isset($_SESSION['token']) AND $_GET['token'] == $_SESSION['token']){
-                session_destroy();
-                
-            }
-            else {
-                
-            }
+    case 'deconnexion':
+        if (isset($_GET['token']) and isset($_SESSION['token']) and $_GET['token'] == $_SESSION['token']) {
+            session_destroy();
+        } else { }
         $vue = "deconnexion";
         $title = "Déconnexion";
         break;
-        
+
+    case 'sav':
+        //liste des capteurs enregistrés
+        $vue = "header-footer/sav";
+        $title = "SAV";
+        break;
+
+    case 'cdu':
+        //liste des capteurs enregistrés
+        $vue = "header-footer/cdu";
+        $title = "CDU";
+        break;
+
+    case 'faq':
+        //liste des capteurs enregistrés
+        $vue = "header-footer/faq";
+        $title = "FAQ";
+        break;
+
 
 
 
@@ -175,5 +157,6 @@ switch ($function) {
         $message = "Erreur 404 : la page recherchée n'existe pas.";
 }
 
-include ('vues/' . $vue . '.php');
-include ('vues/footer/footer.php');
+include('vues/header-footer/headerConnexion.php');
+include('vues/' . $vue . '.php');
+include('vues/header-footer/footer.php');
