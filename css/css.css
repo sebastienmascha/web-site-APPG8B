@@ -137,15 +137,10 @@ h1 {
 }
 .page-content {
 	
-  display: grid;
-  padding:30px;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px 2em;
-}
+	display: grid;
+	padding:30px;
+  }
 
-.page-content:first-child {
-    align-self: center;
-}
 .boite {
 	background-color: rgba(255,255,255,0.4);
 	padding:20px;

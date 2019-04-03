@@ -8,9 +8,7 @@
 
 <style>
 <?php include "css/css_accueil.css"; ?>
-</style>
-
-<div class="page-content2"> 
+</style> 
 
 <div class="boitePrincipale" >
         <div id="accueil-header">
@@ -43,7 +41,12 @@
 
                     <tr>
                         <th> Machine en marche : </th>
-                        <td> NON </td>
+                        <td> 
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </td>
                     </tr>
 
                     <tr>
@@ -79,7 +82,12 @@
 
                     <tr>
                         <th> Machine en marche : </th>
-                        <td> OUI </td>
+                        <td> 
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </td>
                     </tr>
 
                     <tr>
