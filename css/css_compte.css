@@ -1,16 +1,8 @@
-.boite {
-    background : rgba(255, 255, 255, 0.75);
-    height: 300px;
-    width: 700px;
-    border-radius: 1%;
-    margin-left: 5%;
-}
 
-form {
-    width:200px;
-}
 
-input[type=text], input[type=email],input[type=time],select, textarea {
+
+
+input[type=text], input[type=email],input[type=time],select, textarea{
     width: 100%;
     margin: 5px;
     padding: 5px;
@@ -19,6 +11,15 @@ input[type=text], input[type=email],input[type=time],select, textarea {
     border-radius: 4px;
     height: 25px;
 }
+label{
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+    height: 25px;
+
+}
+
 
 
 input[type=submit] {
@@ -39,21 +40,42 @@ input[type=submit]:hover {
 {
     width: 200px;
     height: 200px;
-    margin-left: -200%;
+    
 
 }
 
-.légende
-{
-   margin-left: -175%;
 
-
-}
 .utilisateur
 {
     color: red;
     font-weight: bold;
-   padding-left: 62%;
+    padding-left: 85px;
+   
    
   
 }
+.légende{
+    padding-left: 82px; 
+}
+
+#boitePrincipale {
+	background-color: rgba(255,255,255,0.4);
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px 2em;
+    justify-content: space-around;
+    
+  } 
+form{
+    width: 200px;
+}
+.boite2{
+    padding-left: 260px;
+}
+p.p {
+    color: black;   
+    font-family:monospace;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; 
+}
+
