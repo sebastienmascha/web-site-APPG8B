@@ -1,18 +1,22 @@
-<?php 
+<?php
 /**
-* Vue : accueil
-*/
-
-//<link rel="stylesheet" href="css/css_accueil.css">
+ * Vue : accueil
+ */
 ?>
 
 <style>
-<?php include "css/css_accueil.css"; ?>
-</style> 
+    <?php include "css/css_accueil.css";
+    ?>
+</style>
 
-<div class="boitePrincipale" >
+<?php foreach ($maisons as $element) { ?>
+
+
+
+    <div class="boitePrincipale">
         <div id="accueil-header">
-            <p>Maison Principale    </p>
+            <?php echo $element['nom']; ?>
+            <?php echo $element['location']; ?>
         </div>
 
         <div class="flex-container">
@@ -21,9 +25,9 @@
                 <div class="cafetiere-header">
                     <p>Cafetière n°1 </p>
                 </div>
-                
+
                 <div style="text-align: center;">
-                    <button >
+                    <button>
                         CAFE INSTANTANNE
                     </button>
                 </div>
@@ -31,17 +35,17 @@
                 <table class="Recap" width=100%>
                     <tr>
                         <th> Etat machine :</th>
-                        <td> OK </td> 
+                        <td> OK </td>
                     </tr>
 
                     <tr>
                         <th> Temps utilisation : </th>
-                        <td> 2h30 </td>    
+                        <td> 2h30 </td>
                     </tr>
 
                     <tr>
                         <th> Machine en marche : </th>
-                        <td> 
+                        <td>
                             <label class="switch">
                                 <input type="checkbox">
                                 <span class="slider round"></span>
@@ -54,17 +58,17 @@
                         <td> 52 </td>
                     </tr>
 
-                </table>   
-            </div>               
+                </table>
+            </div>
 
             <div class="boite">
 
                 <div class="cafetiere-header">
                     <p>Cafetière n°2 </p>
                 </div>
-                
+
                 <div style="text-align: center;">
-                    <button >
+                    <button>
                         CAFE INSTANTANNE
                     </button>
                 </div>
@@ -72,17 +76,17 @@
                 <table class="Recap" width=100%>
                     <tr>
                         <th> Etat machine :</th>
-                        <td> OK </td> 
+                        <td> OK </td>
                     </tr>
 
                     <tr>
                         <th> Temps utilisation : </th>
-                        <td> 1h15 </td>    
+                        <td> 1h15 </td>
                     </tr>
 
                     <tr>
                         <th> Machine en marche : </th>
-                        <td> 
+                        <td>
                             <label class="switch">
                                 <input type="checkbox">
                                 <span class="slider round"></span>
@@ -95,10 +99,12 @@
                         <td> 101 </td>
                     </tr>
 
-                </table>   
-                            
-            </div>
-        </div>
-    
-</div>
+                </table>
 
+            </div>
+
+        </div>
+
+    </div>
+
+<?php } ?>

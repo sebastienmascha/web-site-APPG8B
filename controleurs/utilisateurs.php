@@ -26,6 +26,7 @@ switch ($function) {
         //affichage de l'accueil
         $vue = "accueil";
         $title = "Accueil";
+        $maisons = recupereMaisons($bdd);
         break;
 
     case 'referent':

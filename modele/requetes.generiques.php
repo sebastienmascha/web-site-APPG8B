@@ -68,7 +68,6 @@ function recherche(PDO $bdd, string $table, array $attributs): array {
     $statement->execute();
     
     return $statement->fetchAll();
-    
 }
 
 
