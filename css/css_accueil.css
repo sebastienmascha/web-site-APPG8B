@@ -1,11 +1,10 @@
 .boitePrincipale {
-	padding-top: 10px;
 	background-color: rgba(255,255,255,0.4);
 	
 }
 .flex-container{
 	display: flex;
-  justify-content: center;
+	justify-content: center;
 } 
 
 .boite {
@@ -18,9 +17,9 @@
 
 #accueil-header {
 	background-color:rgba(255,255,255,0.4);
-	height:50px;
-	padding-top:1px;
-	padding-bottom:20px;
+	height:auto;
+	padding:2%;
+	vertical-align: center;
 	text-align: center;
 	font-size:25px;
 }
@@ -128,4 +127,22 @@ input:focus + .slider {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+/*Bouton recharger*/
+.recharger{
+	font-size:10px;
+	color:white;
+	background-color: green;
+	border: 2px;
+	border-radius: 15px;
+	transition-duration: 0.4s;
+	height: 20px;
+	margin:5%;
+	padding: 5%;
+	
+}
+.recharger:hover {
+    background-color: white ; 
+    color:#45a049;
 }

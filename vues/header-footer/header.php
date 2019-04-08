@@ -66,4 +66,4 @@
                         <h1><?php echo $title; ?></h1>
                     </div>
 
-                    <div class="page-content"> 
+                    <div class="page-content">

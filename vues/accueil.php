@@ -55,7 +55,11 @@
 
                     <tr>
                         <th> Capsules Restantes : </th>
-                        <td> 52 </td>
+                        <td> 52 
+                            <button class="recharger" onclick="document.location.href='index.php?cible=utilisateurs&fonction=stock';" >
+                                Recharger                           
+                            </button>
+                        </td>
                     </tr>
 
                 </table>
@@ -96,7 +100,11 @@
 
                     <tr>
                         <th> Capsules Restantes : </th>
-                        <td> 101 </td>
+                        <td> 101 
+                            <button class="recharger" onclick="document.location.href='index.php?cible=utilisateurs&fonction=stock';" >
+                                Recharger
+                            </button>
+                        </td>
                     </tr>
 
                 </table>
