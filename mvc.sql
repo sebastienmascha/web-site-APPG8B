@@ -186,7 +186,7 @@ INSERT INTO `structure_maison` (`id`, `idFoyer`, `nom`, `location`) VALUES
 CREATE TABLE `users_homes` (
   `id` int(11) NOT NULL,
   `idMaison` int(11) NOT NULL,
-  `isUser` int(11) NOT NULL
+  `idUser` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
