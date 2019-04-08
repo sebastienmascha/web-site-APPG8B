@@ -14,18 +14,16 @@
 	</select>
 </form>
 
-</br>
 <ul class="machinesCafe">
     <li class="cafetiere"><a href="#1"> Machine Cuisine </a></li>
     <li class="cafetiere"><a href="#2"> Machine chambre Titouan </a></li>
     <li class="cafetiere"><a href="#3"> Machine chambre d'amis</a></li>
     <li class="cafetiere"><a href="#4"> Machine salon</a></li>
 </ul>
-</br>
 
 
 
-
+<div classe="boiteprincipale">
 	<div class="boite1">
 		<p class="p_stock"> Café </p>
 		<img class="cafe" src="./img/coffee_icon.png" >
@@ -48,8 +46,6 @@
 	<br>
 	<div class="progress-bar green"></div>
 	</div>
-		
-
 
 
 	<div class="boite3">
@@ -60,7 +56,7 @@
 		</div>
 		<br>
 		<div class="progress-bar green"></div>
-		</div>
+	</div>
 
 		<div class="boite4">
 		<p class="p_stock"> Cappuccino </p>
@@ -70,8 +66,7 @@
 		</div>
 		<br>
 		<div class="progress-bar green"></div>
-	</div> 
+		</div> 
+	</div>
 </div>
-
-
 
