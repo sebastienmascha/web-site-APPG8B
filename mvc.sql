@@ -193,7 +193,7 @@ CREATE TABLE `users_homes` (
 -- Dumping data for table `users_homes`
 --
 
-INSERT INTO `users_homes` (`id`, `idMaison`, `isUser`) VALUES
+INSERT INTO `users_homes` (`id`, `idMaison`, `idUser`) VALUES
 (1, 1, 1),
 (2, 2, 1),
 (3, 1, 2),
