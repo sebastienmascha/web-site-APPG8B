@@ -101,7 +101,6 @@ button:active {
 
 .cafe{
     width: 50px;
-    margin-left:44%;
 }
 
 .homestock{
@@ -272,6 +271,10 @@ ul.machinesCafe li.cafetiere a:focus::before{
 }
 
 .selectbox{
+    margin-left: 40%;
+    justify-content: center;
+    text-align: center;
+    width: 20%;
     border-bottom: 1px solid;
 }
 

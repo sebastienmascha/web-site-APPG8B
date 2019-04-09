@@ -39,6 +39,7 @@ switch ($function) {
         //liste des capteurs enregistrés
         $vue = "stock";
         $title = "Gestion du stock";
+        $maisons = recupereMaisons($bdd);
         break;
 
     case 'compte':
