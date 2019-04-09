@@ -5,14 +5,17 @@
 </style>
 
 
-<form class="formulaire">
-	<select>
-	<option value="">Maison par défaut</option>
-	<option value="">Maison Lyon</option>
-	<option value="">Chalet Avoriaz</option>
-	<option value="">Appartement Biarritz</option>
-	</select>
-</form>
+
+<div class=testbox>
+	<img class="homestock" src="img/home.png" >
+	<div class=selectbox>
+		<select>
+		<option value="">Maison par défaut</option>
+		<option value="">Maison Lyon</option>
+		<option value="">Chalet Avoriaz</option>
+		<option value="">Appartement Biarritz</option>
+		</select>
+</div>
 
 <ul class="machinesCafe">
     <li class="cafetiere"><a href="#1"> Machine Cuisine </a></li>
