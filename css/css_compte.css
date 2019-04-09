@@ -1,6 +1,23 @@
 
+#boitePrincipale {
+	background-color: rgba(255,255,255,0.4);
+    display: flex;
+    flex-wrap: wrap;
+    /* grid-template-columns: 1fr 1fr; */
+    /* grid-gap: 10px 2em; */
+    justify-content: space-around;  
+  } 
 
-
+.boite1{
+    display:flex;
+    flex:1;
+    flex-direction: column;
+}
+form{
+    flex:1;
+    padding: 5%;
+    
+}
 
 input[type=text], input[type=email],input[type=time],select, textarea{
     width: 100%;
@@ -20,8 +37,6 @@ label{
 
 }
 
-
-
 input[type=submit] {
     background-color: #4CAF50;
     color: white;
@@ -40,8 +55,6 @@ input[type=submit]:hover {
 {
     width: 200px;
     height: 200px;
-    
-
 }
 
 
@@ -49,33 +62,45 @@ input[type=submit]:hover {
 {
     color: red;
     font-weight: bold;
-    padding-left: 85px;
-   
-   
   
 }
-.légende{
-    padding-left: 82px; 
-}
-
-#boitePrincipale {
-	background-color: rgba(255,255,255,0.4);
+.mes-maisons{
+    background-color: rgba(255,255,255,0.4);
     display: flex;
     flex-wrap: wrap;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px 2em;
-    justify-content: space-around;
-    
-  } 
-form{
-    width: 200px;
+    justify-content: space-around;  
+    margin-top:1%;
 }
-.boite2{
-    padding-left: 260px;
-}
+
+
 p.p {
     color: black;   
     font-family:monospace;
-    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; 
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    text-align: center; 
 }
+.center{
+    display:flex;
+    justify-content: center;
+}
+
+input[type=Delete] {
+    font-size:8px;
+	color:white;
+	background-color: red;
+	border: 2px;
+	border-radius: 10px;
+	transition-duration: 0.4s;
+    height: 5px;
+	margin:5%;
+    padding: 2%;
+    text-align: center;  
+    
+}
+
+input[type=Delete]:hover {
+    background-color: rgb(235,38,41);
+}
+
+
 
