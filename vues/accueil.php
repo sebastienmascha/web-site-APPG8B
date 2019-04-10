@@ -24,7 +24,7 @@
                 <div class="boite">
 
                     <div class="cafetiere-header">
-                        <p>Cafetière n°1 </p>
+                        <?php echo $machine['id']; ?>
                     </div>
 
                     <div style="text-align: center;">
@@ -36,7 +36,7 @@
                     <table class="Recap" width=100%>
                         <tr>
                             <th> Etat machine :</th>
-                            <td> OK </td>
+                            <td><?php echo $machine['isDispo']; ?></td>
                         </tr>
 
                         <tr>
@@ -64,50 +64,8 @@
             <?php } ?>
 
 
-            <div class="boite">
-
-                <div class="cafetiere-header">
-                    <p>Cafetière n°2 </p>
-                </div>
-
-                <div style="text-align: center;">
-                    <button>
-                        CAFE INSTANTANNE
-                    </button>
-                </div>
-
-                <table class="Recap" width=100%>
-                    <tr>
-                        <th> Etat machine :</th>
-                        <td> OK </td>
-                    </tr>
-
-                    <tr>
-                        <th> Temps utilisation : </th>
-                        <td> 1h15 </td>
-                    </tr>
-
-                    <tr>
-                        <th> Machine en marche : </th>
-                        <td>
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                            </label>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th> Capsules Restantes : </th>
-                        <td> 101 </td>
-                    </tr>
-
-                </table>
-
-            </div>
 
         </div>
-
     </div>
 
 <?php } ?>
