@@ -14,7 +14,7 @@
 
 	<ul>
 		<li>
-			<p> Le référent peut dans son espace gérer et donc ajouter un compte en lui associant un statut (enfants, administrateurs etc..). </p> 
+			<p> Le référent peut, dans son espace, gérer et donc ajouter un compte en lui associant un statut (enfant, administrateur etc..). </p> 
 		</li>
 	</ul>
 </div>
@@ -27,7 +27,7 @@
 	<h2> Où puis-je voir l'état d'une de mes machines ?</h2> 
 	<ul>
 		<li>
-			<p> L'état de chaque machine est détailler dans l'onglet "accueil".</p> 
+			<p> L'état de chaque machine est détaillé dans l'onglet "accueil".</p> 
 		</li>
 	</ul>
 </div>
