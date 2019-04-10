@@ -22,7 +22,7 @@
 	<ul class="machinesCafe">
 
 	    <li class="cafetiere"><a href="#1"> Machine Cuisine </a></li>
-	    <li class="cafetiere"><a href="#2"> Machine chambre Titouan </a></li>
+	    <li class="cafetiere"><a href="#2"> Machine chambre Sebastien </a></li>
 	    <li class="cafetiere"><a href="#3"> Machine chambre d'amis</a></li>
 	    <li class="cafetiere"><a href="#4"> Machine salon</a></li>
 	</ul>
