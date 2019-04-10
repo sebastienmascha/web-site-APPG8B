@@ -49,16 +49,20 @@ function ajouteUtilisateur(PDO $bdd, array $utilisateur) {
  * @return array
  */
 function recupereMaisons(PDO $bdd): array {
-    $query = "SELECT * FROM structure_maison INNER JOIN users_homes ON structure_maison.id = users_homes.idMaison WHERE users_homes.idUser =" .$_SESSION['id'];
+    $query = "SELECT * FROM structure_maison 
+    INNER JOIN users_homes ON structure_maison.id = users_homes.idMaison 
+    WHERE users_homes.idUser =" .$_SESSION['id'];
     return $bdd->query($query)->fetchAll();
 }
 
 function recupereMachines(PDO $bdd): array {
     $maisons = recupereMaisons($bdd);
+    $index = 0;
     foreach ($maisons as $element) {
-        $query = "SELECT * FROM structure_maison".$element['nom'];
+        $query = "SELECT * FROM structure_machine
+        WHERE ".$element['id'];
+        $maisons[$index]['machines'] = $bdd->query($query)->fetchAll();
+        $index = $index +1;
     }
-    return $bdd->query($query)->fetchAll();
+    return $maisons;
 }
-
-?>
