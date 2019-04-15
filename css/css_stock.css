@@ -1,5 +1,5 @@
-
 .p_stock {
+    text-align: left;
     color: #543e0c;   
     font-family:fantasy;
     font-size: 20px;
@@ -101,7 +101,10 @@ button:active {
 
 .cafe{
     width: 50px;
-    margin-left:44%;
+}
+
+.homestock{
+    width: 20px;
 }
 
 .boite1{
@@ -167,8 +170,8 @@ button:active {
     width: 100%;
     margin: 2% auto 80px;
     padding: 0;
-    background: linear-gradient(deepskyblue, dodgerblue);
-    background: dodgerblue;
+    background: linear-gradient(#efeaea, #d8d2d2);
+    background: #d8d2d2;
     border-radius: 3px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .3),
                 0 3px 5px rgba(0, 0, 0, .2),
@@ -188,12 +191,12 @@ ul.machinesCafe li.cafetiere a{
     text-decoration: none;
     padding: 8px 8px 17px 8px;  
     text-shadow: 0 1px 0 rgba(255, 255, 255, .4);
-    box-shadow: 0 1px 0 rgba(255, 255, 255, .7) inset, 
-                0 -1px 0 hsl(210, 100%, 32%) inset, 
-                0 -2px 0 hsl(210, 100%, 38%) inset, 
-                0 -3px 0 hsl(210, 100%, 44%) inset, 
-                0 -4px 0 hsl(210, 100%, 50%) inset, 
-                0 -5px 0 hsl(210, 100%, 60%) inset;
+    box-shadow: 0 1px 0 rgba(255, 255, 240, .7) inset, 
+                0 -1px 0 rgba(255, 255, 240, .7) inset, 
+                0 -2px 0 rgba(255, 255, 240, .7) inset, 
+                0 -3px 0 rgba(255, 255, 240, .7) inset, 
+                0 -4px 0 rgba(255, 255, 240, .7) inset, 
+                0 -5px 0 rgba(255, 255, 240, .7) inset;
     transition: padding .3s, background .3s;
     position: relative;
 }
@@ -210,11 +213,11 @@ ul.machinesCafe li.cafetiere a:hover,
 ul.machinesCafe li.cafetiere a:focus{
     background: rgba(255,255,255,.2);
     box-shadow: 0 1px 0 rgba(255, 255, 255, .7) inset, 
-                0 -1px 0 hsl(210, 100%, 42%) inset, 
-                0 -2px 0 hsl(210, 100%, 48%) inset, 
-                0 -3px 0 hsl(210, 100%, 54%) inset, 
-                0 -4px 0 hsl(210, 100%, 60%) inset, 
-                0 -5px 0 hsl(210, 100%, 70%) inset; 
+                0 -1px 0 rgba(255, 255, 255, .7) inset, 
+                0 -2px 0 rgba(255, 255, 255, .7) inset, 
+                0 -3px 0 rgba(255, 255, 255, .7) inset, 
+                0 -4px 0 rgba(255, 255, 255, .7) inset, 
+                0 -5px 0 rgba(255, 255, 255, .7) inset; 
     padding: 8px 25px 17px 25px;
     transition: all .3s 0s;
 } 
@@ -246,14 +249,32 @@ ul.machinesCafe li.cafetiere a:focus::before{
 }
 
 
-.formulaire {
-    display: flex;
-    justify-content:center;
-}
-
 .boiteprincipale{
     display: flex;
     justify-content: center;
     float:left;
     background-color: rgba(255,255,255);
 }
+
+.testbox{
+    text-align: center;
+    float: left;
+    border: none;
+    background: none;
+}
+
+.testbox select {
+    border: none;
+    background: none;
+    -webkit-appearance: button;
+    outline: none;
+}
+
+.selectbox{
+    margin-left: 40%;
+    justify-content: center;
+    text-align: center;
+    width: 20%;
+    border-bottom: 1px solid;
+}
+

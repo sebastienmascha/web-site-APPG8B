@@ -10,11 +10,11 @@
 
 
 <div class="boxFaq"> 
-	<h2> Question1 </h2> 
+	<h2> Peut-on ajouter d'autres comptes liés à un foyer?  </h2> 
 
 	<ul>
 		<li>
-			<p> rep1 </p> 
+			<p> Le référent peut, dans son espace, gérer et donc ajouter un compte en lui associant un statut (enfant, administrateur etc..). </p> 
 		</li>
 	</ul>
 </div>
@@ -24,10 +24,10 @@
 
 
 <div class="boxFaq"> 
-	<h2> Question2 </h2> 
+	<h2> Où puis-je voir l'état d'une de mes machines ?</h2> 
 	<ul>
 		<li>
-			<p> rep2 </p> 
+			<p> L'état de chaque machine est détaillé dans l'onglet "accueil".</p> 
 		</li>
 	</ul>
 </div>
@@ -36,37 +36,19 @@
 
 
 <div class="boxFaq"> 
-	<h2> Question3 </h2> 
+	<h2> Peut-on changer nos préférences et horaires d'utilisations? </h2> 
 	<ul>
 		<li>
-			<p> rep3 </p> 
+			<p> Les paramètres de votre compte peuvent être modifiés depuis votre espace "Mon compte". </p> 
 		</li>
 	</ul>
 </div>
 <br/>
 
-
-<div class="boxFaq"> 
-	<h2> Question4 </h2> 
-	<ul>
-		<li>
-			<p> rep4 </p> 
-		</li>
-	</ul>
-</div>
-<br/>
-
-
-<div class="boxFaq"> 
-	<h2> Question5 </h2> 
-	<ul>
-		<li>
-			<p> rep5 </p> 
-		</li>
-	</ul>
-</div>
 
 <br> 
 <div class="boxFaq">
-Vous n'avez pas trouvé de réponse a votre question? N'hésitez pas a nous contacter <a href="index.php?cible=connexion&fonction=connexion" >  ici  </a>
+<p class="qu">
+Vous n'avez pas trouvé de réponse a votre question? N'hésitez pas a nous contacter <a href="index.php?cible=connexion&fonction=contact" >  ici  </a>
+</p class="qu">
 </div>
