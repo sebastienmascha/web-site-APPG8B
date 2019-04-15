@@ -60,7 +60,7 @@ function recupereMachines(PDO $bdd): array {
     $index = 0;
     foreach ($maisons as $element) {
         $query = "SELECT * FROM structure_machine
-        WHERE structure_machine.idMaison =2";
+        WHERE structure_machine.idMaison =1+".$index ;
         $maisons[$index]['machines'] = $bdd->query($query)->fetchAll();
         $index = $index +1;
     }

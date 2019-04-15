@@ -11,8 +11,6 @@
 
 <?php foreach ($maisons as $element) { ?>
 
-
-
     <div class="boitePrincipale">
         <div id="accueil-header">
             <?php echo $element['nom']; ?>
@@ -20,7 +18,9 @@
         </div>
 
         <div class="flex-container">
+
             <?php foreach ($element['machines'] as $machine) { ?>
+
                 <div class="boite">
 
                     <div class="cafetiere-header">
