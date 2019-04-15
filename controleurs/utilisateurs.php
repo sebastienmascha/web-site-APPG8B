@@ -45,6 +45,7 @@ switch ($function) {
         //liste des capteurs enregistrés
         $vue = "compte";
         $title = "Mon compte";
+        $maisons = recupereMaisons($bdd);
         break;
 
     case 'referent-residence':
