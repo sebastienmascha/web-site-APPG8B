@@ -24,7 +24,7 @@
                 <div class="boite">
 
                     <div class="cafetiere-header">
-                        <?php echo $machine['id']; ?>
+                        <?php echo $machine['name']; ?>
                     </div>
 
                     <div style="text-align: center;">
@@ -41,7 +41,7 @@
 
                         <tr>
                             <th> Temps utilisation : </th>
-                            <td> 2h30 </td>
+                            <td> <?php echo $machine['tempsUtilisation']; ?> </td>
                         </tr>
 
                         <tr>
