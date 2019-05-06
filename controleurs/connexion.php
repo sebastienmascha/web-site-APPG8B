@@ -70,6 +70,7 @@ switch ($function) {
                     $_SESSION['nom'] = $dataCo['nom'];
                     $_SESSION['prenom'] = $dataCo['prenom'];
                     $_SESSION['email'] = $dataCo['email'];
+                    $_SESSION['typeUser'] = $dataCo['typeUser'];
 
                     $_SESSION['token'] = uniqid(md5(rand()), true); // utile pour le lien de déconnexion 
                     $_SESSION['acces'] = $dataCo['acces'];
