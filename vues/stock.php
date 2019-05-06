@@ -5,11 +5,37 @@
 </style>
 
 <script>
-	function placement()
+	function placement(str)
 	{
-		var d=document.getElementById("selectPlacement");
-		var displaytext=d.options[d.selectedIndex].text;
-		document.getElementById("txt").innerHTML=displaytext;
+		if (str == "")
+                {
+                    document.getElementById("txtHint").innerHTML = "";
+                    return;
+                }
+                if (window.XMLHttpRequest) {
+                    xmlhttp= new XMLHttpRequest();
+                } else {
+                    if (window.ActiveXObject)
+                        try {
+                            xmlhttp= new ActiveXObject("Msxml2.XMLHTTP");
+                        } catch (e) {
+                            try {
+                                xmlhttp= new ActiveXObject("Microsoft.XMLHTTP");
+                            } catch (e) {
+                                return NULL;
+                            }
+                        }
+                }
+
+                xmlhttp.onreadystatechange = function ()
+                {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                    {
+                        document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+                    }
+                }
+                xmlhttp.open("GET", "vues/stock-getMaisons.php?q=" + str, true);
+                xmlhttp.send();
 	}	
 </script>
 
@@ -19,11 +45,13 @@
 		<img class="homestock" src="img/home.png" >
 		<div class="selectbox">
 
-			<select id="selectPlacement" onchange="placement()">
+			<select id="selectPlacement" onchange="placement(this.value)">
+			<option value="">Choisir une maison</option>
 			<?php foreach ($maisons as $element) { ?>
-			<option value=""> <?php echo $element['nom']; ?> <?php echo $element['location']; ?> </option>
+			<option value=<?php echo $element['idMaison']; ?> > <?php echo $element['nom']; ?> <?php echo $element['location']; ?> </option>
 			<?php } ?>
 			</select>
+			<div id="txtHint"><b>Person info will be listed here.</b></div>
 		</div>
 	</div>
 
