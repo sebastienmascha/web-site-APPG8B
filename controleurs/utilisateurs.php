@@ -47,7 +47,19 @@ switch ($function) {
         $vue = "compte";
         $title = "Mon compte";
         $maisons = recupereMaisons($bdd);
+
+        //$maisons = deleteMaisonUser($bdd,$idSupprimer);
         break;
+
+    case 'supprimerMaison':
+        if(isset($_GET['id'])) {
+            //TODO: Vérifier si la personne à le droit de supprimer la maison (si non tu redirige vers une page d'erreur de méchant)
+            //TODO: Gérer si il y a une erreur: exemple: la maison n'existait déjà plus => try/catch
+            deleteMaisonUser($bdd,$_GET['id']);
+        }
+        header("Location: index.php?cible=utilisateurs&fonction=compte");
+        break;
+        
 
     case 'referent-residence':
         //liste des capteurs enregistrés

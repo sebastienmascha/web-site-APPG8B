@@ -84,21 +84,20 @@ p.p {
     justify-content: center;
 }
 
-input[type=Delete] {
-    font-size:8px;
+.delete_btn {
+    text-decoration: none;
+    font-size:1em;
 	color:white;
 	background-color: red;
 	border: 2px;
 	border-radius: 10px;
-	transition-duration: 0.4s;
-    height: 5px;
-	margin:5%;
-    padding: 2%;
+	margin: 10px;
+    padding: 5px;
     text-align: center;  
     
 }
 
-input[type=Delete]:hover {
+.delete_btn:hover {
     background-color: rgb(235,38,41);
 }
 
