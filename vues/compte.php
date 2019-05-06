@@ -52,11 +52,12 @@
 
     <div class="boite1" >
         <p class="p"> 
-            <?php echo $element['nom']; ?>
-            <?php echo $element['location']; ?>
+            <?= $element['nom']; ?>
+            <?= $element['location']; ?>
         </p>
         <div class="center">
-            <input type="Delete" value="Supprimer">      
+            
+            <a class="delete_btn" href="index.php?cible=utilisateurs&fonction=supprimerMaison&id=<?= $element['id']; ?>">Supprimer</a>    
          </div>
     </div>
 
