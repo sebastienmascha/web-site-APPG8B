@@ -4,27 +4,36 @@
 <?php include "css/css_stock.css"; ?>
 </style>
 
+<script>
+	function placement()
+	{
+		var d=document.getElementById("selectPlacement");
+		var displaytext=d.options[d.selectedIndex].text;
+		document.getElementById("txt").innerHTML=displaytext;
+	}	
+</script>
 
+</style>
 
 	<div class=testbox>
 		<img class="homestock" src="img/home.png" >
 		<div class="selectbox">
 
-			<select>
+			<select id="selectPlacement" onchange="placement()">
 			<?php foreach ($maisons as $element) { ?>
 			<option value=""> <?php echo $element['nom']; ?> <?php echo $element['location']; ?> </option>
 			<?php } ?>
 			</select>
-			
+		</div>
 	</div>
 
 
 	<ul class="machinesCafe">
 
-	    <li class="cafetiere"><a href="#1"> Machine Cuisine </a></li>
-	    <li class="cafetiere"><a href="#2"> Machine chambre Sebastien </a></li>
-	    <li class="cafetiere"><a href="#3"> Machine chambre d'amis</a></li>
-	    <li class="cafetiere"><a href="#4"> Machine salon</a></li>
+	    <li class="cafetiere" id="txt"><a href="#1">Maison Test</a></li>
+	    <li class="cafetiere" ><a href="#2"> Machine chambre Sebastien </a></li>
+	    <li class="cafetiere" ><a href="#3"> Machine chambre d'amis</a></li>
+	    <li class="cafetiere" ><a href="#4"> Machine salon</a></li>
 	</ul>
 
 
