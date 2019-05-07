@@ -55,6 +55,17 @@
 		</tr>
 	</table>
 
+<div>
+	
+<input id="add" type="button" value="AJOUTER UN COMPTE"/>
+
+
+
+
+
+</div>
+
+
 <div id="editer" style="display:none">
 	<h2>MODIFIER LE COMPTE</h2>
 	<table id="table1">
