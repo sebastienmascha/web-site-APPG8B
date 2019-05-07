@@ -29,7 +29,19 @@ switch ($function) {
         $maisons = recupereMachines($bdd);      
         break;
 
-    
+    case 'gestion-user':
+        //affichage de l'accueil
+        $vue = "gestion-user";
+        $title = "Gestion des utilisateurs";
+        $maisons = recupereMachines($bdd);      
+        break;
+
+    case 'gestion-maison':
+        //affichage de l'accueil
+        $vue = "gestion-maison";
+        $title = "Gestion des foyers";
+        $maisons = recupereMachines($bdd);      
+        break;
 
     
 
@@ -43,4 +55,3 @@ switch ($function) {
 
 include('vues/header-footer/headerAdmin.php');
 include('vues/admin/' . $vue . '.php');
-include('vues/header-footer/footerConnexion.php');
