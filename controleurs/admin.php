@@ -15,14 +15,14 @@ include('./modele/requetes.utilisateurs.php');
 
 // si la fonction n'est pas définie, on choisit d'afficher l'accueil
 if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
-    $function = "accueil";
+    $function = "gestion";
 } else {
     $function = $_GET['fonction'];
 }
 
 switch ($function) {
 
-    case 'accueil':
+    case 'gestion':
         //affichage de l'accueil
         $vue = "gestion";
         $title = "Support technique";
@@ -41,6 +41,6 @@ switch ($function) {
         $message = "Erreur 404 : la page recherchée n'existe pas.";
 }
 
-include('vues/header-footer/headerConnexion.php');
+include('vues/header-footer/headerAdmin.php');
 include('vues/admin/' . $vue . '.php');
 include('vues/header-footer/footerConnexion.php');
