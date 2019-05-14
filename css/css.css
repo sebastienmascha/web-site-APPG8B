@@ -181,3 +181,12 @@ footer {
 }
 
 
+
+#accueil-header {
+	background-color:rgba(255,255,255,0.4);
+	height:auto;
+	padding:2%;
+	vertical-align: center;
+	text-align: center;
+	font-size:25px;
+}

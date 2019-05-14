@@ -5,7 +5,7 @@
 ?>
 
 <style>
-    <?php include "css/css_accueil.css";
+    <?php include "css/css_admin.css";
     ?>
 </style>
 
