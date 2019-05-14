@@ -1,32 +1,27 @@
 <?php
 
-// on récupère les requêtes génériques
-include('requetes.generiques.php');
-
 //on définit le nom de la table
 $table = "users";
 
 
 function recupereUsers(PDO $bdd): array {
     $query = 'SELECT * FROM users_user';
-    return $bdd->query($query)->fetchAll();
+    $utilisateurs = $bdd->query($query)->fetchAll();
+    return $utilisateurs;
 }
 
-function recupereMaisons(PDO $bdd): array {
-    $query = "SELECT * FROM structure_maison 
-    INNER JOIN users_homes ON structure_maison.id = users_homes.idMaison 
-    WHERE users_homes.idUser =" .$_SESSION['id'];
-    return $bdd->query($query)->fetchAll();
+function deleteUsers(PDO $bdd,int $idSupprimer) {
+    $query = "DELETE FROM users_user WHERE id=:id ;";
+    $statement = $bdd->prepare($query);
+    $statement->execute(["id" => (int)$idSupprimer]);
 }
 
-function recupereMachines(PDO $bdd): array {
-    $maisons = recupereMaisons($bdd);
-    $index = 0;
-    foreach ($maisons as $element) {
-        $query = "SELECT * FROM structure_machine
-        WHERE structure_machine.idMaison =1+".$index ;
-        $maisons[$index]['machines'] = $bdd->query($query)->fetchAll();
-        $index = $index +1;
-    }
-    return $maisons;
+/**
+ * Récupère tous les enregistrements de la table users
+ * @param PDO $bdd
+ * @return array
+ */
+function recupereFoyers(PDO $bdd): array {
+    $query = "SELECT * FROM structure_foyer";
+    return $bdd->query($query)->fetchAll();
 }

@@ -11,6 +11,7 @@
  */
 
 // on inclut le fichier modèle contenant les appels à la BDD
+include('./modele/requetes.utilisateurs.php');
 include('./modele/requetes.admin.php');
 
 // si la fonction n'est pas définie, on choisit d'afficher l'accueil
@@ -33,16 +34,27 @@ switch ($function) {
         //affichage de l'accueil
         $vue = "gestion-user";
         $title = "Gestion des utilisateurs";
-        $maisons = recupereUsers($bdd);      
+        $utilisateurs = recupereUsers($bdd);     
+
         break;
 
     case 'gestion-maison':
         //affichage de l'accueil
         $vue = "gestion-maison";
         $title = "Gestion des foyers";
-        $maisons = recupereMaisons($bdd);      
+        $foyers = recupereFoyers($bdd);      
         break;
 
+    case 'supprimerUtilisateur':
+        if(isset($_GET['id'])) {
+            //TODO: Vérifier si la personne à le droit de supprimer la maison (si non tu redirige vers une page d'erreur de méchant)
+            //TODO: Gérer si il y a une erreur: exemple: la maison n'existait déjà plus => try/catch
+            
+            deleteUsers($bdd,$_GET['id']);
+
+        }
+        header("Location: index.php?cible=admin&fonction=gestion-user");
+        break;
     
 
 
