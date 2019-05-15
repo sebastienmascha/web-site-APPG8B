@@ -14,7 +14,7 @@
 			<?php echo $element['location']; ?>
 		</p>	
 			<div class="center">
-            	<a class="button" href="index.php?cible=utilisateurs&fonction=referent-machine&idMaison=<?= $element['id'] ?>;">Selectionner</a>    
+            	<a class="button" href="index.php?cible=utilisateurs&fonction=referent-machine&idMaison=<?= $element['idMaison'] ?>;">Selectionner</a>    
          	</div>
 	</div>
 <?php } ?>
