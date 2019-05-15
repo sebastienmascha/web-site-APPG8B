@@ -9,6 +9,7 @@
     ?>
 </style>
 
+
 <?php foreach ($maisons as $element) { ?>
 
     <div class="boitePrincipale">
