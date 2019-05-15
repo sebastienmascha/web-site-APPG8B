@@ -66,6 +66,17 @@ function recupereMachines(PDO $bdd): array {
     }
     return $maisons;
 }
+function recupereMachinefromMaisonid(PDO $bdd, string $idMaison):array{
+    $query = "SELECT * FROM structure_machine 
+            WHERE idMaison=".$idMaison;
+    return $bdd->query($query)->fetchAll();
+}
+
+function recupereCapteurfromMachineid(PDO $bdd, string $idMachine):array{
+    $query = "SELECT * FROM structure_capteur 
+            WHERE idMachine=".$idMachine;
+    return $bdd->query($query)->fetchAll();
+}
 function deleteMaisonUser(PDO $bdd,int $idSupprimer) {
     $query = "DELETE FROM users_homes WHERE id=:id ;";
     $statement = $bdd->prepare($query);
