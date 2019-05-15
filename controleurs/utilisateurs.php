@@ -65,7 +65,33 @@ switch ($function) {
         //liste des capteurs enregistrés
         $vue = "referent-residence";
         $title = "Résidence(s)";
-        break;
+        $maisons = recupereMachines($bdd);
+    break;
+
+    case 'referent-machine':
+        //liste des capteurs enregistrés
+        $vue = "referent-machine";
+        $title = "Machine(s)";
+
+        if(isset($_GET['idMaison'])) {
+            
+            $machines = recupereMachinefromMaisonid($bdd,$_GET['idMaison']);
+        }
+        
+    break;
+
+    case 'referent-capteur':
+        //liste des capteurs enregistrés
+        $vue = "referent-capteur";
+        $title = "Capteur(s)";
+
+        if(isset($_GET['idMachine'])) {
+                
+            $capteurs = recupereCapteurfromMachineid($bdd,$_GET['idMachine']);
+        }
+    
+    break;
+        
 
     case 'referent-profil':
         //liste des capteurs enregistrés
@@ -91,17 +117,7 @@ switch ($function) {
         $title = "FAQ";
         break;
 
-    case 'referent-machine':
-    //liste des capteurs enregistrés
-    $vue = "referent-machine";
-    $title = "Machine(s)";
-    break;
 
-    case 'referent-capteur':
-    //liste des capteurs enregistrés
-    $vue = "referent-capteur";
-    $title = "Capteur(s)";
-    break;
 
     
 
