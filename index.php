@@ -14,7 +14,7 @@ ini_set('display_errors', 1);
 // Appel des fonctions du contrôleur
 include("controleurs/fonctions.php");
 // Appel des fonctions liées à l'affichage
-include("vues/fonctions.php");
+include("vues/fr/fonctions.php");
 
 if(isset($_SESSION['id'])) {
 

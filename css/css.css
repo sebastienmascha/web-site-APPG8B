@@ -37,16 +37,11 @@ header img {
 
 .droite {
 	float:right;
+	vertical-align: middle;
 }
 
 .gauche {
 	float:left;
-
-}
-.moi {
-	
-}
-.notif-icon {
 
 }
 
@@ -123,8 +118,8 @@ main {
 .icon-page {
 	display:inline;
 	margin:auto;
-	height:80px;
-	float:left;
+	height: 80px;
+	float: left;
 }
 h1 {
 	display:inline;
@@ -178,6 +173,24 @@ footer {
   color: #468847;
   background-color: #dff0d8;
   border-color: #d6e9c6;
+}
+
+
+.button{
+	font-size:10px;
+	color:white;
+	background-color: brown;
+	border: 2px;
+	border-radius: 15px;
+	padding: 1%;
+	transition-duration: 0.4s;
+	height: 40px;
+	margin:5%;
+	
+}
+.button:hover {
+    background-color: white ; 
+    color: brown;
 }
 
 

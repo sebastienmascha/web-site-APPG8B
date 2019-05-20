@@ -20,32 +20,57 @@ if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
     $function = $_GET['fonction'];
 }
 
+//mettre en anglais ou francais le site 
+if ( !empty($_GET['language']) ) {
+    $_COOKIE['language'] = $_GET['language'] === 'en' ? 'en' : 'fr';
+    setcookie('language', $_COOKIE['language']);
+}
+
+
 switch ($function) {
 
     case 'accueil':
         //affichage de l'accueil
         $vue = "accueil";
-        $title = "Accueil";
-        $maisons = recupereMachines($bdd);      
+        if ( $_COOKIE['language'] == "en") {
+            $title = "Home";
+        } else {
+            $title = "Accueil";
+        }
+        $maisons = recupereMachines($bdd);    
+        
         break;
+
 
     case 'referent':
         //liste des capteurs enregistrés
         $vue = "referent";
-        $title = "Espace référent";
+        if ( $_COOKIE['language'] == "en") {
+            $title = "Account Officer";
+        } else {
+            $title = "Espace référent";
+        }
         break;
 
     case 'stock':
         //liste des capteurs enregistrés
         $vue = "stock";
-        $title = "Gestion du stock";
+        if ( $_COOKIE['language'] == "en") {
+            $title = "Stock Gestion";
+        } else {
+            $title = "Gestion du stock";
+        }
         $maisons = recupereMaisons($bdd);
         break;
 
     case 'compte':
         //liste des capteurs enregistrés
         $vue = "compte";
-        $title = "Mon compte";
+        if ( $_COOKIE['language'] == "en") {
+            $title = "My Account";
+        } else {
+            $title = "Mon compte";
+        }
         $maisons = recupereMaisons($bdd);
 
         //$maisons = deleteMaisonUser($bdd,$idSupprimer);
@@ -64,7 +89,11 @@ switch ($function) {
     case 'referent-residence':
         //liste des capteurs enregistrés
         $vue = "referent-residence";
-        $title = "Résidence(s)";
+        if ( $_COOKIE['language'] == "en") {
+            $title = "House(s)";
+        } else {
+            $title = "Maison(s)";
+        }
         $maisons = recupereMachines($bdd);
     break;
 
@@ -72,7 +101,7 @@ switch ($function) {
         //liste des capteurs enregistrés
         $vue = "referent-machine";
         $title = "Machine(s)";
-
+       
         if(isset($_GET['idMaison'])) {
             
             $machines = recupereMachinefromMaisonid($bdd,$_GET['idMaison']);
@@ -83,15 +112,30 @@ switch ($function) {
     case 'referent-capteur':
         //liste des capteurs enregistrés
         $vue = "referent-capteur";
-        $title = "Capteur(s)";
-
+        if ( $_COOKIE['language'] == "en") {
+            $title = "Sensors";
+        } else {
+            $title = "Capteurs";
+        }
         if(isset($_GET['idMachine'])) {
                 
             $capteurs = recupereCapteurfromMachineid($bdd,$_GET['idMachine']);
         }
     
     break;
-        
+
+    case 'referent-capteur-info':
+        //liste des capteurs enregistrés
+        $vue = "referent-capteur-info";
+        $title = $_GET['idCapteur'];
+        // if(isset($_GET['idCapteur'])) {
+        //     $infoCapteur = recupereInfoCapteur($bdd,$_GET['idCapteur']);
+        //     $title = $infoCapteur['type'];   
+        // }
+
+    
+    break;
+
 
     case 'referent-profil':
         //liste des capteurs enregistrés
@@ -102,13 +146,22 @@ switch ($function) {
     case 'sav':
         //liste des capteurs enregistrés
         $vue = "header-footer/sav";
-        $title = "SAV";
+        if ( $_COOKIE['language'] == "en") {
+            $title = "Customer service";
+        } else {
+            $title = "Service après vente";
+        }
+        
         break;
 
     case 'cdu':
         //liste des capteurs enregistrés
         $vue = "header-footer/cdu";
-        $title = "CDU";
+        if ( $_COOKIE['language'] == "en") {
+            $title = "Conditions of use";
+        } else {
+            $title = "Conditions d'utilisation";
+        }
         break;
 
     case 'faq':
@@ -129,6 +182,13 @@ switch ($function) {
         $message = "Erreur 404 : la page recherchée n'existe pas.";
 }
 
-include('vues/header-footer/header.php');
-include('vues/' . $vue . '.php');
-include('vues/header-footer/footer.php');
+
+if ( $_COOKIE['language'] == "en") {
+    include('vues/en/header-footer/header.php');
+    include('vues/en/' . $vue . '.php');
+    include('vues/en/header-footer/footer.php');
+} else {
+    include('vues/fr/header-footer/header.php');
+    include('vues/fr/' . $vue . '.php');
+    include('vues/fr/header-footer/footer.php');
+} 

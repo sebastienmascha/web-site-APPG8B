@@ -77,6 +77,12 @@ function recupereCapteurfromMachineid(PDO $bdd, string $idMachine):array{
             WHERE idMachine=".$idMachine;
     return $bdd->query($query)->fetchAll();
 }
+
+function recupereInfoCapteur(PDO $bdd, string $idCapteur):array{
+    $query = "SELECT * FROM structure_capteur 
+            WHERE id=".$idCapteur;
+    return $bdd->query($query)->fetchAll();
+}
 function deleteMaisonUser(PDO $bdd,int $idSupprimer) {
     $query = "DELETE FROM users_homes WHERE id=:id ;";
     $statement = $bdd->prepare($query);
