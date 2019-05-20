@@ -51,8 +51,12 @@
                 <p ><?php echo $_SESSION['prenom']?></p>
                 <img src="img/icon.png" />
                 <img src="img/notif.png" />
-                <a class="button" href="index.php?cible=utilisateurs&language=en">Anglais</a>
-                <a class="button" href="index.php?cible=utilisateurs&language=fr">Français</a>
+                <a href="index.php?cible=utilisateurs&language=en">
+                    <div class="droite"><img src="img/drapeauAnglais.png" /></div>
+                </a>
+                <a href="index.php?cible=utilisateurs&language=fr">
+                    <div class="droite"><img src="img/drapeauFrance.png" /></div>
+                </a>
                 <a href="index.php?cible=connexion&fonction=deconnexion&token=<?php echo $_SESSION['token']; ?>">
                     <div class="droite"><img src="img/deco.png" /></div>
                 </a>

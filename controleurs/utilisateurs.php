@@ -112,7 +112,6 @@ switch ($function) {
     case 'referent-capteur':
         //liste des capteurs enregistrés
         $vue = "referent-capteur";
-        $title = "Capteur(s)";
         if ( $_COOKIE['language'] == "en") {
             $title = "Sensors";
         } else {
@@ -124,7 +123,19 @@ switch ($function) {
         }
     
     break;
-        
+
+    case 'referent-capteur-info':
+        //liste des capteurs enregistrés
+        $vue = "referent-capteur-info";
+        $title = $_GET['idCapteur'];
+        // if(isset($_GET['idCapteur'])) {
+        //     $infoCapteur = recupereInfoCapteur($bdd,$_GET['idCapteur']);
+        //     $title = $infoCapteur['type'];   
+        // }
+
+    
+    break;
+
 
     case 'referent-profil':
         //liste des capteurs enregistrés

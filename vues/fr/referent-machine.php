@@ -13,7 +13,7 @@
 <?php foreach ($machines as $machine) { ?>
 	<div class="boite" style="background:url('img/MachineUne.jpg'); background-size:cover; ">
 
-		<p class="p"> 
+		<p class="afficherTitre"> 
 			<?php echo $machine['name']; 
 			?>
 			

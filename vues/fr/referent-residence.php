@@ -9,7 +9,7 @@
 </style>
 <?php foreach ($maisons as $element) { ?>
 	<div class="boite" style="background:url('img/Appartement_Paris.jpg'); background-size:cover; ">
-		<p class="p" >
+		<p class="afficherTitre" >
 			<?php echo $element['nom']; ?>
 			<?php echo $element['location']; ?>
 		</p>	

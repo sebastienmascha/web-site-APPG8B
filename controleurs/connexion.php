@@ -158,6 +158,6 @@ switch ($function) {
         $message = "Erreur 404 : la page recherchée n'existe pas.";
 }
 
-include('vues/header-footer/headerConnexion.php');
-include('vues/' . $vue . '.php');
-include('vues/header-footer/footer.php');
+include('vues/fr/header-footer/headerConnexion.php');
+include('vues/fr/' . $vue . '.php');
+include('vues/fr/header-footer/footer.php');

@@ -32,7 +32,7 @@
             </tr>
             <tr >
                 <td ><span> <td width="33%">A question ?</span></td>
-                <td ><span><td width="33%"> Find all of conditions of use certified bu the user.</span></td>
+                <td ><span><td width="33%"> Find all the conditions of use certified bu the user.</span></td>
                 <td ><span><td width="33%"> You just need to contact on of our technician by phone: 0978 970 970 or de present yourself at the Customer Service in the shop Caco.</span></td>
             </tr>
         </table>
