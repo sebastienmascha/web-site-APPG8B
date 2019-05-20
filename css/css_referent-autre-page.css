@@ -49,7 +49,8 @@ div.box{
 
 
 div.boite{
-    padding: 20px;
+    padding: 1%;
+
     /*background-position:center;
     
     background-size: cover;*/
@@ -59,9 +60,12 @@ div.boite{
     border-color: #5C5C5C;
 }
 
-div#editer{
-	height: 610px;
-	width: 420px;
-	background: rgba(255,255,255,0.4);
-	visibility: initial;
+div#InfosCapteurs{
+    padding: 1%;
+	border-radius: 7px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #5C5C5C;
+    background-color: white;
+    background-size:cover;
 }
