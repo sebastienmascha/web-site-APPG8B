@@ -4,5 +4,5 @@
 */
 ?>
 
-Il vous suffit de contacter l'un de nos techniciens par téléphone au 0978 970 970 (prix d'un appel local) ou de vous présenter au comptoir SAV du magasin CaCo le plus proche de chez vous. 
-La seule condition à remplir pour être pris en charge, est que la marque de l'appareil soit commercialisée chez CaCo.
+You just need to contact on of our technician by phone: 0978 970 970 or to present yourself at the Customer Service in the closer shop Caco from your home.
+The only condition to be taken care is that the device's trend need to be commercialised at Caco. 

@@ -10,13 +10,13 @@
 <?php foreach ($capteurs as $capteur) { ?>
 	<div class="boite" style="background:url('img/Micro.jpg'); background-size:cover; ">
 
-		<p class="p"> 
+		<p class="afficherTitre"> 
 			<?php echo $capteur['id']; ?>
 			
 		</p>
 
 		<div class="center">
-            	<a class="button" >Selectionner</a>    
+            	<a class="button" >Select</a>    
          	</div>
 	</div>
 <?php } ?>
