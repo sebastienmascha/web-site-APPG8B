@@ -1,7 +1,6 @@
 <?php
-/**
- * Vue : entête HTML
- */
+
+
 ?>
 
 <!doctype html>
@@ -15,14 +14,39 @@
     <meta name="description" content="CaCo, la cafetière connectée.">
     <meta name="author" content="CaCo">
 
-    <link rel="stylesheet" href="css/css_connexion.css">
+    <link rel="stylesheet" href="css/css.css">
+
 </head>
 
 <body>
+
+
     <div id="conteneur">
+
+
+
+        <aside id="side" class="bg-trans">
+
+            <a href="index.php">
+                <div id="logo"><img src="img/logotop.png" /></div>
+            </a>
+
+            <nav class="menu" role="navigation">
+                <ul class="liste">
+                    <a href="index.php">
+                        <li><span class="nav-icon"><img src="img/dashboard.png" alt="Accueil" /></span><span class="nav-text"> Dashboard</span></li>
+                    </a>
+                    <li><a href="index.php?cible=admin&fonction=gestion-user"><span class="nav-icon"><img src="img/admin.png" alt="Mon compte" /></span> <span class="nav-text">Gestion des utilisateurs</span></a></li>
+                    <li><a href="index.php?cible=admin&fonction=gestion-maison"><span class="nav-icon"><img src="img/home.png" alt="Stock" /> </span><span class="nav-text">Gestion des foyers</span></a></li>
+
+                </ul>
+            </nav>
+
+        </aside>
+
         <header class="bg-trans">
             <div class="droite">
-                <p><?php echo $_SESSION['prenom'] ?></p>
+                <p><?php echo $_SESSION['prenom']?></p>
                 <img src="img/icon.png" />
                 <img src="img/notif.png" />
                 <a href="index.php?cible=connexion&fonction=deconnexion&token=<?php echo $_SESSION['token']; ?>">
@@ -31,19 +55,14 @@
             </div>
 
         </header>
+
         <div class="wrap">
             <main>
                 <div id="page-wrap" class="bg-trans">
 
                     <div id="page-header">
                         <img src="img/home.png" alt="intitulé img" class="icon-page" />
-                        <h1>
-                            <?php echo $title; ?>
-                            <a href="javascript:history.go(-1)" title="Return to the previous page">&laquo; Go back</a>
-                            <a href="index.php?cible=connexion&fonction=deconnexion&token=<?php echo $_SESSION['token']; ?>">
-                                <div ><img src="img/deco.png" /></div>
-                            </a>
-                        </h1>
+                        <h1><?php echo $title; ?></h1>
                     </div>
 
                     <div class="page-content">
