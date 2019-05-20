@@ -31,7 +31,7 @@
 				document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
 			}
 		}
-		xmlhttp.open("GET", "vues/stock-getMaisons.php?q=" + str, true);
+		xmlhttp.open("GET", "vues/fr/stock-getMaisons.php?q=" + str, true);
 		xmlhttp.send();
 	}
 </script>
