@@ -72,6 +72,12 @@ function recupereMachinefromMaisonid(PDO $bdd, string $idMaison):array{
     return $bdd->query($query)->fetchAll();
 }
 
+function recupereInfoMachinefromMachineid(PDO $bdd, int $idMachine):array{
+    $query = "SELECT * FROM boisson_stock 
+            WHERE idMachine=".$idMachine;
+    return $bdd->query($query)->fetchAll();
+}
+
 function recupereCapteurfromMachineid(PDO $bdd, string $idMachine):array{
     $query = "SELECT * FROM structure_capteur 
             WHERE idMachine=".$idMachine;

@@ -1,45 +1,62 @@
-<?php
+<?php ?>
 
-$q = $_GET["q"];
-$maisons = $_GET["maisons"];
-
-echo '-----ok----';
-echo $maisons[$q]['nom'];
-echo '-----ha----';
-
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "mvc";
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-$sql = "SELECT * FROM structure_maison 
-INNER JOIN users_homes ON structure_maison.id = users_homes.idMaison 
-WHERE users_homes.idUser =2";
-
-$result = mysqli_query($conn, $sql);
+<style>
+    <?php include "css/css_stock.css";
+    ?>
+</style>
 
 
-echo "<ul >";
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "<li><a>" . $row['id'] . "</a></li>";
-        echo "<li><a>" . $row['idFoyer'] . "</a></li>";
-        echo "<li><a>" . $row['nom'] . "</a></li>";
-        echo "<li><a>" . $row['location'] . "</a></li>";
-    }
-    echo "</ul>";
-} else {
-    echo "0 results";
-}
+<?php foreach ($machines as $machine) { ?>
+    <ul class="machinesCafe">
+        <li class="cafetiere"><a href="#2"><?php echo $machine['name']; ?></a></li>
+    </ul>
 
-mysqli_close($conn);
-?>
+    
+<div>
+	<div class="boite1">
+		<p class="p_stock"> Café - Capsule restantes : <?php echo $machinesInfo[0]['stock']; ?></p>
+		<img class="cafe" src="./img/coffee_icon.png">
+		<div class="box">
+			<a href="https://www.dolce-gusto.fr/boissons/grande-morning-16-capsules" target="_blank"> <button> Commander </button> </a>
+		</div>
+		<br>
+		<div class="progress-bar green"></div>
+	</div>
+
+
+
+
+	<div class="boite2">
+		<p class="p_stock"> Chocolat chaud - Capsule restantes : <?php echo $machinesInfo[1]['stock']; ?></p>
+		<img class="cafe" src="./img/Chocolat.png">
+		<div class="box">
+			<a href="https://www.dolce-gusto.fr/boissons/chocolat/chococino-chocolat-chaud" target="_blank"> <button> Commander </button></a>
+		</div>
+		<br>
+		<div class="progress-bar green"></div>
+	</div>
+
+
+	<div class="boite3">
+		<p class="p_stock"> Latte - Capsule restantes : <?php echo $machinesInfo[2]['stock']; ?></p>
+		<img class="cafe" src="./img/latte.png">
+		<div class="box">
+			<a href="https://www.dolce-gusto.fr/boissons/cappuccino-latte/latte-macchiato" target="_blank"> <button> Commander </button> </a>
+		</div>
+		<br>
+		<div class="progress-bar green"></div>
+	</div>
+
+	<div class="boite4">
+		<p class="p_stock"> Cappuccino - Capsule restantes : <?php echo $machinesInfo[3]['stock']; ?></p>
+		<img class="cafe" src="./img/Cappuccino.png">
+		<div class="box">
+			<a href="https://www.dolce-gusto.fr/boissons/cappuccino-latte/cappuccino" target="_blank"> <button> Commander </button> </a>
+		</div>
+		<br>
+		<div class="progress-bar green"></div>
+	</div>
+</div>
+
+<?php } ?>
+
