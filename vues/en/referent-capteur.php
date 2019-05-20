@@ -29,7 +29,7 @@
 				echo ' °C';
 			} else if ($capteur['type']=='Présence de tasse'){
 				echo 'Use : Permit to know if there is a mug in front of the machine <br/>';
-				echo 'Etat : ';
+				echo 'State : ';
 				if ($capteur['etat']==1) {
 					echo 'Good <br/>';
 				} else {
@@ -40,7 +40,7 @@
 				echo ' cm';
 			} else if ($capteur['type']=='Présence de capsules'){
 				echo 'Use : Permit to know if there are capsules remaining in the machine <br/>';
-				echo 'Etat : ';
+				echo 'State : ';
 				if ($capteur['etat']==1) {
 					echo 'Good <br/>';
 				} else {
@@ -51,7 +51,7 @@
 				echo ' cm';
 			}else if ($capteur['type']=='Sonore'){
 				echo 'Use : Permit to comand a coffee with the voice  <br/>';
-				echo 'Etat : ';
+				echo 'State : ';
 				if ($capteur['etat']==1) {
 					echo 'Good <br/>';
 				} else {
@@ -59,7 +59,7 @@
 				}
 			} else if ($capteur['type']=='Résistance Chauffante'){
 				echo 'Use : Warm the drink if needed <br/>';
-				echo 'Etat : ';
+				echo 'State : ';
 				if ($capteur['etat']==1) {
 					echo 'Good <br/>';
 				} else {

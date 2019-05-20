@@ -17,6 +17,17 @@ function recupereTous(PDO $bdd, string $table): array {
 }
 
 /**
+ * Récupère tous les éléments d'une table
+ * @param PDO $bdd
+ * @param string $table
+ * @return array
+ */
+function update(PDO $bdd, string $table): array {
+    $query = 'UPDATE * FROM ' . $table . ' VALUES() ';
+    return $bdd->query($query)->fetchAll();
+}
+
+/**
  * Recherche des éléments en fonction des attributs passés en paramètre
  * @param PDO $bdd
  * @param string $table
