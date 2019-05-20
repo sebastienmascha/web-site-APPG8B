@@ -13,7 +13,7 @@
 		<p class="afficherTitre"> 
 			<?php echo $capteur['type']; ?>
 		</p>
-		<p >
+		<div class="boite" >
 			<?php
 			if ($capteur['type']=='Température') {
 				echo 'Utilisation : Récupère la température de la boisson pour savoir s il faut le rechauffer <br/>';
@@ -24,6 +24,8 @@
 					echo 'Critique<br/>';
 				}
 				echo 'Température mesurée actuellement : ';
+				echo $capteur['Mesure'];
+				echo ' °C';
 			} else if ($capteur['type']=='Présence de tasse'){
 				echo 'Utilisation : Permet de savoir si il y a une tasse devant la cafetière <br/>';
 				echo 'Etat : ';
@@ -33,6 +35,8 @@
 					echo 'Critique<br/>';
 				}
 				echo 'Distance calculée : ';
+				echo $capteur['Mesure'];
+				echo ' cm';
 			} else if ($capteur['type']=='Présence de capsules'){
 				echo 'Utilisation : Permet de savoir si il reste des capsules dans la machine <br/>';
 				echo 'Etat : ';
@@ -42,6 +46,8 @@
 					echo 'Critique<br/>';
 				}
 				echo 'Distance calculée : ';
+				echo $capteur['Mesure'];
+				echo ' cm';
 			}else if ($capteur['type']=='Sonore'){
 				echo 'Utilisation : Permet de commander un café avec la voix <br/>';
 				echo 'Etat : ';
@@ -61,7 +67,7 @@
 				
 			}
 			?>
-		</p>
+		</div>
 	
 
 				
