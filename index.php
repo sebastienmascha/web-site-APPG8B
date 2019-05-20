@@ -16,6 +16,9 @@ include("controleurs/fonctions.php");
 // Appel des fonctions liées à l'affichage
 include("vues/fr/fonctions.php");
 
+// SET COOKIE LANGAGE TO FR PAR DEFAULT
+setcookie('language', "fr");
+
 if(isset($_SESSION['id'])) {
 
 // On identifie le contrôleur à appeler dont le nom est contenu dans cible passé en GET
