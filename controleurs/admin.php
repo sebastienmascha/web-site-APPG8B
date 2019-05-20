@@ -15,7 +15,7 @@ include('./modele/requetes.utilisateurs.php');
 include('./modele/requetes.admin.php');
 
 // si la fonction n'est pas définie, on choisit d'afficher l'accueil
-if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
+if (!isset($_GET['fonction']) || empty($_GET['fonction'])){
     $function = "gestion";
 } else {
     $function = $_GET['fonction'];
@@ -46,7 +46,7 @@ switch ($function) {
         break;
 
     case 'supprimerUtilisateur':
-        if(isset($_GET['id'])) {
+        if(isset($_GET['id']) && isset($_GET['token']) && ($_GET['token'] == $_SESSION['token'])) {
             //TODO: Vérifier si la personne à le droit de supprimer la maison (si non tu redirige vers une page d'erreur de méchant)
             //TODO: Gérer si il y a une erreur: exemple: la maison n'existait déjà plus => try/catch
             
