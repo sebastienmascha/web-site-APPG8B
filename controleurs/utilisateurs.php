@@ -73,6 +73,14 @@ switch ($function) {
         }
         $maisons = recupereMaisons($bdd);
 
+        if(!empty($_POST['email']) && !empty($_POST['prenom']) && !empty($_POST['boisson']) && !empty($_POST['heure']) )
+        {
+            $sql = "UPDATE users_user SET email=?, prenom=?, preference=?, heure=? WHERE id =?";
+            $bdd->prepare($sql)->execute([secure($_POST['email']), secure($_POST['prenom']), secure($_POST['boisson']), secure($_POST['heure']), $_SESSION['id']]);
+    
+    
+        }
+
         //$maisons = deleteMaisonUser($bdd,$idSupprimer);
         break;
 
@@ -124,17 +132,6 @@ switch ($function) {
     
     break;
 
-    case 'referent-capteur-info':
-        //liste des capteurs enregistrés
-        $vue = "referent-capteur-info";
-        $title = $_GET['idCapteur'];
-        // if(isset($_GET['idCapteur'])) {
-        //     $infoCapteur = recupereInfoCapteur($bdd,$_GET['idCapteur']);
-        //     $title = $infoCapteur['type'];   
-        // }
-
-    
-    break;
 
 
     case 'referent-profil':

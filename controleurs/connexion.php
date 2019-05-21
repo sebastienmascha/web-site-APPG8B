@@ -72,6 +72,9 @@ switch ($function) {
                     $_SESSION['email'] = $dataCo['email'];
                     $_SESSION['typeUser'] = $dataCo['typeUser'];
 
+                    $_SESSION['pref'] = $dataCo['preference'];
+                    $_SESSION['heure'] = $dataCo['heure'];
+
                     $_SESSION['token'] = uniqid(md5(rand()), true); // utile pour le lien de déconnexion 
                     $_SESSION['acces'] = $dataCo['acces'];
 
