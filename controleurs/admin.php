@@ -31,10 +31,41 @@ switch ($function) {
         break;
 
     case 'gestion-user':
+    $alerte='';
+     $alertemdp='';
         //affichage de l'accueil
         $vue = "gestion-user";
         $title = "Gestion des utilisateurs";
         $utilisateurs = recupereUsers($bdd);     
+
+        if(!empty($_POST['email']) && !empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['boisson']) && !empty($_POST['heure']))
+        {
+            $sql = "UPDATE users_user SET email=?, nom=?, prenom=?, preference=?, heure=? WHERE id =?";
+            $bdd->prepare($sql)->execute(
+                [secure($_POST['email']),
+                 secure($_POST['nom']),
+                 secure($_POST['prenom']),
+                  secure($_POST['boisson']),
+                   secure($_POST['heure']),
+                    secure($_POST['id'])
+                ]);
+             $alerte = succes("<center>Informations modifiées pour ".$_POST["prenom"]." ".$_POST["nom"].".</center>");
+    
+        }
+
+        if(!empty($_POST['mdp1']) && !empty($_POST['mdp2']))
+            {
+                if($_POST['mdp1'] == $_POST['mdp2']) {
+
+                    $sql = "UPDATE users_user SET mdp=? WHERE id =?";
+                    $bdd->prepare($sql)->execute([secure(crypterMdp($_POST['mdp1'])), $_POST['id']]);
+
+                    $alertemdp = succes("<center>Mot de passe changé pour ".$_POST["prenom"]." ".$_POST["nom"].".</center>");
+                }
+                else {
+                    $alertemdp = succes("<center>Les deux mot de passe ne correspondent pas.</center>");
+                }
+            }
 
         break;
 
@@ -51,10 +82,12 @@ switch ($function) {
             //TODO: Gérer si il y a une erreur: exemple: la maison n'existait déjà plus => try/catch
             
             deleteUsers($bdd,$_GET['id']);
+            
 
         }
         header("Location: index.php?cible=admin&fonction=gestion-user");
         break;
+
     
 
 
