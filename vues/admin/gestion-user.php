@@ -2,13 +2,16 @@
 /**
  * Vue : accueil
  */
+
+
 ?>
 
 <style>
     <?php include "css/css_admin.css";
     ?>
 </style>
-
+<?php echo $alerte; ?>
+<?php echo $alertemdp; ?>
 <p class="titre">Gestion des utilisateurs:</p>
 
 
@@ -19,9 +22,10 @@
 	<tr>
 		<th>Nom</th>
 		<th>Type</th>
-		<th>Id</th>
+		<th>Heure</th>
 		<th>E-mail</th>
 		<th>Suppression</th>
+        <th>Modifier</th>
 	</tr>
 </thead>
 
@@ -38,15 +42,20 @@ foreach ($utilisateurs as $element) {
 			<?php echo $element['nom']; ?>
 			</td>
 			<td><?php echo $element['typeUser']; ?> </td>
-			<td><?php echo $element['id']; ?> </td>
+			<td><?php echo $element['heure']; ?> </td>
 			<td><?php echo $element['email']; ?> </td>
 			<td>
-			<a class="delete_btn" href="index.php?cible=admin&fonction=supprimerUtilisateur
-			&id=<?php echo $element['id']; ?>
-			&token=<?php echo $_SESSION['token']; ?>"
-			>Supprimer</a>
-			</td>
+            <a class="delete_btn" href="index.php?cible=admin&fonction=supprimerUtilisateur&id=<?php echo $element['id']; ?>&token=<?php echo $_SESSION['token']; ?>"
+            >Supprimer</a>
+            </td>
+
+            <td>
+           <input id="edite"type="button" value="Edit" onclick="edit_div('editer<?php echo $element['id'];?>')" /> 
+            </td>
+
+
 		</tr>
+
 <?php	$i++; }	?>
 
 
@@ -55,33 +64,50 @@ foreach ($utilisateurs as $element) {
 </div>
 </br>
 
+<?php
+foreach ($utilisateurs as $user) { 
+    ?>
+<div id="editer<?php echo $user['id'];?>" style="display:none" >
+    
+ <div class="titre">MODIFIER LE COMPTE</div>
+        
+        <form method="POST" action="">
+            <label for="nom">Nom : <br> </label> <input type="text" name="nom" id="nom" value="<?php echo $user['nom']; ?>"/> <br>
+            <label for="prenom">Prenom : <br> </label> <input type="text" name="prenom" id="prenom" value="<?php echo $user['prenom']; ?>"/> <br>
+            <label for="mail">Email : <br> </label> <input type="email" name="email" id="Email" value="<?php echo $user['email']; ?>"/> <br>
+    
+            <label for="mdp1">Nouveau mot de passe:</label>
+                <input type="password" name="mdp1" id="mdp1" value=""/>
+            <label for="mdp2">Confirmation:</label>
+                <input type="password" name="mdp2" id="mdp2" value=""/>
+                
+            <label for="PreferenceBoisson "> Préférence Boisson : <br> </label>
+            <select name="boisson" value="">
+                <?php  $req = recupereTous($bdd, 'boisson_boisson');
+                foreach ($req as $element) {
+                    echo '<option';
+                    if($element['id'] == $user['preference']) { echo ' selected'; }
+                    echo ' value="'.$element['id'].'">'.$element['nom'].'</option>';
+                }
+                ?>
+            </select>
+            
+            <label for="heure"> Préférence heure de préparation: </label>
 
-<p class="titre">Ajout d'utilisateur:</p>
+            <input type="time"  id="heure" name="heure"
+                min="00:00" max="23:59" value="<?php echo $user['heure']; ?>" required/>
+                
 
-<div id="boitePrincipale" >
-        <div class="boite1">
-            <form method="POST" action="">
 
-                <input type="email" name="Email" id="Email" placeholder="Email">
-                <input type="text" name="Prénom" id="Prénom" placeholder="Prénom">
-                <input type="text" name="Prénom" id="Prénom" placeholder="Nom">
-                <select>
-                    <option value="">Préférence</option>
-                    <option value="">Café</option>
-                    <option value="">Chocolat chaud</option>
-                    <option value="">Late</option>
-                    <option value="">Cappucino</option>
-                    <option value="">Thé</option>
-                </select>
-            </br></br>
-                <label for="heure">Heure de préparation:</label>
-                <input type="time"  id="heure" name="heure"
-                    min="00:00" max="23:00" placeholder="heure" required/>
-                <div style="text-align: center;">
-                    <input type="submit" value="Ajouter cet utilisateur" >
-                </div>
-                								
-            </form>
-        </div>
-</div> 
 
+
+            <input type="hidden" name="id" value="<?php echo $user['id']; ?>"/> 
+            <div style="text-align: center;">
+                <input type="submit" value="Valider" >
+            </div>
+
+        </form>
+    </div>
+
+<?php   } ?>
+<script src="js/afficher_masquer.js"></script>
