@@ -38,9 +38,9 @@ switch ($function) {
 
         break;
 
-    case 'gestion-maison':
+    case 'gestion-foyer':
         //affichage de l'accueil
-        $vue = "gestion-maison";
+        $vue = "gestion-foyer";
         $title = "Gestion des foyers";
         $foyers = recupereFoyers($bdd);      
         break;
@@ -56,7 +56,51 @@ switch ($function) {
         header("Location: index.php?cible=admin&fonction=gestion-user");
         break;
     
+    case 'ajouterUtilisateur':
+        if(isset($_GET['id']) && isset($_GET['token']) && ($_GET['token'] == $_SESSION['token'])) {
+            //TODO: Vérifier si la personne à le droit de supprimer la maison (si non tu redirige vers une page d'erreur de méchant)
+            //TODO: Gérer si il y a une erreur: exemple: la maison n'existait déjà plus => try/catch
+            
+            addUsers($bdd,$_GET['id']);
 
+        }
+        header("Location: index.php?cible=admin&fonction=gestion-user");
+        break;
+
+
+     case 'gestion-maison':
+        $vue = "gestion-maison";
+        $title = "Maisons";
+       
+        if(isset($_GET['idFoyer'])) {
+            
+            $maisons = recupereMaisonsFromFoyerid($bdd,$_GET['idFoyer']);
+        }
+        break;
+
+    case 'gestion-machine':
+        //liste des capteurs enregistrés
+        $vue = "gestion-machine";
+        $title = "Machine(s)";
+       
+        if(isset($_GET['idMaison'])) {
+            
+            $machines = recupereMachinefromMaisonidGest($bdd,$_GET['idMaison']);
+        }
+        break;
+
+
+
+    case 'gestion-capteur':
+        //liste des capteurs enregistrés
+        $vue = "gestion-capteur";
+        $title = "Capteurs";
+       
+        if(isset($_GET['idMachine'])) {
+            
+            $capteurs = recupereCapteursfromMachineidGest($bdd,$_GET['idMachine']);
+        }
+        break;
 
     default:
         // si aucune fonction ne correspond au paramètre function passé en GET

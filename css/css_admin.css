@@ -104,3 +104,26 @@ input[type=submit]:hover {
     flex-wrap: wrap;
     justify-content: space-around;  
   } 
+
+
+
+
+label{
+  position: relative;
+  display: inline-block;
+  width: 27px;
+  height: 17px;
+  color: red;
+}
+
+
+.etat {
+  position: relative;
+  display: inline-block;
+  width: 27px;
+  height: 17px;
+  color: green;
+}
+
+
+
