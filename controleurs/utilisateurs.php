@@ -71,12 +71,28 @@ switch ($function) {
         } else {
             $title = "Mon compte";
         }
+        $alerte = '';
         $maisons = recupereMaisons($bdd);
 
         if(!empty($_POST['email']) && !empty($_POST['prenom']) && !empty($_POST['boisson']) && !empty($_POST['heure']) )
         {
             $sql = "UPDATE users_user SET email=?, prenom=?, preference=?, heure=? WHERE id =?";
             $bdd->prepare($sql)->execute([secure($_POST['email']), secure($_POST['prenom']), secure($_POST['boisson']), secure($_POST['heure']), $_SESSION['id']]);
+
+
+            if(!empty($_POST['mdp1']) && !empty($_POST['mdp2']))
+            {
+                if($_POST['mdp1'] == $_POST['mdp2']) {
+
+                    $sql = "UPDATE users_user SET mdp=? WHERE id =?";
+                    $bdd->prepare($sql)->execute([secure(crypterMdp($_POST['mdp1'])), $_SESSION['id']]);
+
+                    $alerte = succes("<center>Mot de passe changé.</center>");
+                }
+                else {
+                    $alerte = succes("<center>Les deux mot de passe ne correspondent pas.</center>");
+                }
+            }
     
     
         }

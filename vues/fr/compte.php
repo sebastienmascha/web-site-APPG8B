@@ -24,11 +24,19 @@
 
 <div id="boitePrincipale" >
         <div class="boite1">
+
+            <?php 
+echo $alerte;
+            ?>
             <form method="POST" action="">
 
+<label for="email">Email:</label>
                 <input type="email" name="email" id="Email" value="<?php echo $email; ?>"" required/>
+    <label for="prenom">Prénom:</label>
                 <input type="text" name="prenom" id="Prénom" value="<?php echo $prenom; ?>" required/>
-                
+
+
+                <label for="boisson">Préférence:</label>
                 <select name="boisson" value="">
                 <?php  $req = recupereTous($bdd, 'boisson_boisson');
                   foreach ($req as $element) {
@@ -41,10 +49,19 @@
                 <label for="heure">Heure de préparation:</label>
                 <input type="time"  id="heure" name="heure"
                     min="00:00" max="23:59" value="<?php echo $heure; ?>" required/>
-                <div style="text-align: center;">
+               
+                	
+                <label for="mdp1">Nouveau mot de passe:</label>
+                <input type="password" name="mdp1" id="mdp1" value=""/>
+<label for="mdp2">Confirmation:</label>
+                <input type="password" name="mdp2" id="mdp2" value=""/>
+
+
+                 <div style="text-align: center;">
                     <input type="submit" value="Valider" >
                 </div>
-                								
+
+
             </form>
         </div>
 

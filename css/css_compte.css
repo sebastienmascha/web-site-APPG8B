@@ -19,7 +19,7 @@ form{
     
 }
 
-input[type=text], input[type=email],input[type=time],select, textarea{
+input[type=text],input[type=password], input[type=email],input[type=time],select, textarea{
     width: 100%;
     margin: 5px;
     padding: 5px;
