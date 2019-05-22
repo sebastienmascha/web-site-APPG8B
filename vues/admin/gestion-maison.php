@@ -9,18 +9,22 @@
     ?>
 </style>
 
-<p>Gestion des différents foyers:</p>
+<p class="titre">Gestion des différentes maisons:</p>
 
 
 
-<?php foreach ($foyers as $element) { ?>
+<?php foreach ($maisons as $maison) { ?>
 
 <div class="boite" style="background:url('img/Appartement_Paris.jpg'); background-size:cover; ">
-	<p class="p" ><?php echo $element['nom']; ?></p>
-		<p class="p" ><?php echo $element['id']; ?> </p>
-		<div class="box">
-		<input  type="button" onclick="document.location.href='index.php?cible=utilisateurs&fonction=referent-machine';" value="Sélectionner">
-		</div>
+	<p class="p" ><?php echo $maison['nom']; ?></p>
+	<p class="p" ><?php echo $maison['id']; ?> </p>
+	<div class="center">
+        <a class="button" href="
+            	index.php?cible=admin&fonction=gestion-machine&idMaison=<?= $maison['id'] ?>;">Selectionner</a>    
+    </div>
 </div>
 
 <?php } ?>
+
+
+

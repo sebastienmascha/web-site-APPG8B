@@ -35,9 +35,10 @@
                 <ul class="liste">
                     <a href="index.php">
                         <li><span class="nav-icon"><img src="img/dashboard.png" alt="Accueil" /></span><span class="nav-text"> Dashboard</span></li>
-                    </a>
-                    <li><a href="index.php?cible=admin&fonction=gestion-user"><span class="nav-icon"><img src="img/admin.png" alt="Mon compte" /></span> <span class="nav-text">Gestion des utilisateurs</span></a></li>
-                    <li><a href="index.php?cible=admin&fonction=gestion-maison"><span class="nav-icon"><img src="img/home.png" alt="Stock" /> </span><span class="nav-text">Gestion des foyers</span></a></li>
+                    </a> </br>
+                    Gestion :
+                    <li><a href="index.php?cible=admin&fonction=gestion-user"><span class="nav-icon"><img src="img/admin.png" alt="Mon compte" /></span> <span class="nav-text">Utilisateurs</span></a></li>
+                    <li><a href="index.php?cible=admin&fonction=gestion-foyer"><span class="nav-icon"><img src="img/home.png" alt="Stock" /> </span><span class="nav-text">Foyers</span></a></li>
 
                 </ul>
             </nav>
