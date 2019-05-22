@@ -70,8 +70,11 @@
 				
 			<label for="heure"> Type d'utilisateur: </label>
 
+			<input type="hidden" name="idUser" value=<?php echo $user['id'];?> />
+		
+		
 			<div style="text-align: center;">
-				<input type="submit" value="Valider" >
+				<input type="submit" value="Valider" />
 			</div>
 
 		</form>

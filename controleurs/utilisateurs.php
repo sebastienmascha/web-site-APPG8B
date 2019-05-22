@@ -138,12 +138,12 @@ switch ($function) {
         } else {
             $title = "Profils du foyer";
         }
-        $users = recupereTous($bdd,'users_user');
+        $users = recupereTous($bdd, 'users_user WHERE idFoyer=' . secure($_SESSION['idFoyer']));
 
-        if(!empty($_POST['email']) && !empty($_POST['prenom'])&& !empty($_POST['nom']) && !empty($_POST['boisson']) && !empty($_POST['heure']) )
+        if(!empty($_POST['email']) && !empty($_POST['prenom'])&& !empty($_POST['nom']) && !empty($_POST['boisson']) && !empty($_POST['heure']) && !empty($_POST['idUser']) )
         {
             $sql = "UPDATE users_user SET email=?, prenom=?, nom=?, preference=?, heure=? WHERE id =?";
-            $bdd->prepare($sql)->execute([secure($_POST['email']), secure($_POST['prenom']),secure($_POST['nom']), secure($_POST['boisson']), secure($_POST['heure']), $_SESSION['id']]);
+            $bdd->prepare($sql)->execute([secure($_POST['email']), secure($_POST['prenom']),secure($_POST['nom']), secure($_POST['boisson']), secure($_POST['heure']), $_POST['idUser']]);
     
         }
         if(!empty($_POST['mdp1']) && !empty($_POST['mdp2']))

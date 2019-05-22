@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 20 mai 2019 à 12:56
+-- Généré le :  mer. 22 mai 2019 à 09:03
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -301,6 +301,7 @@ INSERT INTO `users_main` (`id`, `idUser`, `idFoyer`) VALUES
 DROP TABLE IF EXISTS `users_user`;
 CREATE TABLE IF NOT EXISTS `users_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idFoyer` int(11) NOT NULL,
   `prenom` varchar(255) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -319,14 +320,12 @@ CREATE TABLE IF NOT EXISTS `users_user` (
 -- Déchargement des données de la table `users_user`
 --
 
-INSERT INTO `users_user` (`id`, `prenom`, `nom`, `email`, `mdp`, `heure`, `preference`, `acces`, `invite`, `datecre`, `valide`, `typeUser`) VALUES
-(1, 'Gaétan', 'BERTHIER', 'gaet@app.com', '32c57a4f95915ebb6f24dbe58d1aa933a3af5c7b', '08:00:00', 1, 50, 0, 1553507143, 1, 'utilisateurs'),
-(2, 'Gus', 'Simon', 'gus@app.com', '32c57a4f95915ebb6f24dbe58d1aa933a3af5c7b', '08:10:00', 1, 50, 0, 1553507143, 1, 'utilisateurs'),
-(3, 'Agathe', 'Le Bris', 'agathe@app.com', '32c57a4f95915ebb6f24dbe58d1aa933a3af5c7b', '07:10:00', 1, 50, 0, 1553507143, 1, 'utilisateurs'),
-(4, 'Seb', 'Mascha', 'seb@app.com', '32c57a4f95915ebb6f24dbe58d1aa933a3af5c7b', '00:00:00', 1, 50, 0, 1553507143, 1, 'utilisateurs'),
-(5, 'Astrid', 'Benoit', 'astrid@app.com', '32c57a4f95915ebb6f24dbe58d1aa933a3af5c7b', '08:10:00', 1, 50, 0, 1553507143, 1, 'utilisateurs'),
-(6, 'Olivier', 'Condere', 'oliv@app.com', '32c57a4f95915ebb6f24dbe58d1aa933a3af5c7b', '08:10:00', 1, 50, 0, 1553507143, 1, 'utilisateurs'),
-(7, 'webmaster', '', 'webmaster@app.com', '32c57a4f95915ebb6f24dbe58d1aa933a3af5c7b', '08:10:00', 1, 50, 0, 1553507143, 1, 'admin');
+INSERT INTO `users_user` (`id`, `idFoyer`, `prenom`, `nom`, `email`, `mdp`, `heure`, `preference`, `acces`, `invite`, `datecre`, `valide`, `typeUser`) VALUES
+(1, 1, 'azert', 'BERTHIER', 'gaet@app.com', '32c57a4f95915ebb6f24dbe58d1aa933a3af5c7b', '08:00:00', 1, 50, 0, 1553507143, 1, 'utilisateurs'),
+(2, 1, 'Guuuus', 'Simon', 'gus@app.com', '32c57a4f95915ebb6f24dbe58d1aa933a3af5c7b', '08:10:00', 1, 50, 0, 1553507143, 1, 'utilisateurs'),
+(4, 1, 'Gsdfvzdx', 'BERTHIER', 'gaet@app.com', '32c57a4f95915ebb6f24dbe58d1aa933a3af5c7b', '08:00:00', 1, 50, 0, 1553507143, 1, 'utilisateurs'),
+(6, 1, 'sdfghj', 'BERTHIEROK', 'gaet@app.com', '32c57a4f95915ebb6f24dbe58d1aa933a3af5c7b', '08:00:00', 1, 50, 0, 1553507143, 1, 'utilisateurs'),
+(7, 0, 'webmaster', '', 'webmaster@app.com', '32c57a4f95915ebb6f24dbe58d1aa933a3af5c7b', '08:10:00', 1, 50, 0, 1553507143, 1, 'admin');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
