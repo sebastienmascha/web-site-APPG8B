@@ -71,6 +71,7 @@ switch ($function) {
                     $_SESSION['prenom'] = $dataCo['prenom'];
                     $_SESSION['email'] = $dataCo['email'];
                     $_SESSION['typeUser'] = $dataCo['typeUser'];
+                    $_SESSION['idFoyer'] = $dataCo['idFoyer'];
 
                     $_SESSION['pref'] = $dataCo['preference'];
                     $_SESSION['heure'] = $dataCo['heure'];
