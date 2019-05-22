@@ -17,7 +17,9 @@ include("controleurs/fonctions.php");
 include("vues/fr/fonctions.php");
 
 // SET COOKIE LANGAGE TO FR PAR DEFAULT
-setcookie('language', "fr");
+if ( !isset($_COOKIE['language'])) {
+    setcookie('language', "fr");
+}
 
 if(isset($_SESSION['id'])) {
 
