@@ -50,7 +50,7 @@ foreach ($utilisateurs as $element) {
             </td>
 
             <td>
-           <input id="edite"type="button" value="Edit" onclick="edit_div('editer<?php echo $element['id'];?>')" /> 
+           <input id="edite"type="submit" value="Edit" onclick="edit_div('editer<?php echo $element['id'];?>')" /> 
             </td>
 
 
@@ -69,8 +69,8 @@ foreach ($utilisateurs as $user) {
     ?>
 <div id="editer<?php echo $user['id'];?>" style="display:none" >
     
- <div class="titre">MODIFIER LE COMPTE</div>
-        
+ <div class="titre">Modifier le compte</div>
+  <div id="boitePrincipale" >      
         <form method="POST" action="">
             <label for="nom">Nom : <br> </label> <input type="text" name="nom" id="nom" value="<?php echo $user['nom']; ?>"/> <br>
             <label for="prenom">Prenom : <br> </label> <input type="text" name="prenom" id="prenom" value="<?php echo $user['prenom']; ?>"/> <br>
@@ -108,6 +108,44 @@ foreach ($utilisateurs as $user) {
 
         </form>
     </div>
+</div>    
 
 <?php   } ?>
 <script src="js/afficher_masquer.js"></script>
+
+
+
+
+
+<p class="titre">Ajout d'utilisateur:</p>
+
+<div id="boitePrincipale" >
+        <div class="boite1">
+            <form method="POST" action="">
+            <label for="nom">Nom : <br> </label> <input type="text" name="nom" id="nom" value="<?php echo $user['nom']; ?>"/> <br>
+            <label for="prenom">Prenom : <br> </label> <input type="text" name="prenom" id="prenom" value="<?php echo $user['prenom']; ?>"/> <br>
+                
+                <label for="mdp1">Mot de passe:</label>
+                <input type="password" name="mdp1" id="mdp1" value=""/>
+            <label for="mdp2">Confirmation:</label>
+                <input type="password" name="mdp2" id="mdp2" value=""/>
+                
+                <select>
+                    <option value="">Préférence</option>
+                    <option value="">Café</option>
+                    <option value="">Chocolat chaud</option>
+                    <option value="">Late</option>
+                    <option value="">Cappucino</option>
+                    <option value="">Thé</option>
+                </select>
+            </br></br>
+                <label for="heure">Heure de préparation:</label>
+                <input type="time"  id="heure" name="heure"
+                    min="00:00" max="23:00" placeholder="heure" required/>
+                <div style="text-align: center;">
+                    <input type="submit" value="Ajouter cet utilisateur" >
+                </div>
+                                                
+            </form>
+        </div>
+</div> 
