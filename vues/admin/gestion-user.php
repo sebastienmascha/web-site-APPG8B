@@ -50,7 +50,7 @@ foreach ($utilisateurs as $element) {
             </td>
 
             <td>
-           <input id="edite"type="button" value="Edit" onclick="edit_div('editer<?php echo $element['id'];?>')" /> 
+           <input id="edite" type="submit" value="Edit" onclick="edit_div('editer<?php echo $element['id'];?>')" /> 
             </td>
 
 

@@ -62,6 +62,7 @@ div.box{
 .alt td { background: #F0E5CC; color: #7F4614; }
 .datagrid table tbody td:first-child { border-left: none; }
 .datagrid table tbody tr:last-child td { border-bottom: none; }
+.datagrid table tbody tr { height:60px; }
 
 
 
@@ -124,6 +125,5 @@ label{
   height: 17px;
   color: green;
 }
-
 
 
