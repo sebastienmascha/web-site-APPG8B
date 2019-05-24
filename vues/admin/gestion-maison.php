@@ -27,4 +27,20 @@
 <?php } ?>
 
 
+<p class="titre">Ajout maison</p>
+
+<div id="boitePrincipale" >
+        <div class="boite1">
+            <form method="POST" action="">
+            <label for="nom">Nom : <br> </label> <input type="text" name="nom" id="nom" required/> 
+            <label for="nom">Lieu : <br> </label> <input type="text" name="lieu" id="lieu" required/> 
+
+                <div style="text-align: center;">
+                    <input type="submit" value="Ajouter cette maison dans ce foyer" >
+                </div>
+                                                
+            </form>
+        </div>
+</div> 
+
 

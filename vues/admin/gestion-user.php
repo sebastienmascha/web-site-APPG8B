@@ -120,7 +120,6 @@ foreach ($utilisateurs as $user) {
 <p class="titre">Ajout d'utilisateur:</p>
 
 <div id="boitePrincipale" >
-        
             <form method="POST" action="">
             <label for="nom">Nom : <br> </label> <input type="text" name="nomadd" id="nom" required/> <br>
             <label for="prenom">Prenom : <br> </label> <input type="text" name="prenomadd" id="prenom" required/> <br>
@@ -130,15 +129,34 @@ foreach ($utilisateurs as $user) {
             <label for="mdp2">Confirmation:</label>
                 <input type="password" name="mdp2add" id="mdp2" value="" required/>
                 
-                <select>
-                    <option value="">Préférence</option>
-                    <option value="">Café</option>
-                    <option value="">Chocolat chaud</option>
-                    <option value="">Late</option>
-                    <option value="">Cappucino</option>
-                    <option value="">Thé</option>
-                </select>
-            </br></br>
+                <label for="PreferenceBoisson "> Préférence Boisson : <br> </label>
+            <select name="boissonadd" value="">
+                <?php  $req = recupereTous($bdd, 'boisson_boisson');
+                foreach ($req as $element) {
+                    echo '<option';
+                    if($element['id'] == $user['preference']) { echo ' selected'; }
+                    echo ' value="'.$element['id'].'">'.$element['nom'].'</option>';
+                }
+                ?>
+            </select>
+
+            <label for="heure">Choisissez le foyer:</label>    
+            <select name="idfoyeradd" value="">
+                    <?php  $req = recupereTous($bdd, 'structure_foyer');
+                foreach ($req as $element) {
+                    echo '<option';
+                    echo ' value="'.$element['id'].'">'.$element['nom'].'</option>';
+                }
+                ?>
+            </select>
+            
+            <label for="heure">Choissisez le type d'utilisateur :</label>    
+            <select name="typeUseradd" value="">
+                    <option value=50> Enfant</option>
+                    <option value=75> Utilisateur</option>
+                    <option value=100> Référent</option>
+            </select>
+
                 <label for="heure">Heure de préparation:</label>
                 <input type="time"  id="heure" name="heureadd"
                     min="00:00" max="23:00" placeholder="heure" required/>
@@ -147,5 +165,7 @@ foreach ($utilisateurs as $user) {
                 </div>
                                                 
             </form>
-        
 </div> 
+
+
+
