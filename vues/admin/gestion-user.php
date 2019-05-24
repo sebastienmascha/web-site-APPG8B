@@ -120,11 +120,11 @@ foreach ($utilisateurs as $user) {
 <p class="titre">Ajout d'utilisateur:</p>
 
 <div id="boitePrincipale" >
-        <div class="boite1">
+        
             <form method="POST" action="">
-            <label for="nom">Nom : <br> </label> <input type="text" name="nom" id="nom" value="<?php echo $user['nom']; ?>"/> <br>
-            <label for="prenom">Prenom : <br> </label> <input type="text" name="prenom" id="prenom" value="<?php echo $user['prenom']; ?>"/> <br>
-                
+            <label for="nom">Nom : <br> </label> <input type="text" name="nom" id="nom"/> <br>
+            <label for="prenom">Prenom : <br> </label> <input type="text" name="prenom" id="prenom"/> <br>
+            <label for="mail">Email : <br> </label> <input type="email" name="email" id="Email"/> <br>    
                 <label for="mdp1">Mot de passe:</label>
                 <input type="password" name="mdp1" id="mdp1" value=""/>
             <label for="mdp2">Confirmation:</label>
@@ -147,5 +147,5 @@ foreach ($utilisateurs as $user) {
                 </div>
                                                 
             </form>
-        </div>
+        
 </div> 
