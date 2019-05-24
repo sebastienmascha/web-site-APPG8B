@@ -67,6 +67,46 @@ switch ($function) {
                 }
             }
 
+
+        if(!empty($_POST['emailadd']) && !empty($_POST['prenomadd']) && !empty($_POST['typeUseradd']) && !empty($_POST['idfoyeradd']) && !empty($_POST['nomadd']) && !empty($_POST['boissonadd']) && !empty($_POST['accesadd']) && !empty($_POST['heureadd']))
+
+                {
+
+
+            if($_POST['mdp1'] == $_POST['mdp2']) {
+
+                $query = 'INSERT INTO users_user (idFoyer, prenom, nom, email, mdp, heure, preference, acces, invite, datecre, valide, typeUser) 
+                VALUES (:idFoyer, :prenom, :nom, :email, :mdp, :heure, :preference, :acces, :invite, :datecre, :valide, :typeUser)';
+
+
+                $donnees = $bdd->prepare($query);
+                $donnees->bindParam(":idFoyer", secure($_POST['idfoyeradd']), PDO::PARAM_STR);
+                $donnees->bindParam(":prenom", secure($_POST['prenomadd']), PDO::PARAM_STR);
+                $donnees->bindParam(":nom", secure($_POST['nomadd']), PDO::PARAM_STR);
+                $donnees->bindParam(":email", secure($_POST['emailadd']), PDO::PARAM_STR);
+                $donnees->bindParam(":mdp", secure($_POST['mdp1add']), PDO::PARAM_STR);
+                $donnees->bindParam(":heure", secure($_POST['heureadd']), PDO::PARAM_STR);
+                $donnees->bindParam(":preference", secure($_POST['preferenceadd']), PDO::PARAM_STR);
+                $donnees->bindParam(":acces", secure($_POST['accesadd']), PDO::PARAM_STR);
+                $donnees->bindParam(":invite", 0, PDO::PARAM_STR);
+                $donnees->bindParam(":datecre", time(), PDO::PARAM_STR);
+                $donnees->bindParam(":valide", 1, PDO::PARAM_STR);
+                $donnees->bindParam(":typeUser", secure($_POST['typeUseradd']), PDO::PARAM_STR);
+
+                return $donnees->execute();
+
+                    $alerte = succes("<center>Utilisateur ".$_POST["prenomadd"]." ".$_POST["nomadd"]." ajouté!.</center>");
+                }
+                else {
+                    $alerte = alerte("<center>Les deux mot de passe ne correspondent pas.</center>");
+                }
+
+
+         
+    
+        }
+
+
         break;
 
     case 'gestion-foyer':
@@ -108,7 +148,26 @@ switch ($function) {
         if(isset($_GET['idFoyer'])) {
             
             $maisons = recupereMaisonsFromFoyerid($bdd,$_GET['idFoyer']);
+
+              if(!empty($_POST['id']) && !empty($_POST['maison']))
+
+                {
+
+                $query = 'INSERT INTO users_home (idMaison, idUser) 
+                VALUES (:idMaison, :idUser)';
+
+
+                $donnees = $bdd->prepare($query);
+                $donnees->bindParam(":idUser", secure($_POST['id']), PDO::PARAM_STR);
+                $donnees->bindParam(":idMaison", secure($_POST['maison']), PDO::PARAM_STR);
+
+                return $donnees->execute();
+
+                    $alerte = succes("<center>Utilisateur ajouté!.</center>");
+                }
+              
         }
+
         break;
 
     case 'gestion-machine':
