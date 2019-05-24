@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 22 mai 2019 à 09:03
+-- Généré le :  ven. 24 mai 2019 à 15:27
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -88,7 +88,11 @@ INSERT INTO `boisson_stock` (`idBoisson`, `idMachine`, `stock`) VALUES
 (1, 2, 10),
 (2, 2, 10),
 (3, 2, 10),
-(4, 2, 10);
+(4, 2, 10),
+(1, 3, 10),
+(2, 3, 20),
+(3, 3, 9),
+(4, 3, 16);
 
 -- --------------------------------------------------------
 
@@ -134,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `structure_capteur` (
   `etat` int(11) NOT NULL,
   `Mesure` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `structure_capteur`
@@ -150,7 +154,12 @@ INSERT INTO `structure_capteur` (`id`, `idMachine`, `type`, `etat`, `Mesure`) VA
 (7, 2, 'Présence de capsules', 1, 2),
 (8, 2, 'Sonore', 1, 0),
 (9, 1, 'Résistance Chauffante', 1, 0),
-(10, 2, 'Résistance Chauffante', 1, 0);
+(10, 2, 'Résistance Chauffante', 1, 0),
+(11, 3, 'Température', 1, 18),
+(12, 3, 'Présence de tasse', 1, 52),
+(13, 3, 'Présence de capsules', 1, 2),
+(14, 3, 'Sonore', 1, 0),
+(15, 3, 'Résistance Chauffante', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -188,15 +197,16 @@ CREATE TABLE IF NOT EXISTS `structure_machine` (
   `tempsUtilisation` int(11) NOT NULL,
   `machineStatut` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `structure_machine`
 --
 
 INSERT INTO `structure_machine` (`id`, `idMaison`, `isDispo`, `name`, `etat`, `tempsUtilisation`, `machineStatut`) VALUES
-(1, 1, 1, 'Salon', 'Fonctionnelle', 26, 0),
-(2, 2, 1, 'Diner', 'Fonctionnelle', 30, 1);
+(1, 1, 0, 'Salon', 'Fonctionnelle', 26, 0),
+(2, 2, 1, 'Diner', 'Fonctionnelle', 30, 1),
+(3, 2, 0, 'Terrasse', 'Non Fonctionnelle', 109, 0);
 
 -- --------------------------------------------------------
 
@@ -314,18 +324,21 @@ CREATE TABLE IF NOT EXISTS `users_user` (
   `valide` int(11) NOT NULL,
   `typeUser` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `users_user`
 --
 
 INSERT INTO `users_user` (`id`, `idFoyer`, `prenom`, `nom`, `email`, `mdp`, `heure`, `preference`, `acces`, `invite`, `datecre`, `valide`, `typeUser`) VALUES
-(1, 1, 'azert', 'BERTHIER', 'gaet@app.com', '32c57a4f95915ebb6f24dbe58d1aa933a3af5c7b', '08:00:00', 1, 50, 0, 1553507143, 1, 'utilisateurs'),
-(2, 1, 'Guuuus', 'Simon', 'gus@app.com', '32c57a4f95915ebb6f24dbe58d1aa933a3af5c7b', '08:10:00', 1, 50, 0, 1553507143, 1, 'utilisateurs'),
-(4, 1, 'Gsdfvzdx', 'BERTHIER', 'gaet@app.com', '32c57a4f95915ebb6f24dbe58d1aa933a3af5c7b', '08:00:00', 1, 50, 0, 1553507143, 1, 'utilisateurs'),
-(6, 1, 'sdfghj', 'BERTHIEROK', 'gaet@app.com', '32c57a4f95915ebb6f24dbe58d1aa933a3af5c7b', '08:00:00', 1, 50, 0, 1553507143, 1, 'utilisateurs'),
-(7, 0, 'webmaster', '', 'webmaster@app.com', '32c57a4f95915ebb6f24dbe58d1aa933a3af5c7b', '08:10:00', 1, 50, 0, 1553507143, 1, 'admin');
+(1, 1, 'Gaétan', 'BERTHIER', 'gaet@app.com', '6c06bb132fd07ea338907e4084a781ab09bac931', '08:00:00', 1, 75, 0, 1553507143, 1, 'Utilisateur'),
+(2, 1, 'Gus', 'SIMON\r\n', 'gus@app.com', '6c06bb132fd07ea338907e4084a781ab09bac931', '08:10:00', 1, 50, 0, 1553507143, 1, 'Enfant'),
+(3, 1, 'Olivier', 'CONDERE', 'oliv@app.com', '6c06bb132fd07ea338907e4084a781ab09bac931', '12:05:00', 2, 50, 0, 24052019, 1, 'Enfant'),
+(4, 1, 'Seb', 'MASCHA', 'seb@app.com', '6c06bb132fd07ea338907e4084a781ab09bac931', '07:00:00', 1, 50, 0, 1553507143, 1, 'Enfant'),
+(5, 1, 'Agathe', 'Le Bris', 'agathe@app.com', '32c57a4f95915ebb6f24dbe58d1aa933a3af5c7b', '08:06:00', 3, 75, 0, 24052019, 1, 'Utilisateur'),
+(6, 1, 'Astrid', 'BENOIT', 'astrid@app.com', '6c06bb132fd07ea338907e4084a781ab09bac931', '08:00:00', 1, 100, 0, 1553507143, 1, 'Référent'),
+(7, 0, 'webmaster', '', 'webmaster@app.com', '6c06bb132fd07ea338907e4084a781ab09bac931', '08:10:00', 1, 200, 0, 1553507143, 1, 'admin'),
+(8, 1, 'John', 'Smith', 'john@app.com', 'john', '07:00:00', 3, 25, 1, 24052019, 1, 'Invite');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
