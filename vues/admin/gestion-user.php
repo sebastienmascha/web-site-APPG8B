@@ -150,6 +150,19 @@ foreach ($utilisateurs as $user) {
                 ?>
             </select>
             
+
+                <label for="heure">Choisissez la maison:</label>    
+            <select name="idfoyeradd" value="">
+                    <?php  $req = recupereTous($bdd, 'structure_maison');
+                foreach ($req as $element) {
+                    echo '<option';
+                    echo ' value="'.$element['id'].'">'.$element['nom'].'</option>';
+                }
+                ?>
+            </select>
+
+
+
             <label for="heure">Choissisez le type d'utilisateur :</label>    
             <select name="typeUseradd" value="">
                     <option value=50> Enfant</option>
