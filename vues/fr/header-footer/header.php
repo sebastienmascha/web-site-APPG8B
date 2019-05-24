@@ -36,9 +36,16 @@
                     <a href="index.php">
                         <li><span class="nav-icon"><img src="img/home.png" alt="Accueil" /></span><span class="nav-text"> Accueil</span></li>
                     </a>
+                    <?php if ($_SESSION['acces'] > 40): ?>
                     <li><a href="index.php?cible=utilisateurs&fonction=compte"><span class="nav-icon"><img src="img/dashboard.png" alt="Mon compte" /></span> <span class="nav-text">Mon compte</span></a></li>
+                    <?php endif; ?>
+                    <?php if ($_SESSION['acces'] > 60): ?>
                     <li><a href="index.php?cible=utilisateurs&fonction=stock"><span class="nav-icon"><img src="img/package.png" alt="Stock" /> </span><span class="nav-text">Stock</span></a></li>
+                    <?php endif; ?>
+                    <?php if ($_SESSION['acces'] > 80): ?>
                     <li><a href="index.php?cible=utilisateurs&fonction=referent"><span class="nav-icon"><img src="img/admin.png" alt="Referent" /></span> <span class="nav-text">Référent</span></a></li>
+                    <?php endif; ?>
+                    
 
                 </ul>
             </nav>
@@ -47,8 +54,8 @@
 
         <header class="bg-trans">
             <div class="droite">
-                
-                <p ><?php echo $_SESSION['prenom']?></p>
+
+                <p><?php echo $_SESSION['prenom'] ?></p>
                 <img src="img/icon.png" />
                 <img src="img/notif.png" />
                 <a href="index.php?cible=utilisateurs&language=en">

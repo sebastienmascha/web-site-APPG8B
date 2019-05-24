@@ -17,25 +17,27 @@ include("controleurs/fonctions.php");
 include("vues/fr/fonctions.php");
 
 // SET COOKIE LANGAGE TO FR PAR DEFAULT
-if ( !isset($_COOKIE['language'])) {
+if (!isset($_COOKIE['language'])) {
     setcookie('language', "fr");
 }
 
-if(isset($_SESSION['id'])) {
+if (isset($_SESSION['acces'])) {
 
-// On identifie le contrôleur à appeler dont le nom est contenu dans cible passé en GET
-if(isset($_GET['cible']) && !empty($_GET['cible'])) {
-    // Si la variable cible est passé en GET
-    $url = $_GET['cible']; //utilisateurs, capteur, admin, etc.
-    
+    // On identifie le contrôleur à appeler dont le nom est contenu dans cible passé en GET
+    if (isset($_GET['cible']) && !empty($_GET['cible'])) {
+        // Si la variable cible est passé en GET
+        $url = $_GET['cible']; //utilisateurs, capteur, admin, etc.
+
+    } else {
+        // Si aucun contrôleur défini en GET, on bascule sur utilisateurs
+        if ($_SESSION['acces'] > 150) {
+            $url = 'admin';
+        } else {
+            $url = 'utilisateurs';
+        }
+    }
 } else {
-    // Si aucun contrôleur défini en GET, on bascule sur utilisateurs
-    $url = $_SESSION['typeUser'];
-}
-	
-}
-else {
-	$url = 'connexion';
+    $url = 'connexion';
 }
 
 // On appelle le contrôleur
