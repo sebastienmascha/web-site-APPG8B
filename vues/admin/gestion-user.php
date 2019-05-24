@@ -122,13 +122,13 @@ foreach ($utilisateurs as $user) {
 <div id="boitePrincipale" >
         
             <form method="POST" action="">
-            <label for="nom">Nom : <br> </label> <input type="text" name="nom" id="nom"/> <br>
-            <label for="prenom">Prenom : <br> </label> <input type="text" name="prenom" id="prenom"/> <br>
-            <label for="mail">Email : <br> </label> <input type="email" name="email" id="Email"/> <br>    
+            <label for="nom">Nom : <br> </label> <input type="text" name="nomadd" id="nom" required/> <br>
+            <label for="prenom">Prenom : <br> </label> <input type="text" name="prenomadd" id="prenom" required/> <br>
+            <label for="mail">Email : <br> </label> <input type="email" name="emailadd" id="Email" required/> <br>    
                 <label for="mdp1">Mot de passe:</label>
-                <input type="password" name="mdp1" id="mdp1" value=""/>
+                <input type="password" name="mdp1add" id="mdp1" value="" required/>
             <label for="mdp2">Confirmation:</label>
-                <input type="password" name="mdp2" id="mdp2" value=""/>
+                <input type="password" name="mdp2add" id="mdp2" value="" required/>
                 
                 <select>
                     <option value="">Préférence</option>
@@ -140,7 +140,7 @@ foreach ($utilisateurs as $user) {
                 </select>
             </br></br>
                 <label for="heure">Heure de préparation:</label>
-                <input type="time"  id="heure" name="heure"
+                <input type="time"  id="heure" name="heureadd"
                     min="00:00" max="23:00" placeholder="heure" required/>
                 <div style="text-align: center;">
                     <input type="submit" value="Ajouter cet utilisateur" >
