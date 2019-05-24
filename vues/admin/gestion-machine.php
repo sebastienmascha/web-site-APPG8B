@@ -2,6 +2,7 @@
 /**
  * Vue : accueil
  */
+echo $alerte;
 ?>
 
 <style>
@@ -20,6 +21,7 @@
 		<th>ID</th>
 		<th>Nom</th>
 		<th>Selectionner</th>
+        <th>Supprimer</th>
 	</tr>
 </thead>
 
@@ -40,7 +42,10 @@ $i = 0;
             <input type="submit" value="ACCEDER" ></a>'; ?>
             </td>
 
-
+            <td>
+            <?php echo '<a class="delete_btn" href="index.php?cible=admin&fonction=supprimerMachine&id='.$machine["id"].'"
+            >Supprimer</a>'; ?>
+            </td>
 		</tr>
 
 <?php	$i++; }	?>
@@ -52,13 +57,14 @@ $i = 0;
 
 
 
-<p class="titre">Ajout maison</p>
+<p class="titre">Ajout machine</p>
 
 <div id="boitePrincipale" >
         <div class="boite1">
             <form method="POST" action="">
             <label for="nom">Nom : <br> </label> <input type="text" name="nom" id="nom" required/> 
 
+            <input type='hidden' name="idMaison" value='<?php echo $_GET['idMaison']; ?>'/>
                 <div style="text-align: center;">
                     <input type="submit" value="Ajouter cette machine dans cette maison" >
                 </div>
