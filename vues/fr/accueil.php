@@ -37,7 +37,7 @@
                     <table class="Recap" width=100%>
                         <tr>
                             <th> Etat machine :</th>
-                            <td><?php echo $machine['isDispo']; ?></td>
+                            <td><?php echo $machine['etat']; ?></td>
                         </tr>
 
                         <tr>
@@ -48,10 +48,15 @@
                         <tr>
                             <th> Machine en marche : </th>
                             <td>
-                                <label class="switch">
-                                    <input type="checkbox">
-                                    <span class="slider round"></span>
-                                </label>
+                            <?php 
+
+                            if ($machine['isDispo']==1){
+                                echo 'Disponible';
+                            } else{
+                                echo 'Non Disponible';
+                            }
+                            
+                            ?>
                             </td>
                         </tr>
 

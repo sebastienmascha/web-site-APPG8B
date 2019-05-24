@@ -167,7 +167,7 @@ switch ($function) {
             if($_POST['mdp1'] == $_POST['mdp2']) {
 
                 $sql = "UPDATE users_user SET mdp=? WHERE id =?";
-                $bdd->prepare($sql)->execute([secure(crypterMdp($_POST['mdp1'])), $_SESSION['id']]);
+                $bdd->prepare($sql)->execute([secure(crypterMdp($_POST['mdp1'])), $_POST['idUser']]);
 
                 $alerte = succes("<center>Mot de passe changé.</center>");
             }
