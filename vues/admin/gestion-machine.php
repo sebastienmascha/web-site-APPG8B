@@ -52,4 +52,18 @@ $i = 0;
 
 
 
+<p class="titre">Ajout maison</p>
+
+<div id="boitePrincipale" >
+        <div class="boite1">
+            <form method="POST" action="">
+            <label for="nom">Nom : <br> </label> <input type="text" name="nom" id="nom" required/> 
+
+                <div style="text-align: center;">
+                    <input type="submit" value="Ajouter cette machine dans cette maison" >
+                </div>
+                                                
+            </form>
+        </div>
+</div> 
 

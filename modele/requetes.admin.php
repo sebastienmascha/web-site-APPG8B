@@ -59,3 +59,12 @@ function recupereCapteursfromMachineidGest(PDO $bdd, string $idMachine):array{
             WHERE idMachine=".$idMachine;
     return $bdd->query($query)->fetchAll();
 }
+
+
+
+function nbmaison(PDO $bdd, string $idFoyer){
+    $requete = $bdd->prepare("SELECT COUNT(*) AS nombreMaisons  FROM structure_maison
+        WHERE idFoyer=1");
+    $requete -> execute();
+    return $result = $requete->fetch(\PDO::FETCH_ASSOC);
+}
