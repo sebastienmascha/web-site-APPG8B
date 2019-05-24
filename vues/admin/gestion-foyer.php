@@ -13,18 +13,41 @@
 
 
 
-<?php foreach ($foyers as $element) { ?>
 
-<div class="boite" style="background:url('img/Appartement_Paris.jpg'); background-size:cover; ">
-	<p class="p" ><?php echo $element['nom']; ?></p>
-	<p class="p" ><?php echo $element['id']; ?> </p>
-	<div class="box">
-			<div class="center">
-            	<a class="button" href="
-            	index.php?cible=admin&fonction=gestion-maison&idFoyer=<?= $element['id'] ?>;">Selectionner</a>    
-         	</div>
-	</div>
+<div class="datagrid">
+<table>
+<thead>
+	<tr>
+		<th>ID</th>
+		<th>Nom</th>
+		<th>Selectionner</th>
+	</tr>
+</thead>
+
+
+<tbody>
+<?php 
+$i = 0;
+foreach ($foyers as $element) { 
+
+	if ($i%2 == 0 ){ $alt = 'class="alt"'; } else { $alt = ''; } ?>
+		<tr  <?php echo $alt; ?>>
+			<td>
+			<?php echo $element['id']; ?>   
+			</td>
+			<td><?php echo $element['nom']; ?> </td>
+			<td>
+            <?php echo '<a class="" href="index.php?cible=admin&fonction=gestion-maison&idFoyer='.$element["id"].'"
+            ><input type="submit" value="ACCEDER" ></a>'; ?>
+            </td>
+
+
+		</tr>
+
+<?php	$i++; }	?>
+
+</tbody>
+</table>
 </div>
 
-<?php } ?>
 

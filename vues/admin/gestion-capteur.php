@@ -13,28 +13,50 @@
 
 
 
-<?php 
 
-foreach ($capteurs as $element)
- { 
- 
+
+
+<div class="datagrid">
+<table  class="haute" >
+<thead>
+	<tr>
+		<th>Type</th>
+		<th>Mesure</th>
+		<th>Etat</th>
+	</tr>
+</thead>
+
+
+<tbody>
+<?php 
+$i = 0;
+ foreach ($capteurs as $element) { 
+
  	if( $element['etat'] == 1) 
  		{ $etat = succes("O");
  } 
  elseif( $element['etat'] == 0) 
  	{ 
- 		$etat = alerte("O");
+ 		$etat = alerte("X");
  	} 
 
- 			?>
-	<div class="boite" style="background:url(''); background-size:cover; ">
-		<p class="p" ><?php echo $element['type']; ?> </p>
-		Capteur en marche :
-             <?php echo $etat; ?>
-                            
+
+	if ($i%2 == 0 ){ $alt = 'class="alt"'; } else { $alt = ''; } ?>
+
+		<tr <?php echo $alt; ?>>
+			<td>
+			<?php echo $element['type']; ?>   
+			</td>
+			<td>
+			<?php echo $element['Mesure']; ?>   
+			</td>
+			<td><?php echo $etat; ?> </td>
+
+
+		</tr>
+
+<?php	$i++; }	?>
+
+</tbody>
+</table>
 </div>
-
-<?php } ?>
-
-
-

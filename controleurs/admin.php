@@ -63,7 +63,7 @@ switch ($function) {
                     $alertemdp = succes("<center>Mot de passe changé pour ".$_POST["prenom"]." ".$_POST["nom"].".</center>");
                 }
                 else {
-                    $alertemdp = succes("<center>Les deux mot de passe ne correspondent pas.</center>");
+                    $alertemdp = alerte("<center>Les deux mot de passe ne correspondent pas.</center>");
                 }
             }
 
