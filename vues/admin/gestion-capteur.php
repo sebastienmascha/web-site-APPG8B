@@ -54,8 +54,25 @@ $i = 0;
 
 
 
+		</tr>
+
+
 <?php	$i++; }	?>
 
 </tbody>
 </table>
 </div>
+
+<p class="titre">Ajout capteur</p>
+<div id="boitePrincipale" >
+        <div class="boite1">
+            <form method="POST" action="">
+            <label for="nom">Nom : <br> </label> <input type="text" name="nom" id="nom" required/> 
+            <label for="nom">Nom : <br> </label> <input type="text" name="nom" id="nom" required/> 
+                <div style="text-align: center;">
+                    <input type="submit" value="Ajouter ce capteur dans cette machine" >
+                </div>
+                                                
+            </form>
+        </div>
+</div> 
