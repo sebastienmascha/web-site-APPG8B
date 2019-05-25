@@ -228,7 +228,7 @@ switch ($function) {
                 $invite=0;
                 $temps = time();
                 $valide = 1;
-                switch ($_POST['accesad']){
+                switch ($_POST['accesadd']){
                     case 25:
                         $type= 'Invité';
                         $invite=1;
@@ -245,6 +245,9 @@ switch ($function) {
                         $type= 'Référent';
                         $invite=0;
                         break;
+                    default: 
+                        $type= 'Utilisateur';
+                        $invite=0;
                 }
                 $idmaison = secure($_POST['idmaisonadd']);
 
@@ -285,15 +288,16 @@ switch ($function) {
 
     case 'supprimerUtilisateur':
         if(isset($_GET['id']) && isset($_GET['token']) && ($_GET['token'] == $_SESSION['token'])) {
-            //TODO: Vérifier si la personne à le droit de supprimer la maison (si non tu redirige vers une page d'erreur de méchant)
-            //TODO: Gérer si il y a une erreur: exemple: la maison n'existait déjà plus => try/catch
-            
-            deleteUsers($bdd,$_GET['id']);
-            
+           
+            deleteUser($bdd,$_GET['id']);
 
         }
-        header("Location: index.php?cible=admin&fonction=referent-profil");
+        header("Location: index.php?cible=utilisateurs&fonction=referent-profil");
         break;
+
+
+
+  
 
     case 'sav':
         $vue = "header-footer/sav";

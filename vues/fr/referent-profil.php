@@ -29,6 +29,12 @@
 			<div class="boite2">
 				<input id="edite"type="button" value="Edit" onclick="edit_div('editer<?php echo $user['id'];?>')" /> </p>
 			</div>
+
+			<div class="boite2">
+				<a class="delete_btn" href="index.php?cible=utilisateurs&fonction=supprimerUtilisateur&id=<?php echo $user['id']; ?>&token=<?php echo $_SESSION['token']; ?>">Supprimer</a>
+			</div>
+
+			
 			
 		</div>
 	
@@ -127,7 +133,7 @@
 
 
 			<label for="maison">Choisissez la maison:</label>    
-            <select name="idMaisonadd" value="">
+            <select name="idmaisonadd" value="">
                     <?php  $req = recupereTous($bdd, 'structure_maison');
                 foreach ($req as $element) {
                     echo '<option';
