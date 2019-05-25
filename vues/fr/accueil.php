@@ -37,7 +37,14 @@
                     <table class="Recap" width=100%>
                         <tr>
                             <th> Etat machine :</th>
-                            <td><?php echo $machine['etat']; ?></td>
+                            <td><?php 
+                            
+                            if ($machine['etat']==1){
+                                echo 'Fonctionnelle';
+                            } else{
+                                echo 'Non Fonctionnelle';
+                            }
+                            ?></td>
                         </tr>
 
                         <tr>

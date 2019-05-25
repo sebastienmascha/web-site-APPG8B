@@ -94,3 +94,12 @@ function deleteMaisonUser(PDO $bdd,int $idSupprimer) {
     $statement = $bdd->prepare($query);
     $statement->execute(["id" => (int)$idSupprimer]);
 }
+function deleteUser(PDO $bdd,int $idSupprimer) {
+    $query = "DELETE FROM users_user WHERE id=:id ;";
+    $statement = $bdd->prepare($query);
+    $statement->execute(["id" => (int)$idSupprimer]);
+
+    $query = "DELETE FROM users_homes WHERE idUser=:id ;";
+    $statement = $bdd->prepare($query);
+    $statement->execute(["id" => (int)$idSupprimer]);
+}

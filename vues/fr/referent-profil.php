@@ -29,9 +29,14 @@
 			<div class="boite2">
 				<input id="edite"type="button" value="Edit" onclick="edit_div('editer<?php echo $user['id'];?>')" /> </p>
 			</div>
+
+			<div class="boite2">
+				<a class="delete_btn" href="index.php?cible=utilisateurs&fonction=supprimerUtilisateur&id=<?php echo $user['id']; ?>&token=<?php echo $_SESSION['token']; ?>">Supprimer</a>
+			</div>
+
+			
 			
 		</div>
-
 	
 </div>
 
@@ -69,6 +74,12 @@
 				min="00:00" max="23:59" value="<?php echo $user['heure']; ?>" required/>
 				
 			<label for="heure"> Type d'utilisateur: </label>
+			<select name="acces" value="">
+					<option value=25> Invité</option>
+                    <option value=50> Enfant</option>
+                    <option value=75> Utilisateur</option>
+                    <option value=100> Référent</option>
+            </select>
 
 			<input type="hidden" name="idUser" value=<?php echo $user['id'];?> />
 		
@@ -82,6 +93,73 @@
 </div>
 <?php } ?>
 <?php echo $alerte; ?>
+
+<div class="boite2">
+	<input id="addUser" type="button" value="Ajouter utilisateur dans le foyer" onclick="edit_div('add')" /> </p>
+</div>
+
+<div id="add" style="display:none" >
+	<div class="title">AJOUTER UTILISATEUR</div>
+
+
+	<form method="POST" action="">
+            <label for="nom">Nom : <br> </label> <input type="text" name="nomadd" id="nom" required/> <br>
+
+            <label for="prenom">Prenom : <br> </label> <input type="text" name="prenomadd" id="prenom" required/> <br>
+
+            <label for="mail">Email : <br> </label> <input type="email" name="emailadd" id="Email" required/> <br>  
+
+                <label for="mdp1">Mot de passe:</label>
+                <input type="password" name="mdp1add" id="mdp1" value="" required/>
+
+
+            <label for="mdp2">Confirmation:</label>
+                <input type="password" name="mdp2add" id="mdp2" value="" required/>
+                
+        	<label for="PreferenceBoisson "> Préférence Boisson : <br> </label>
+            <select name="boissonadd" value="">
+                <?php  $req = recupereTous($bdd, 'boisson_boisson');
+                foreach ($req as $element) {
+                    echo '<option';
+                    if($element['id'] == $user['preference']) { echo ' selected'; }
+                    echo ' value="'.$element['id'].'">'.$element['nom'].'</option>';
+                }
+                ?>
+			</select>
+
+			<label for="heure">Heure de préparation:</label>
+                <input type="time"  id="heure" name="heureadd"
+					min="00:00" max="23:00" placeholder="heure" required/>
+
+
+			<label for="maison">Choisissez la maison:</label>    
+            <select name="idmaisonadd" value="">
+                    <?php  $req = recupereTous($bdd, 'structure_maison');
+                foreach ($req as $element) {
+                    echo '<option';
+                    echo ' value="'.$element['id'].'">'.$element['nom'].'</option>';
+                }
+                ?>
+            </select>
+
+
+            <label for="heure">Choissisez le type d'utilisateur :</label>    
+			<select name="accesadd" value="">
+					<option value=25> Invité</option>
+                    <option value=50> Enfant</option>
+                    <option value=75> Utilisateur</option>
+                    <option value=100> Référent</option>
+            </select>
+
+            
+					
+            <div style="text-align: center;">
+                <input type="submit" value="Ajouter cet utilisateur" >
+            </div>
+                                                
+    </form>
+
+</div>
 
 
 <script src="js/afficher_masquer.js"></script>
