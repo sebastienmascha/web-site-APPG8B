@@ -52,9 +52,18 @@ $i = 0;
 			</td>
 			<td><?php echo $etat; ?> </td>
 
-<p class="titre">Ajout capteur</p>
+
 
 		</tr>
+
+
+<?php	$i++; }	?>
+
+</tbody>
+</table>
+</div>
+
+<p class="titre">Ajout capteur</p>
 <div id="boitePrincipale" >
         <div class="boite1">
             <form method="POST" action="">
@@ -67,9 +76,3 @@ $i = 0;
             </form>
         </div>
 </div> 
-
-<?php	$i++; }	?>
-
-</tbody>
-</table>
-</div>

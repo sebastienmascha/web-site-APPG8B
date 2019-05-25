@@ -2,6 +2,8 @@
 /**
  * Vue : accueil
  */
+
+echo $alerte;
 ?>
 
 <style>
@@ -23,6 +25,8 @@
 		<th>ID</th>
 		<th>Nom</th>
 		<th>Selectionner</th>
+        <th>Supprimer</th>
+
 	</tr>
 </thead>
 
@@ -41,6 +45,10 @@ foreach ($maisons as $maison) {
 			<td>
             <?php echo '<a class="" href="index.php?cible=admin&fonction=gestion-machine&idMaison='.$maison["id"].'"
             ><input type="submit" value="ACCEDER" ></a>'; ?>
+            </td>
+            <td>
+            <?php echo '<a class="delete_btn" href="index.php?cible=admin&fonction=supprimermaison&id='.$maison["id"].'"
+            >Supprimer</a>'; ?>
             </td>
 
 
@@ -64,6 +72,7 @@ foreach ($maisons as $maison) {
             <label for="nom">Nom : <br> </label> <input type="text" name="nom" id="nom" required/> 
             <label for="nom">Lieu : <br> </label> <input type="text" name="lieu" id="lieu" required/> 
 
+            <input type="hidden" name="id" value="<?php echo $_GET['idFoyer']; ?>"/>
                 <div style="text-align: center;">
                     <input type="submit" value="Ajouter cette maison dans ce foyer" >
                 </div>

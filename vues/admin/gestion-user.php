@@ -35,13 +35,30 @@
 $i = 0;
 foreach ($utilisateurs as $element) { 
 
+
+
+switch($element['acces']) {
+    case 50;
+    $accesUsr = "Enfant";
+    break;
+
+
+    case 75;
+    $accesUsr = "Utilisateur";
+    break;
+
+    case 100;
+    $accesUsr = "Référent";
+    break;
+}
+
 	if ($i%2 == 0 ){ $alt = 'class="alt"'; } else { $alt = ''; } ?>
 		<tr <?php echo $alt; ?>>
 			<td>
 			<?php echo $element['prenom']; ?>   
 			<?php echo $element['nom']; ?>
 			</td>
-			<td><?php echo $element['typeUser']; ?> </td>
+			<td><?php echo $accesUsr; ?> </td>
 			<td><?php echo $element['heure']; ?> </td>
 			<td><?php echo $element['email']; ?> </td>
 			<td>
@@ -122,10 +139,15 @@ foreach ($utilisateurs as $user) {
 <div id="boitePrincipale" >
             <form method="POST" action="">
             <label for="nom">Nom : <br> </label> <input type="text" name="nomadd" id="nom" required/> <br>
+
             <label for="prenom">Prenom : <br> </label> <input type="text" name="prenomadd" id="prenom" required/> <br>
-            <label for="mail">Email : <br> </label> <input type="email" name="emailadd" id="Email" required/> <br>    
+
+            <label for="mail">Email : <br> </label> <input type="email" name="emailadd" id="Email" required/> <br>  
+
                 <label for="mdp1">Mot de passe:</label>
                 <input type="password" name="mdp1add" id="mdp1" value="" required/>
+
+
             <label for="mdp2">Confirmation:</label>
                 <input type="password" name="mdp2add" id="mdp2" value="" required/>
                 
@@ -149,9 +171,42 @@ foreach ($utilisateurs as $user) {
                 }
                 ?>
             </select>
+
+             <label for="heure">Choisissez la maison:</label>    
+            <select name="idmaisonadd" value="">
+                    <?php  
+
+            $req1 = recupereTous($bdd, 'structure_foyer');
+
+                foreach ($req1 as $fofo) {
+
+                    echo '<optgroup label="'.$fofo['nom'].'">';
+
+                        $req2 = recupereTous($bdd, 'structure_maison WHERE idFoyer = '.$fofo['id']);
+                        foreach ($req2 as $element) {
+                            echo '<option value="'.$element['id'].'">'.$element['nom'].'</option>';
+                        }
+
+                    echo '</optgroup>';
+                }
+                ?>
+            </select>
             
+
+                <label for="heure">Choisissez la maison:</label>    
+            <select name="idfoyeradd" value="">
+                    <?php  $req = recupereTous($bdd, 'structure_maison');
+                foreach ($req as $element) {
+                    echo '<option';
+                    echo ' value="'.$element['id'].'">'.$element['nom'].'</option>';
+                }
+                ?>
+            </select>
+
+
+
             <label for="heure">Choissisez le type d'utilisateur :</label>    
-            <select name="typeUseradd" value="">
+            <select name="accesadd" value="">
                     <option value=50> Enfant</option>
                     <option value=75> Utilisateur</option>
                     <option value=100> Référent</option>

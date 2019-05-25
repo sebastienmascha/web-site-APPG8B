@@ -2,6 +2,8 @@
 /**
  * Vue : accueil
  */
+
+echo $alerte;
 ?>
 
 <style>
@@ -20,6 +22,7 @@
 	<tr>
 		<th>ID</th>
 		<th>Nom</th>
+		<th>Nb Maisons</th>
 		<th>Selectionner</th>
 	</tr>
 </thead>
@@ -30,12 +33,15 @@
 $i = 0;
 foreach ($foyers as $element) { 
 
+		$nbMaisons = nbmaison($bdd,$element['id']);
+
 	if ($i%2 == 0 ){ $alt = 'class="alt"'; } else { $alt = ''; } ?>
 		<tr  <?php echo $alt; ?>>
 			<td>
 			<?php echo $element['id']; ?>   
 			</td>
 			<td><?php echo $element['nom']; ?> </td>
+			<td><?php echo $nbMaisons['nombreMaisons']; ?> </td>
 			<td>
             <?php echo '<a class="" href="index.php?cible=admin&fonction=gestion-maison&idFoyer='.$element["id"].'"
             ><input type="submit" value="ACCEDER" ></a>'; ?>
