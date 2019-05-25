@@ -1,7 +1,7 @@
 <?php
 /**
-* Vue : entête HTML
-*/
+ * Vue : entête HTML
+ */
 ?>
 
 <!doctype html>
@@ -30,11 +30,10 @@
                 <div id="page-wrap" class="bg-trans">
 
                     <div id="page-header">
-                        <img src="img/home.png" alt="intitulé img" class="icon-page" />
+                        <a href="javascript:history.go(-1)" title="Return to the previous page"><img src="img/home.png" alt="intitulé img" class="icon-page" /></a>
                         <h1>
                             <?php echo $title; ?>
-                            <a href="javascript:history.go(-1)" title="Return to the previous page">&laquo; Go back</a>
                         </h1>
                     </div>
 
-                    <div class="page-content"> 
+                    <div class="page-content">

@@ -50,6 +50,9 @@ switch($element['acces']) {
     case 100;
     $accesUsr = "Référent";
     break;
+
+    default:
+    $accesUsr = "Administrateur";
 }
 
 	if ($i%2 == 0 ){ $alt = 'class="alt"'; } else { $alt = ''; } ?>
