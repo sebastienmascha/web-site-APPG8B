@@ -29,8 +29,14 @@ switch ($function) {
         break;
 
     case 'postCafe':
-        postCafe($bdd, $_GET['idMachine']);
-        header('location: index.php?cible=utilisateurs&fonction=accueil');
+        if ($_GET['etatMachine'] == 0) {
+            stopCafe($bdd, $_GET['idMachine']);
+            header('location: index.php?cible=utilisateurs&fonction=accueil');
+        } else {
+            runCafe($bdd, $_GET['idMachine']);
+            header('location: index.php?cible=utilisateurs&fonction=accueil');
+        }
+
         break;
 
     default:

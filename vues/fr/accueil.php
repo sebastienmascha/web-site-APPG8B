@@ -29,11 +29,21 @@
                     </div>
 
                     <div style="text-align: center;">
-                        <a href="index.php?cible=ajax&fonction=postCafe&idMachine=<?= $machine['id']; ?>">
-                            <button type="submit" onclick="postCafe();" >
-                                CAFE INSTANTANNE
-                            </button>
-                        </a>
+                        <?php if ($machine['etat'] == 1 ) : ?>
+                            <a href="index.php?cible=ajax&fonction=postCafe&idMachine=<?= $machine['id']; ?>&etatMachine=<?= $machine['etat']; ?>">
+                                <button type="submit" onclick="postCafe();">
+                                    CAFE INSTANTANNE
+                                </button>
+                            </a>
+                        <?php endif; ?>
+                        <?php if ($machine['etat'] == 0 ) : ?>
+                            <a href="index.php?cible=ajax&fonction=postCafe&idMachine=<?= $machine['id']; ?>&etatMachine=<?= $machine['etat']; ?>">
+                                <button type="submit" style="background-color: red;">
+                                    ARRETER
+                                </button>
+                            </a>
+                        <?php endif; ?>
+
                     </div>
 
                     <table class="Recap" width=100%>
@@ -86,7 +96,6 @@
     <script>
         function postCafe() {
             alert('e');
-        
     </script>
 
 <?php } ?>
