@@ -1,32 +1,42 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: May 25, 2019 at 02:53 PM
--- Server version: 5.7.23
--- PHP Version: 7.2.10
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  lun. 27 mai 2019 à 07:51
+-- Version du serveur :  5.7.24
+-- Version de PHP :  7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
--- Database: `mvc`
+-- Base de données :  `mvc`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `boisson_boisson`
+-- Structure de la table `boisson_boisson`
 --
 
-CREATE TABLE `boisson_boisson` (
-  `id` int(11) NOT NULL,
-  `nom` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `boisson_boisson`;
+CREATE TABLE IF NOT EXISTS `boisson_boisson` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `boisson_boisson`
+-- Déchargement des données de la table `boisson_boisson`
 --
 
 INSERT INTO `boisson_boisson` (`id`, `nom`) VALUES
@@ -38,33 +48,36 @@ INSERT INTO `boisson_boisson` (`id`, `nom`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `boisson_servie`
+-- Structure de la table `boisson_servie`
 --
 
-CREATE TABLE `boisson_servie` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `boisson_servie`;
+CREATE TABLE IF NOT EXISTS `boisson_servie` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `idBoisson` int(11) NOT NULL,
   `idMachine` int(11) NOT NULL,
   `idUser` int(11) NOT NULL,
   `date` int(11) NOT NULL,
   `temperature` float NOT NULL,
-  `isRemoved` int(11) NOT NULL
+  `isRemoved` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `boisson_stock`
+-- Structure de la table `boisson_stock`
 --
 
-CREATE TABLE `boisson_stock` (
+DROP TABLE IF EXISTS `boisson_stock`;
+CREATE TABLE IF NOT EXISTS `boisson_stock` (
   `idBoisson` int(11) NOT NULL,
   `idMachine` int(11) NOT NULL,
   `stock` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `boisson_stock`
+-- Déchargement des données de la table `boisson_stock`
 --
 
 INSERT INTO `boisson_stock` (`idBoisson`, `idMachine`, `stock`) VALUES
@@ -84,45 +97,51 @@ INSERT INTO `boisson_stock` (`idBoisson`, `idMachine`, `stock`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sav_message`
+-- Structure de la table `sav_message`
 --
 
-CREATE TABLE `sav_message` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `sav_message`;
+CREATE TABLE IF NOT EXISTS `sav_message` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `idUser` int(11) NOT NULL,
   `date` int(11) NOT NULL,
   `titre` varchar(255) NOT NULL,
-  `content` text NOT NULL
+  `content` text NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sensors`
+-- Structure de la table `sensors`
 --
 
-CREATE TABLE `sensors` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `sensors`;
+CREATE TABLE IF NOT EXISTS `sensors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
-  `type` varchar(11) NOT NULL
+  `type` varchar(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `structure_capteur`
+-- Structure de la table `structure_capteur`
 --
 
-CREATE TABLE `structure_capteur` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `structure_capteur`;
+CREATE TABLE IF NOT EXISTS `structure_capteur` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `idMachine` int(11) NOT NULL,
   `type` text NOT NULL,
   `etat` int(11) NOT NULL DEFAULT '1',
-  `Mesure` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Mesure` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `structure_capteur`
+-- Déchargement des données de la table `structure_capteur`
 --
 
 INSERT INTO `structure_capteur` (`id`, `idMachine`, `type`, `etat`, `Mesure`) VALUES
@@ -138,16 +157,18 @@ INSERT INTO `structure_capteur` (`id`, `idMachine`, `type`, `etat`, `Mesure`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `structure_foyer`
+-- Structure de la table `structure_foyer`
 --
 
-CREATE TABLE `structure_foyer` (
-  `id` int(11) NOT NULL,
-  `nom` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `structure_foyer`;
+CREATE TABLE IF NOT EXISTS `structure_foyer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `structure_foyer`
+-- Déchargement des données de la table `structure_foyer`
 --
 
 INSERT INTO `structure_foyer` (`id`, `nom`) VALUES
@@ -156,76 +177,83 @@ INSERT INTO `structure_foyer` (`id`, `nom`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `structure_machine`
+-- Structure de la table `structure_machine`
 --
 
-CREATE TABLE `structure_machine` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `structure_machine`;
+CREATE TABLE IF NOT EXISTS `structure_machine` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `idMaison` int(11) NOT NULL,
   `isDispo` int(11) NOT NULL DEFAULT '1',
   `name` varchar(100) NOT NULL,
   `etat` int(11) NOT NULL DEFAULT '1',
   `tempsUtilisation` int(11) NOT NULL DEFAULT '0',
-  `machineStatut` int(11) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `machineStatut` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `structure_machine`
+-- Déchargement des données de la table `structure_machine`
 --
 
 INSERT INTO `structure_machine` (`id`, `idMaison`, `isDispo`, `name`, `etat`, `tempsUtilisation`, `machineStatut`) VALUES
 (1, 2, 1, 'Salon', 1, 127, 1),
-(2, 2, 1, 'Salle à manger', 1, 2478, 1),
-(3, 1, 1, 'Invité', 1, 109, 1),
-(4, 1, 1, 'Cuisine', 1, 10, 1);
+(2, 2, 1, 'Salle à manger', 1, 2478, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `structure_maison`
+-- Structure de la table `structure_maison`
 --
 
-CREATE TABLE `structure_maison` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `structure_maison`;
+CREATE TABLE IF NOT EXISTS `structure_maison` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `idFoyer` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
-  `location` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `location` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `structure_maison`
+-- Déchargement des données de la table `structure_maison`
 --
 
 INSERT INTO `structure_maison` (`id`, `idFoyer`, `nom`, `location`) VALUES
 (1, 1, 'NDC', 'Notre-Dame des Champs'),
-(2, 1, 'NDL', 'Notre-Dame de Lorette');
+(2, 1, 'NDL', 'Notre-Dame de Lorette'),
+(3, 1, 'Test', 'Test');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structure de la table `users`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `password` varchar(255) CHARACTER SET latin1 NOT NULL
+  `password` varchar(255) CHARACTER SET latin1 NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_homes`
+-- Structure de la table `users_homes`
 --
 
-CREATE TABLE `users_homes` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `users_homes`;
+CREATE TABLE IF NOT EXISTS `users_homes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `idMaison` int(11) NOT NULL,
-  `idUser` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `idUser` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users_homes`
+-- Déchargement des données de la table `users_homes`
 --
 
 INSERT INTO `users_homes` (`id`, `idMaison`, `idUser`) VALUES
@@ -247,17 +275,19 @@ INSERT INTO `users_homes` (`id`, `idMaison`, `idUser`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_main`
+-- Structure de la table `users_main`
 --
 
-CREATE TABLE `users_main` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `users_main`;
+CREATE TABLE IF NOT EXISTS `users_main` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `idUser` int(11) NOT NULL,
-  `idFoyer` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `idFoyer` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users_main`
+-- Déchargement des données de la table `users_main`
 --
 
 INSERT INTO `users_main` (`id`, `idUser`, `idFoyer`) VALUES
@@ -271,11 +301,12 @@ INSERT INTO `users_main` (`id`, `idUser`, `idFoyer`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_user`
+-- Structure de la table `users_user`
 --
 
-CREATE TABLE `users_user` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `users_user`;
+CREATE TABLE IF NOT EXISTS `users_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `idFoyer` int(11) NOT NULL,
   `prenom` varchar(255) NOT NULL,
   `nom` varchar(255) NOT NULL,
@@ -287,11 +318,12 @@ CREATE TABLE `users_user` (
   `invite` int(11) NOT NULL,
   `datecre` int(11) NOT NULL,
   `valide` int(11) NOT NULL,
-  `typeUser` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `typeUser` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users_user`
+-- Déchargement des données de la table `users_user`
 --
 
 INSERT INTO `users_user` (`id`, `idFoyer`, `prenom`, `nom`, `email`, `mdp`, `heure`, `preference`, `acces`, `invite`, `datecre`, `valide`, `typeUser`) VALUES
@@ -303,155 +335,8 @@ INSERT INTO `users_user` (`id`, `idFoyer`, `prenom`, `nom`, `email`, `mdp`, `heu
 (6, 1, 'Gus', 'Simon', 'gus@app.com', '6c06bb132fd07ea338907e4084a781ab09bac931', '08:10:00', 1, 100, 0, 1, 1, ''),
 (7, 1, 'Astrid', 'Benoit', 'astrid@app.com', '6c06bb132fd07ea338907e4084a781ab09bac931', '09:10:00', 1, 100, 0, 1, 1, ''),
 (8, 1, 'Invité', 'Invité', 'invite@app.com', '6c06bb132fd07ea338907e4084a781ab09bac931', '08:10:00', 2, 25, 1, 1, 1, '');
+COMMIT;
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `boisson_boisson`
---
-ALTER TABLE `boisson_boisson`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `boisson_servie`
---
-ALTER TABLE `boisson_servie`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `sav_message`
---
-ALTER TABLE `sav_message`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `sensors`
---
-ALTER TABLE `sensors`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `structure_capteur`
---
-ALTER TABLE `structure_capteur`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `structure_foyer`
---
-ALTER TABLE `structure_foyer`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `structure_machine`
---
-ALTER TABLE `structure_machine`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `structure_maison`
---
-ALTER TABLE `structure_maison`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users_homes`
---
-ALTER TABLE `users_homes`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users_main`
---
-ALTER TABLE `users_main`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users_user`
---
-ALTER TABLE `users_user`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `boisson_boisson`
---
-ALTER TABLE `boisson_boisson`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `boisson_servie`
---
-ALTER TABLE `boisson_servie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `sav_message`
---
-ALTER TABLE `sav_message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `sensors`
---
-ALTER TABLE `sensors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `structure_capteur`
---
-ALTER TABLE `structure_capteur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `structure_foyer`
---
-ALTER TABLE `structure_foyer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `structure_machine`
---
-ALTER TABLE `structure_machine`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `structure_maison`
---
-ALTER TABLE `structure_maison`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `users_homes`
---
-ALTER TABLE `users_homes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT for table `users_main`
---
-ALTER TABLE `users_main`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `users_user`
---
-ALTER TABLE `users_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
