@@ -1,6 +1,6 @@
 <?php 
 /**
-* Vue : compte
+* Vue : accueil
 */
             $req = recupereTous($bdd, 'users_user WHERE id=' . secure($_SESSION['id']));
              foreach ($req as $dataMe) {
@@ -24,11 +24,19 @@
 
 <div id="boitePrincipale" >
         <div class="boite1">
+
+            <?php 
+echo $alerte;
+            ?>
             <form method="POST" action="">
 
+<label for="email">Email:</label>
                 <input type="email" name="email" id="Email" value="<?php echo $email; ?>"" required/>
+    <label for="prenom">Prénom:</label>
                 <input type="text" name="prenom" id="Prénom" value="<?php echo $prenom; ?>" required/>
-                
+
+
+                <label for="boisson">Preference:</label>
                 <select name="boisson" value="">
                 <?php  $req = recupereTous($bdd, 'boisson_boisson');
                   foreach ($req as $element) {
@@ -41,10 +49,19 @@
                 <label for="heure">Drink preparation time :</label>
                 <input type="time"  id="heure" name="heure"
                     min="00:00" max="23:59" value="<?php echo $heure; ?>" required/>
-                <div style="text-align: center;">
-                    <input type="submit" value="Confirm" >
+               
+                	
+                <label for="mdp1">New password :</label>
+                <input type="password" name="mdp1" id="mdp1" value=""/>
+<label for="mdp2">Confirmation:</label>
+                <input type="password" name="mdp2" id="mdp2" value=""/>
+
+
+                 <div style="text-align: center;">
+                    <input type="submit" value="Valider" >
                 </div>
-                								
+
+
             </form>
         </div>
 
@@ -53,7 +70,7 @@
                 <img src="img/icon.png" class="icon" alt="icon">
                 <figcaption class="légende"> <p> <?php echo $_SESSION['prenom']?> </p>  </figcaption>
             </figure>
-            <p class="utilisateur">Type of user : <?php echo $_SESSION['typeUser']?></p>
+            <p class="utilisateur">User type : <?php echo $_SESSION['typeUser']?></p>
         </div>
 
 </div>  

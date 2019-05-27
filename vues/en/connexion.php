@@ -12,7 +12,7 @@ if (!isset($valide) or !$valide) {
 
     <form method="POST" action="">
         <label for="email">Email : </label> <input type="email" name="email" id="email" placeholder="Email" required />
-        <label for="password">Password : </label> <input type="password" name="password" id="password" placeholder="********" required />
+        <label for="password">Mot de passe : </label> <input type="password" name="password" id="password" placeholder="********" required />
         <label for="submit"></label><input type="submit" value="Valider">
         <?php 
         if (isset($alerte)) {

@@ -38,7 +38,7 @@ switch ($function) {
             $title = "Accueil";
         }
         $maisons = recupereMachines($bdd);    
-        
+
         break;
 
 

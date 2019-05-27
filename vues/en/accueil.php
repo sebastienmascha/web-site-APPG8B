@@ -9,6 +9,7 @@
     ?>
 </style>
 
+
 <?php foreach ($maisons as $element) { ?>
 
     <div class="boitePrincipale">
@@ -35,8 +36,15 @@
 
                     <table class="Recap" width=100%>
                         <tr>
-                            <th> Machine state :</th>
-                            <td><?php echo $machine['isDispo']; ?></td>
+                            <th>  Machine state :</th>
+                            <td><?php 
+                            
+                            if ($machine['etat']==1){
+                                echo 'Fonctionnelle';
+                            } else{
+                                echo 'Non Fonctionnelle';
+                            }
+                            ?></td>
                         </tr>
 
                         <tr>
@@ -47,10 +55,15 @@
                         <tr>
                             <th> Machine working : </th>
                             <td>
-                                <label class="switch">
-                                    <input type="checkbox">
-                                    <span class="slider round"></span>
-                                </label>
+                            <?php 
+
+                            if ($machine['isDispo']==1){
+                                echo 'Disponible';
+                            } else{
+                                echo 'Non Disponible';
+                            }
+                            
+                            ?>
                             </td>
                         </tr>
 

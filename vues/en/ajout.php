@@ -14,8 +14,8 @@
 	<label>Type :</label>
 	<input type="text"  name="type" />
 
-    <button type="submit" name="submit">Ajouter</button>
+    <button type="submit" name="submit">Add</button>
 
 </form>
 
-<p><a href="index.php?cible=capteurs">Retour</a> | <a href="index.php">Accueil</a></p>
+<p><a href="index.php?cible=capteurs">Go back</a> | <a href="index.php">Home</a></p>

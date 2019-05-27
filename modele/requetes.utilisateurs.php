@@ -103,3 +103,10 @@ function deleteUser(PDO $bdd,int $idSupprimer) {
     $statement = $bdd->prepare($query);
     $statement->execute(["id" => (int)$idSupprimer]);
 }
+function postCafe(PDO $bdd, int $idMachine) {
+    $query = "UPDATE structure_machine
+    SET etat = '0'
+    WHERE id=:id";
+    $statement = $bdd->prepare($query);
+    $statement->execute(["id" => (int)$idMachine]);
+}

@@ -28,6 +28,11 @@ switch ($function) {
         $machinesInfo = recupereInfoMachinefromMachineid($bdd, 1);
         break;
 
+    case 'postCafe':
+        postCafe($bdd, $_GET['idMachine']);
+        header('location: index.php?cible=utilisateurs&fonction=accueil');
+        break;
+
     default:
         // si aucune fonction ne correspond au paramètre function passé en GET
         $vue = "components/erreur404";

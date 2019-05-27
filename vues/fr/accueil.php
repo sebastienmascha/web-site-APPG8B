@@ -29,22 +29,24 @@
                     </div>
 
                     <div style="text-align: center;">
-                        <button>
-                            CAFE INSTANTANNE
-                        </button>
+                        <a href="index.php?cible=ajax&fonction=postCafe&idMachine=<?= $machine['id']; ?>">
+                            <button type="submit" onclick="postCafe();" >
+                                CAFE INSTANTANNE
+                            </button>
+                        </a>
                     </div>
 
                     <table class="Recap" width=100%>
                         <tr>
                             <th> Etat machine :</th>
-                            <td><?php 
-                            
-                            if ($machine['etat']==1){
-                                echo 'Fonctionnelle';
-                            } else{
-                                echo 'Non Fonctionnelle';
-                            }
-                            ?></td>
+                            <td><?php
+
+                                if ($machine['etat'] == 1) {
+                                    echo 'Fonctionnelle';
+                                } else {
+                                    echo 'Non Fonctionnelle';
+                                }
+                                ?></td>
                         </tr>
 
                         <tr>
@@ -55,15 +57,15 @@
                         <tr>
                             <th> Machine en marche : </th>
                             <td>
-                            <?php 
+                                <?php
 
-                            if ($machine['isDispo']==1){
-                                echo 'Disponible';
-                            } else{
-                                echo 'Non Disponible';
-                            }
-                            
-                            ?>
+                                if ($machine['isDispo'] == 1) {
+                                    echo 'Disponible';
+                                } else {
+                                    echo 'Non Disponible';
+                                }
+
+                                ?>
                             </td>
                         </tr>
 
@@ -80,5 +82,11 @@
 
         </div>
     </div>
+
+    <script>
+        function postCafe() {
+            alert('e');
+        
+    </script>
 
 <?php } ?>
