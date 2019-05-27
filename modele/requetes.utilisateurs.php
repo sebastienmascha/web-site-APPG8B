@@ -105,14 +105,14 @@ function deleteUser(PDO $bdd,int $idSupprimer) {
 }
 function runCafe(PDO $bdd, int $idMachine) {
     $query = "UPDATE structure_machine
-    SET etat = '0'
+    SET isDispo = '0'
     WHERE id=:id";
     $statement = $bdd->prepare($query);
     $statement->execute(["id" => (int)$idMachine]);
 }
 function stopCafe(PDO $bdd, int $idMachine) {
     $query = "UPDATE structure_machine
-    SET etat = '1'
+    SET isDispo = '1'
     WHERE id=:id";
     $statement = $bdd->prepare($query);
     $statement->execute(["id" => (int)$idMachine]);

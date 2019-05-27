@@ -29,15 +29,15 @@
                     </div>
 
                     <div style="text-align: center;">
-                        <?php if ($machine['etat'] == 1 ) : ?>
-                            <a href="index.php?cible=ajax&fonction=postCafe&idMachine=<?= $machine['id']; ?>&etatMachine=<?= $machine['etat']; ?>">
+                        <?php if ($machine['isDispo'] == 1 ) : ?>
+                            <a href="index.php?cible=ajax&fonction=postCafe&idMachine=<?= $machine['id']; ?>&etatMachine=<?= $machine['isDispo']; ?>">
                                 <button type="submit" onclick="postCafe();">
                                     CAFE INSTANTANNE
                                 </button>
                             </a>
                         <?php endif; ?>
-                        <?php if ($machine['etat'] == 0 ) : ?>
-                            <a href="index.php?cible=ajax&fonction=postCafe&idMachine=<?= $machine['id']; ?>&etatMachine=<?= $machine['etat']; ?>">
+                        <?php if ($machine['isDispo'] == 0 ) : ?>
+                            <a href="index.php?cible=ajax&fonction=postCafe&idMachine=<?= $machine['id']; ?>&etatMachine=<?= $machine['isDispo']; ?>">
                                 <button type="submit" style="background-color: red;">
                                     ARRETER
                                 </button>
