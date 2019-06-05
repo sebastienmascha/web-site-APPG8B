@@ -300,12 +300,6 @@ switch ($function) {
 
 
 
-
-
-            $query2 = "DELETE FROM structure_capteur WHERE idMachine=".$idmach;
-            $statement2 = $bdd->prepare($query2);
-            $statement2->execute();
-
             $query3 = "DELETE FROM structure_machine WHERE idMaison=".$_GET['id'];
             $statement3 = $bdd->prepare($query3);
             $statement3->execute();
@@ -313,6 +307,8 @@ switch ($function) {
             $query4 = "DELETE FROM structure_maison WHERE id=".$_GET['id'];
             $statement4 = $bdd->prepare($query4);
             $statement4->execute();
+
+            header('location:index.php?cible=admin&fonction=gestion-foyer');
 
         }
         
@@ -340,7 +336,7 @@ switch ($function) {
             $statement3 = $bdd->prepare($query3);
             $statement3->execute();
 
-            
+            header('location:index.php?cible=admin&fonction=gestion-foyer');
 
         }
         break;
