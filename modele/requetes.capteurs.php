@@ -1,28 +1,32 @@
 <?php
 
 /**
- * Liste des fonctions spécifiques à la table des capteurs
+ * Liste des fonctions spécifiques à la recuperation des trames de transmission
  */
 
-// on récupère les requêtes génériques
-include('requetes.generiques.php');
 
-//on définit le nom de la table
-$table = "structure_capteur";
+function getTrameTransmission()
+{
+    $ch = curl_init();
 
+    curl_setopt(
 
+        $ch,
 
-/**
- * Recherche les capteurs en fonction du type passé en paramètre
- * @param PDO $bdd
- * @param string $table
- * @param string $type
- * @return array
- */
-function rechercheParType(PDO $bdd, string $table, string $type): array {
-    
-    return recherche($bdd, $table, ['type' => $type]);
-    
+        CURLOPT_URL,
+
+        "http://projets-tomcat.isep.fr:8080/appService?ACTION=GETLOG&TEAM=008B"
+    );
+
+    curl_setopt($ch, CURLOPT_HEADER, FALSE);
+
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+
+    $data = curl_exec($ch);
+
+    curl_close($ch);
+
+    echo "Raw Data:<br />";
+
+    echo ("$data");
 }
-
-?>
