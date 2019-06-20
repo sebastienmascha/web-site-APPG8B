@@ -30,7 +30,12 @@
 
                     <div style="text-align: center;">
                         <?php if ($machine['isDispo'] == 1 ) : ?>
-                            <a href="index.php?cible=ajax&fonction=postCafe&idMachine=<?= $machine['id']; ?>&etatMachine=<?= $machine['isDispo']; ?>">
+                            <a href="index.php?cible=ajax&fonction=postCafe&idMachine=<?= $machine['id']; ?>&etatMachine=<?= $machine['isDispo']; ?>" 
+
+                                onclick="window.open('index.php?cible=envoitrame');"
+                            
+>
+
                                 <button type="submit" onclick="postCafe();">
                                     CAFE INSTANTANNE
                                 </button>
